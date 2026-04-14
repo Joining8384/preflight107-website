@@ -1,0 +1,3528 @@
+/* ── PreFlight 107 Design Tokens ── */
+:root {
+  --bg:        #0D1117;
+  --card:      #161B22;
+  --border:    #21262D;
+  --text:      #FFFFFF;
+  --text-sec:  #C9D1D9;
+  --text-muted:#8B949E;
+  --accent:    #10B981;   /* emerald green  */
+  --yellow:    #FBBF24;   /* AR Airspace    */
+  --purple:    #8B5CF6;   /* ADS-B Radar    */
+  --blue:      #3B82F6;   /* info / METAR   */
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ── */
+.navbar {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  background: rgba(13, 17, 23, 0.85);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ── Main ── */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* ── Hero ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 0;
+  min-height: 520px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.3rem 0.85rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-sec);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 0.85rem 2rem;
+  background: var(--accent);
+  color: #0D1117;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+}
+
+.cta-button-secondary {
+  padding: 0.85rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-orb {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.35), rgba(139, 92, 246, 0.15));
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-stat-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  min-width: 180px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
+/* ── Features ── */
+.features {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.features h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.features-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  position: relative;
+  padding: 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card--ar:hover    { border-color: rgba(251, 191, 36,  0.4); }
+.feature-card--radar:hover { border-color: rgba(139, 92,  246, 0.4); }
+.feature-card--forecast:hover { border-color: rgba(16,  185, 129, 0.4); }
+
+.feature-accent-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.feature-accent-bar--yellow  { background: var(--yellow); }
+.feature-accent-bar--purple  { background: var(--purple); }
+.feature-accent-bar--green   { background: var(--accent); }
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  color: var(--text-sec);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.feature-tag--pro {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: var(--yellow);
+}
+
+/* ── Nav CTA pill ── */
+.nav-cta {
+  padding: 0.4rem 1rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 9999px;
+  color: var(--accent) !important;
+  font-weight: 600;
+  transition: background 0.2s ease !important;
+}
+.nav-cta:hover {
+  background: rgba(16, 185, 129, 0.22) !important;
+  color: var(--accent) !important;
+}
+
+/* ── Section shared ── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Flight Logs ── */
+.logs-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.logs-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.logs-text h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.logs-text p {
+  font-size: 0.95rem;
+  color: var(--text-sec);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.logs-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.logs-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-sec);
+}
+
+.check {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.check--free {
+  color: var(--text-muted);
+}
+
+/* Log card preview */
+.logs-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.log-card-preview {
+  width: 100%;
+  max-width: 360px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.log-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.log-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.log-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.log-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.log-status {
+  margin-left: auto;
+  padding: 0.2rem 0.65rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.log-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+.log-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.log-stat:last-child {
+  border-right: none;
+}
+
+.log-stat-val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.log-stat-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.log-drone-row {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Pricing ── */
+.pricing-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.pricing-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 840px;
+  margin: 0 auto 4rem;
+}
+
+/* Free card */
+.pricing-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pricing-card--free {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+/* Pro card */
+.pricing-card--pro {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.12), 0 12px 40px rgba(16, 185, 129, 0.08);
+}
+
+.pricing-badge-pro {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.85rem;
+  background: var(--accent);
+  color: #0D1117;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 9999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pricing-tier {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-tier--pro {
+  color: var(--accent);
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-amount {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.pricing-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+}
+
+.pricing-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.pricing-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--text-sec);
+}
+
+.pi {
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.pi--yes  { color: var(--text-muted); }
+.pi--no   { color: var(--border); }
+.pi--accent { color: var(--accent); }
+
+.pricing-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-btn--free {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+}
+
+.pricing-btn--free:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.pricing-btn--pro {
+  background: var(--accent);
+  color: #0D1117;
+}
+
+.pricing-btn--pro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+
+/* ── Comparison Table ── */
+.compare-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.compare-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.compare-table th {
+  padding: 0.65rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table th:first-child { text-align: left; }
+
+.th-pro { color: var(--accent) !important; }
+
+.compare-table td {
+  padding: 0.7rem 1rem;
+  color: var(--text-sec);
+  border-bottom: 1px solid rgba(33, 38, 45, 0.7);
+  text-align: center;
+}
+
+.compare-table td:first-child { text-align: left; }
+
+.compare-table tbody tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.compare-row--pro td:first-child {
+  color: var(--text);
+}
+
+.ci {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ci--yes { color: var(--accent); }
+.ci--no  { color: var(--border); }
+
+.ci-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ci-text--pro {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: auto;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.1rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--border);
+  margin-top: 0.25rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3.5rem 0;
+    gap: 2.5rem;
+  }
+
+  .hero-title { font-size: 2.3rem; }
+  .hero-visual { height: auto; }
+  .hero-stat-cards { flex-direction: row; flex-wrap: wrap; }
+  .gradient-orb { display: none; }
+  .nav-links { gap: 1rem; }
+  .features h2 { font-size: 2rem; }
+
+  .logs-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .pricing-section h2,
+  .logs-text h2 { font-size: 1.9rem; }
+
+  .compare-table { font-size: 0.8rem; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PILOT DASHBOARD  (/dashboard)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Shell layout ── */
+.db-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Sidebar ── */
+.db-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.db-sidebar-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  padding: 0 24px 28px;
+  letter-spacing: -0.02em;
+}
+.db-sidebar-logo span { color: var(--accent); }
+
+.db-nav { flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 0 12px; }
+.db-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+.db-nav-item:hover  { background: var(--border); color: var(--text-sec); }
+.db-nav-item.active { background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+
+.db-sidebar-footer {
+  padding: 20px 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.db-user-email {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Main content ── */
+.db-main {
+  flex: 1;
+  padding: 36px 40px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* ── Header ── */
+.db-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.db-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 4px;
+}
+.db-header-sub { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+.db-header-right { display: flex; align-items: center; gap: 12px; }
+.db-btn-refresh { font-size: 1.1rem; }
+
+/* ── Stat cards ── */
+.db-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.db-stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.db-stat-card--accent { border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.db-stat-icon { font-size: 1.6rem; }
+.db-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.db-stat-card--accent .db-stat-value { color: var(--accent); }
+.db-stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+/* ── Table ── */
+.db-table-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.db-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.db-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+.db-table th {
+  padding: 14px 16px;
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.db-log-row td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.db-log-row:hover td { background: color-mix(in srgb, var(--border) 40%, transparent); }
+.db-log-row--open td { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.db-log-row:last-child td { border-bottom: none; }
+
+.db-log-date { font-weight: 600; color: var(--text); }
+.db-log-time { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.db-temp     { color: var(--text-muted); }
+
+/* Expanded detail row */
+.db-log-detail td {
+  padding: 0;
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.db-detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 16px 20px;
+}
+.db-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.85rem;
+}
+.db-detail-item--full { flex: 1 1 100%; }
+.db-detail-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.db-detail-link { color: var(--accent); text-decoration: none; }
+.db-detail-link:hover { text-decoration: underline; }
+
+/* Actions column */
+.db-actions { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.db-chevron  { color: var(--text-muted); font-size: 0.7rem; }
+.db-btn-icon {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.db-btn-icon:hover { background: #ff444422; color: #ff6b6b; border-color: #ff444444; }
+
+/* ── Drone grid ── */
+.db-drone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.db-drone-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.db-drone-icon  { font-size: 2rem; margin-bottom: 4px; }
+.db-drone-name  { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+.db-drone-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+.db-drone-added { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; }
+
+/* ── Badges ── */
+.db-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.db-badge--green { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
+.db-badge--gray  { background: color-mix(in srgb, var(--border) 60%, transparent); color: var(--text-muted); border: 1px solid var(--border); }
+.db-badge--pro   { background: color-mix(in srgb, var(--yellow) 15%, transparent); color: var(--yellow); border: 1px solid color-mix(in srgb, var(--yellow) 40%, transparent); }
+
+/* ── Utility ── */
+.db-muted   { color: var(--text-muted); }
+.db-alert   { background: #ff444420; border: 1px solid #ff444455; color: #ff8888; border-radius: 10px; padding: 12px 16px; font-size: 0.88rem; margin-bottom: 16px; }
+.db-alert--full { margin-bottom: 20px; }
+.db-loading { display: flex; align-items: center; gap: 12px; color: var(--text-muted); padding: 40px 0; }
+.db-spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: db-spin 0.7s linear infinite;
+}
+@keyframes db-spin { to { transform: rotate(360deg); } }
+
+.db-empty {
+  text-align: center;
+  padding: 64px 20px;
+  color: var(--text-muted);
+}
+.db-empty-icon { font-size: 3rem; margin-bottom: 16px; }
+.db-empty h3   { font-size: 1.1rem; color: var(--text-sec); margin-bottom: 8px; }
+.db-empty p    { font-size: 0.9rem; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+
+/* ── Buttons ── */
+.db-btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+.db-btn-primary:hover    { opacity: 0.88; }
+.db-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.db-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.db-btn-ghost:hover { border-color: var(--text-muted); color: var(--text-sec); }
+
+/* ── Login screen ── */
+.db-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 20px;
+}
+.db-login-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+.db-login-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.db-login-logo span { color: var(--accent); }
+.db-login-card h2  { font-size: 1.5rem; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.02em; }
+.db-login-sub      { color: var(--text-muted); font-size: 0.88rem; margin: 0 0 24px; }
+
+.db-form { display: flex; flex-direction: column; gap: 6px; }
+.db-form label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; margin-top: 8px; }
+.db-form input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.db-form input:focus { border-color: var(--accent); }
+.db-form input::placeholder { color: var(--text-muted); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .db-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .db-main { padding: 24px 20px; }
+}
+@media (max-width: 640px) {
+  .db-shell    { flex-direction: column; }
+  .db-sidebar  { width: 100%; height: auto; position: static; flex-direction: row; padding: 16px; align-items: center; }
+  .db-nav      { flex-direction: row; padding: 0; flex: 1; }
+  .db-sidebar-footer { border-top: none; border-left: 1px solid var(--border); padding: 0 0 0 16px; margin: 0; }
+  .db-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .db-table th:nth-child(4),
+  .db-table td:nth-child(4),
+  .db-table th:nth-child(5),
+  .db-table td:nth-child(5) { display: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   AUTH PAGES  (/login  /signup)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 20px;
+  position: relative;
+}
+
+/* Subtle grid texture behind the form */
+.auth-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* "← PreFlight 107" back link */
+.auth-back {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
+  z-index: 10;
+}
+.auth-back:hover { color: var(--text-sec); }
+
+/* Card */
+.auth-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 44px 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+}
+
+.auth-logo {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+}
+.auth-logo span { color: var(--accent); }
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+.auth-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 26px;
+}
+
+/* Alert */
+.auth-alert {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.35);
+  color: #fca5a5;
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.auth-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.auth-field input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+.auth-field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+.auth-field input::placeholder { color: var(--text-muted); }
+
+.auth-btn-primary {
+  width: 100%;
+  padding: 13px;
+  margin-top: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 11px;
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.auth-btn-primary:hover:not(:disabled)  { opacity: 0.88; transform: translateY(-1px); }
+.auth-btn-primary:active:not(:disabled) { transform: translateY(0); }
+.auth-btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Footer links */
+.auth-switch {
+  text-align: center;
+  margin: 20px 0 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+.auth-terms {
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.auth-terms a { color: var(--text-muted); text-decoration: underline; }
+
+/* Full-page loader */
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+/* ── Navbar auth buttons ──────────────────────────────────────────────────────*/
+.nav-login-btn {
+  display: inline-block;
+  padding: 7px 20px;
+  border: 1.5px solid var(--accent);
+  border-radius: 9999px;
+  color: var(--accent) !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-login-btn:hover {
+  background: var(--accent);
+  color: var(--bg) !important;
+}
+
+.nav-auth-link {
+  color: var(--text-sec) !important;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-auth-link:hover { color: var(--text) !important; }
+.nav-signout         { color: var(--text-muted) !important; }
+
+/* ── New Flight Log button (dashboard header) ─────────────────────────────── */
+.db-btn-new-log {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 18px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.db-btn-new-log:hover  { opacity: 0.88; }
+.db-btn-new-log:active { transform: scale(0.97); }
+
+/* ── Modal backdrop & card ────────────────────────────────────────────────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+/* ── Modal header ─────────────────────────────────────────────────────────── */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.modal-close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+/* ── Modal body (scrollable) ──────────────────────────────────────────────── */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-section--flex {
+  display: flex;
+  gap: 0.75rem;
+}
+.modal-section--flex .modal-section {
+  flex: 1;
+}
+
+.modal-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-label-hint {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.modal-label-hint span {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.modal-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ── Form controls ────────────────────────────────────────────────────────── */
+.modal-select,
+.modal-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.92rem;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  appearance: none;
+}
+.modal-select:focus,
+.modal-input:focus {
+  border-color: var(--accent);
+}
+.modal-select option {
+  background: var(--card);
+}
+
+.modal-textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.92rem;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 72px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+.modal-textarea:focus {
+  border-color: var(--accent);
+}
+
+/* ── Weather fetch row ────────────────────────────────────────────────────── */
+.modal-weather-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1.5px solid var(--blue);
+  border-radius: 8px;
+  color: var(--blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  align-self: flex-start;
+}
+.modal-weather-btn:hover {
+  background: var(--blue);
+  color: #fff;
+}
+.modal-weather-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.modal-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.modal-weather-error {
+  font-size: 0.82rem;
+  color: #f87171;
+  padding: 6px 10px;
+  background: rgba(248, 113, 113, 0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.modal-weather-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.modal-weather-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  color: var(--text-sec);
+}
+.modal-weather-chip--geo {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+.modal-weather-chip--wide {
+  flex-basis: 100%;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: rgba(16, 185, 129, 0.07);
+  border-color: rgba(16, 185, 129, 0.2);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.modal-weather-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+/* ── Modal footer ─────────────────────────────────────────────────────────── */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.4rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-btn-cancel {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-sec);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.modal-btn-cancel:hover {
+  background: var(--border);
+  border-color: #444c56;
+}
+
+.modal-btn-save {
+  padding: 8px 22px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.modal-btn-save:hover  { opacity: 0.88; }
+.modal-btn-save:active { transform: scale(0.97); }
+.modal-btn-save:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ── Spin keyframe (shared) ───────────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.nav-signout:hover   { color: #fca5a5 !important; }
+
+/* ── Insurance toggle ─────────────────────────────────────────────────────── */
+.modal-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.3rem;
+}
+
+.modal-toggle {
+  width: 40px;
+  height: 22px;
+  background: var(--border);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+}
+.modal-toggle--on {
+  background: var(--accent);
+}
+.modal-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+}
+.modal-toggle--on .modal-toggle-thumb {
+  transform: translateX(18px);
+}
+
+.modal-toggle-label {
+  font-size: 0.9rem;
+  color: var(--text-sec);
+  font-weight: 500;
+}
+
+/* ── Insurance detail fields (revealed when insured) ─────────────────────── */
+.modal-insurance-fields {
+  margin-top: 0.65rem;
+  padding: 0.85rem 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.18);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  animation: fadeSlideIn 0.18s ease;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Log detail extras ────────────────────────────────────────────────────── */
+.db-detail-mono {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--text-sec);
+  letter-spacing: 0.02em;
+}
+
+/* ── Free-tier log counter bar ───────────────────────────────────────────── */
+.db-free-tier-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 7px 14px;
+  margin-bottom: 0.5rem;
+  background: rgba(251, 191, 36, 0.06);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.db-free-tier-bar strong {
+  color: var(--yellow);
+}
+.db-free-tier-bar__limit {
+  margin-left: auto;
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ── Modal limit banner ───────────────────────────────────────────────────── */
+.modal-limit-banner {
+  background: rgba(248, 113, 113, 0.08);
+  border-bottom: 1px solid rgba(248, 113, 113, 0.2);
+  padding: 0.75rem 1.4rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  text-align: center;
+}
+.modal-limit-banner strong {
+  color: var(--accent);
+}
+
+/* ── PDF Export button (in expanded log row detail) ──────────────────────── */
+.db-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.db-btn-export-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 7px 16px;
+  background: transparent;
+  border: 1.5px solid var(--purple);
+  border-radius: 8px;
+  color: var(--purple);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+}
+.db-btn-export-pdf:hover:not(:disabled) {
+  background: var(--purple);
+  color: #fff;
+}
+.db-btn-export-pdf:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Locked / free-tier variant */
+.db-btn-export-pdf--locked {
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+  font-size: 0.82rem;
+}
+.db-btn-export-pdf--locked:hover {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.db-pro-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+
+.db-export-error {
+  font-size: 0.78rem;
+  color: #f87171;
+}
+
+/* Small spinner variant for export button */
+.db-spinner--sm {
+  width: 10px;
+  height: 10px;
+  border-width: 1.5px;
+}
+
+/* ── Bulk export toolbar ─────────────────────────────────────────────────── */
+.db-bulk-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.db-bulk-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.db-btn-bulk-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 7px 16px;
+  background: var(--accent);
+  color: #000;
+  font-size: 0.83rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.db-btn-bulk-export:hover:not(:disabled) { opacity: 0.88; }
+.db-btn-bulk-export:active:not(:disabled) { transform: scale(0.97); }
+.db-btn-bulk-export:disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}
+
+/* ── Checkbox column ─────────────────────────────────────────────────────── */
+.db-col-check {
+  width: 36px;
+  padding: 0 6px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Custom checkbox — hides native, shows styled box */
+.db-checkbox-wrap {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.db-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.db-checkbox-box {
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: background 0.12s, border-color 0.12s;
+  position: relative;
+}
+
+/* Checkmark via pseudo-element */
+.db-checkbox:checked + .db-checkbox-box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.db-checkbox:checked + .db-checkbox-box::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 8px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+/* Indeterminate dash */
+.db-checkbox:indeterminate + .db-checkbox-box {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--accent);
+}
+.db-checkbox:indeterminate + .db-checkbox-box::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  width: 9px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.db-checkbox-wrap:hover .db-checkbox-box {
+  border-color: var(--accent);
+}
+
+/* Selected row highlight */
+.db-log-row--selected {
+  background: rgba(16, 185, 129, 0.06) !important;
+}
+.db-log-row--selected td {
+  border-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* ── Filter & Search bar ─────────────────────────────────────────────────── */
+.db-filter-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.db-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.db-filter-group--grow { flex: 1; min-width: 140px; }
+
+.db-filter-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.db-filter-input,
+.db-filter-select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.15s;
+  min-width: 130px;
+  appearance: none;
+}
+.db-filter-input:focus,
+.db-filter-select:focus { border-color: var(--accent); }
+/* Native date picker dark-mode text fix */
+.db-filter-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+.db-filter-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.db-filter-count {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.db-filter-clear {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.db-filter-clear:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* No results after filtering */
+.db-filter-empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  border: 1px dashed var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+.db-filter-empty .db-filter-clear {
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+
+/* ── Inline delete confirmation (inside db-actions td) ───────────────────── */
+.db-delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.db-delete-confirm__msg {
+  font-size: 0.75rem;
+  color: #f87171;
+  font-weight: 600;
+}
+
+.db-delete-confirm__yes {
+  padding: 3px 9px;
+  background: #ef4444;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.db-delete-confirm__yes:hover { opacity: 0.85; }
+
+.db-delete-confirm__no {
+  padding: 3px 9px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.db-delete-confirm__no:hover { border-color: var(--text-muted); }
+
+/* Trash + chevron as sibling buttons */
+.db-btn-icon--trash {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  opacity: 0.45;
+  padding: 2px 5px;
+  border-radius: 5px;
+  transition: opacity 0.15s, background 0.15s;
+  line-height: 1;
+}
+.db-btn-icon--trash:hover {
+  opacity: 1;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.db-btn-chevron {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.db-btn-chevron:hover { color: var(--text); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Double-Account Fix — Jesse's beta feedback
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Auth Pro Tip banner (LoginPage) ── */
+.auth-provider-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(59, 130, 246, 0.10);
+  border: 1px solid rgba(59, 130, 246, 0.30);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.83rem;
+  color: var(--text-sec);
+  line-height: 1.5;
+}
+.auth-provider-tip__icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.auth-provider-tip strong { color: var(--blue); }
+
+/* ── New-account detection banner (Dashboard) ── */
+.db-new-account-banner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 10px;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-sec);
+}
+.db-new-account-banner__icon { font-size: 1.2rem; flex-shrink: 0; }
+.db-new-account-banner__body { flex: 1; min-width: 200px; line-height: 1.5; }
+.db-new-account-banner__body strong { color: var(--yellow); }
+.db-new-account-banner__actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.db-new-account-banner__btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.db-new-account-banner__btn:hover { opacity: 0.82; }
+.db-new-account-banner__btn--switch {
+  background: var(--yellow);
+  color: #0D1117;
+}
+.db-new-account-banner__btn--dismiss {
+  background: var(--border);
+  color: var(--text-sec);
+}
+
+/* ── Settings page ── */
+.db-settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 640px;
+}
+.db-settings-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.db-settings-section__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+.db-settings-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+.db-settings-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.db-settings-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+.db-settings-value {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.db-settings-value--mono {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.88rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+/* ── Pilot Credentials section ── */
+.db-settings-creds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 560px) {
+  .db-settings-creds-grid { grid-template-columns: 1fr; }
+}
+.db-settings-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.db-settings-field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  letter-spacing: 0.01em;
+}
+.db-settings-field-hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.2rem;
+}
+.db-settings-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.db-settings-input:focus {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* Dropdown select — matches input style exactly */
+.db-settings-select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23768390' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.2rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.db-settings-select:focus {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+.db-settings-select option {
+  background: #1c2128;
+  color: var(--text);
+}
+
+.db-settings-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #F87171;
+  border-radius: 7px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.84rem;
+  margin-bottom: 0.75rem;
+}
+.db-settings-save-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Compact action-style save button — auto width, never full-width */
+.db-settings-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.1rem;
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  border: 1px solid #B45309;
+  border-radius: 7px;
+  color: #0D1117;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+  width: auto;            /* never stretches to fill container */
+}
+.db-settings-save-btn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+.db-settings-save-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.db-settings-save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.db-settings-saved-badge {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #34D399;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Linked Accounts list ── */
+.db-linked-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.db-linked-account-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.db-linked-account-icon { font-size: 1.1rem; flex-shrink: 0; }
+.db-linked-account-name {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.db-linked-account-status { font-size: 0.75rem; }
+.db-btn-link-provider {
+  padding: 0.38rem 0.9rem;
+  background: var(--accent);
+  color: #0D1117;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.db-btn-link-provider:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
+.db-btn-link-provider:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ── Inline loading helper ── */
+.db-loading--inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   SMART HANGAR  — Fleet Health + Battery Management
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.db-hangar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.db-hangar-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.db-hangar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.db-hangar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Fleet Report PDF button ── */
+.db-btn-fleet-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.db-btn-fleet-pdf:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.1);
+}
+.db-btn-fleet-pdf:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Fleet header right-side action group (PDF + Add to Fleet) ── */
+.db-hangar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* ── Add to Fleet button ── */
+.db-btn-add-drone {
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.db-btn-add-drone:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Inline add-drone form ── */
+.db-add-drone-form {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.db-add-drone-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Drone health bars ── */
+.db-health-section {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.db-health-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.db-health-label-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.db-health-pct {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* colour variants for the percentage label */
+.db-health-bar--green  { color: #10B981; }
+.db-health-bar--yellow { color: #FBBF24; }
+.db-health-bar--red    { color: #EF4444; }
+
+.db-health-track {
+  height: 7px;
+  background: var(--border);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.db-health-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+/* colour variants for the fill bar — need specificity over .db-health-bar-- */
+.db-health-fill.db-health-bar--green  { background: #10B981; }
+.db-health-fill.db-health-bar--yellow { background: #FBBF24; }
+.db-health-fill.db-health-bar--red    { background: #EF4444; }
+
+.db-health-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ── Battery grid ── */
+.db-battery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 1rem;
+}
+
+.db-battery-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.db-battery-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.db-battery-cycles {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.15rem 0;
+}
+
+.db-battery-cycle-val {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.db-battery-cycle-lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.db-battery-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.db-battery-drone {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--text-sec);
+  background: var(--border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.db-btn-log-charge {
+  margin-top: auto;
+  padding: 0.55rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #FBBF24;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.db-btn-log-charge:hover {
+  background: rgba(251, 191, 36, 0.16);
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+/* ── Add Battery button ── */
+.db-btn-add-battery {
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.db-btn-add-battery:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Add Battery inline form ── */
+.db-add-battery-form {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.db-add-battery-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Maintenance reset buttons row ── */
+.db-drone-reset-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.db-btn-reset-prop,
+.db-btn-reset-airframe {
+  flex: 1;
+  padding: 0.48rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Props — purple */
+.db-btn-reset-prop {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #A78BFA;
+}
+.db-btn-reset-prop:hover {
+  background: rgba(139, 92, 246, 0.16);
+  border-color: rgba(139, 92, 246, 0.55);
+}
+
+/* Airframe — sky blue */
+.db-btn-reset-airframe {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38BDF8;
+}
+.db-btn-reset-airframe:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.55);
+}
+
+/* ── Battery cycle health bar ── */
+.db-battery-health {
+  margin: 0.5rem 0 0.25rem;
+}
+.db-battery-health .db-health-track {
+  height: 6px;
+  border-radius: 3px;
+}
+.db-battery-health .db-health-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ── Empty inline state ── */
+.db-empty-inline {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Drone card footer: date + delete side-by-side ── */
+.db-drone-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+}
+
+/* ── Delete Drone button (text label, sits in card footer) ── */
+.db-btn-delete-drone {
+  padding: 0.35rem 0.65rem;
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #F87171;
+  border-radius: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.db-btn-delete-drone:hover {
+  background: rgba(239, 68, 68, 0.16);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #FCA5A5;
+}
+
+/* ── Battery action row: Log Charge + trash icon side-by-side ── */
+.db-battery-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  align-items: stretch;
+}
+.db-battery-actions .db-btn-log-charge {
+  flex: 1;
+  margin-top: 0;   /* override the standalone margin */
+}
+
+/* ── Delete Battery button (icon-only trash, red tint) ── */
+.db-btn-delete-battery {
+  padding: 0.5rem 0.6rem;
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #F87171;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+.db-btn-delete-battery:hover {
+  background: rgba(239, 68, 68, 0.16);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #FCA5A5;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PRE-FLIGHT CHECKLIST BUTTON (header)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.db-btn-preflight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34D399;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.db-btn-preflight:hover {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.6);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   BADGE EXTENSIONS (purple + blue for service types)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.db-badge--purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: #A78BFA;
+}
+.db-badge--blue {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   REPORTS TAB
+   ══════════════════════════════════════════════════════════════════════════════ */
+.db-reports-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.db-report-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.db-report-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.db-report-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.db-report-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.db-report-table-wrap {
+  overflow-x: auto;
+}
+
+.db-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.db-report-table th {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+}
+
+.db-report-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.db-report-table tr:last-child td {
+  border-bottom: none;
+}
+
+.db-report-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PRE-FLIGHT CHECKLIST MODAL
+   ══════════════════════════════════════════════════════════════════════════════ */
+/* Checklist modal overrides the header padding so inline X aligns properly */
+.db-checklist-modal .db-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+}
+
+.db-checklist-modal {
+  width: min(560px, 95vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.db-checklist-drone-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.db-checklist-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  white-space: nowrap;
+}
+
+.db-checklist-items {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.db-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.db-checklist-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.db-checklist-item--checked {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.db-checklist-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #10B981;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.db-checklist-item-label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.db-checklist-item--checked .db-checklist-item-label {
+  color: var(--text-sec);
+  text-decoration: line-through;
+  text-decoration-color: rgba(16, 185, 129, 0.4);
+}
+
+.db-checklist-progress {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.db-checklist-progress-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  text-align: right;
+}
+
+.db-checklist-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.db-btn-checklist-save {
+  width: 100%;
+  padding: 0.7rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+  border-radius: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.db-btn-checklist-save:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.65);
+}
+
+.db-btn-checklist-save:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.db-checklist-saved {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #34D399;
+  padding: 0.4rem 0;
+}
+
+/* ── Active drone selector error ring ── */
+.db-select--error {
+  border-color: #F87171 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
+}
+
+/* ── Checklist drone validation warning ── */
+.db-checklist-drone-warning {
+  margin: 0 1.5rem 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.5rem;
+  color: #FCA5A5;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ── Active drone badge on drone cards ── */
+.db-drone-card--active {
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.db-drone-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.db-badge-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #F59E0B;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ── Reports header actions (count + export button) ── */
+.db-report-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ── Export PDF button (gold) ── */
+.db-btn-export-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.85rem;
+  background: rgba(245, 158, 11, 0.09);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #F59E0B;
+  border-radius: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.15s;
+}
+.db-btn-export-pdf:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.17);
+  border-color: rgba(245, 158, 11, 0.6);
+}
+.db-btn-export-pdf:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Maintenance table delete icon ── */
+.db-btn-report-delete {
+  padding: 0.3rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  opacity: 0.5;
+}
+.db-btn-report-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #F87171;
+  opacity: 1;
+}
+
+/* ── Maintenance table row actions (edit + delete together) ── */
+.db-report-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ── Pencil edit button (maintenance log rows) ── */
+.db-btn-edit-log {
+  padding: 0.3rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  opacity: 0.5;
+}
+.db-btn-edit-log:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #F59E0B;
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DB MODAL SYSTEM  (overlay · card · header · body · footer)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Overlay — darkened + blurred backdrop */
+.db-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Modal card */
+.db-modal {
+  position: relative;          /* anchor for the absolute close button */
+  background: var(--card, #161b22);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 14px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+/* Header — title only; close is absolute so no flex fighting */
+.db-modal-header {
+  padding: 1.25rem 3rem 1.1rem 1.5rem; /* right pad leaves room for X */
+  border-bottom: 1px solid var(--border, rgba(255,255,255,0.08));
+  flex-shrink: 0;
+}
+.db-modal-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text, #e6edf3);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Inline close button (inside header row, e.g. checklist modal) */
+.db-modal-close {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted, #768390);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+.db-modal-close:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--text, #e6edf3);
+}
+
+/* Absolute close button — top-right corner */
+.db-modal-close-abs {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted, #768390);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  z-index: 1;
+}
+.db-modal-close-abs:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text, #e6edf3);
+}
+
+/* Scrollable body */
+.db-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Footer — always at the bottom-right */
+.db-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.015);
+}
+
+/* Ghost cancel button */
+.db-btn-ghost {
+  background: transparent;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 7px;
+  color: var(--text-muted, #768390);
+  font-size: 0.87rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.db-btn-ghost:hover:not(:disabled) {
+  background: rgba(255,255,255,0.06);
+  color: var(--text, #e6edf3);
+}
+.db-btn-ghost:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Edit Maintenance Log Modal — card width & context row ── */
+.db-edit-log-modal {
+  max-width: 480px;
+}
+.db-edit-log-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+/* ── Form field groups ── */
+.db-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+.db-form-group:last-of-type {
+  margin-bottom: 0.25rem;
+}
+.db-form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-sec, #adbac7);
+  letter-spacing: 0.01em;
+}
+.db-form-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: var(--text, #e6edf3);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.db-form-input:focus {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+.db-form-textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border, rgba(255,255,255,0.1));
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: var(--text, #e6edf3);
+  font-size: 0.92rem;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.db-form-textarea:focus {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ── Gold primary button (Update Record) ── */
+.db-btn-gold {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  border: 1px solid #B45309;
+  color: #0D1117;
+  font-weight: 700;
+}
+.db-btn-gold:hover:not(:disabled) {
+  background: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+  border-color: #92400E;
+}
+
+/* ── Form helpers ── */
+.db-form-required {
+  color: #F87171;
+  margin-left: 0.15rem;
+}
+.db-form-optional {
+  color: var(--text-muted, #768390);
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-left: 0.2rem;
+}
+.db-form-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #F87171;
+  border-radius: 7px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.84rem;
+  margin-top: 0.35rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DRONE CARD — actions row (Edit + Delete side-by-side)
+   ═══════════════════════════════════════════════════════════ */
+.db-drone-card-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+/* Edit Drone button — gold accent, mirrors Delete styling */
+.db-btn-edit-drone {
+  padding: 0.35rem 0.65rem;
+  background: rgba(251, 191, 36, 0.07);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  color: #FCD34D;
+  border-radius: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.db-btn-edit-drone:hover {
+  background: rgba(251, 191, 36, 0.16);
+  border-color: rgba(251, 191, 36, 0.5);
+  color: #FDE68A;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EDIT DRONE MODAL — interval fields in 3-column grid
+   ═══════════════════════════════════════════════════════════ */
+.db-edit-drone-modal {
+  max-width: 520px;
+}
+.db-edit-drone-intervals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+@media (max-width: 520px) {
+  .db-edit-drone-intervals {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SETTINGS — Legal links section
+   ═══════════════════════════════════════════════════════════ */
+.db-settings-legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.db-settings-legal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #C9D1D9;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #21262D;
+  background: #161B22;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  width: fit-content;
+}
+.db-settings-legal-link:hover {
+  background: #1C2128;
+  border-color: #30363D;
+  color: #FFFFFF;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEGAL PAGES — Terms of Service & Privacy Policy
+   ═══════════════════════════════════════════════════════════ */
+.legal-page {
+  min-height: 100vh;
+  background: #0D1117;
+  color: #C9D1D9;
+  font-family: inherit;
+}
+
+.legal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 56px;
+  border-bottom: 1px solid #21262D;
+  background: #0D1117;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.legal-back-btn {
+  padding: 0.4rem 0.85rem;
+  background: transparent;
+  border: 1px solid #30363D;
+  color: #C9D1D9;
+  border-radius: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.legal-back-btn:hover {
+  background: #161B22;
+  color: #FFFFFF;
+}
+
+.legal-header-title {
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.legal-company {
+  color: #FBBF24;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.legal-effective {
+  color: #6E7681;
+  font-size: 0.78rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.legal-intro {
+  color: #C9D1D9;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.legal-section-title {
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-sub-title {
+  color: #10B981;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-top: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.legal-body {
+  color: #C9D1D9;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 0.25rem;
+}
+
+.legal-link {
+  color: #10B981;
+  text-decoration: underline;
+}
+.legal-link:hover {
+  color: #34D399;
+}
+
+.legal-footer {
+  color: #30363D;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 2.5rem;
+}
