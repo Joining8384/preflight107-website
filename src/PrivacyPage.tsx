@@ -8,13 +8,19 @@ export default function PrivacyPage() {
       <div className="legal-header">
         <button
           className="legal-back-btn"
-          onClick={() => window.history.length > 1 ? window.history.back() : navigate('/')}
-          aria-label="Go back"
+          onClick={() => navigate('/')}
+          aria-label="Go to home page"
         >
-          ← Back
+          ← Home
         </button>
         <h1 className="legal-header-title">Privacy Policy</h1>
-        <div style={{ width: 80 }} />
+        <button
+          className="legal-back-btn"
+          onClick={() => navigate('/support')}
+          aria-label="Go to support"
+        >
+          Support
+        </button>
       </div>
 
       <div className="legal-content">
@@ -23,7 +29,7 @@ export default function PrivacyPage() {
 
         <p className="legal-intro">
           This Privacy Policy describes how Mcuztoms LLC ("we", "our", or "us") collects, uses, and
-          protects information when you use DroneWeather ("the App").
+          protects information when you use Preflight 107 ("the App").
         </p>
 
         {/* 1 */}
@@ -42,6 +48,16 @@ export default function PrivacyPage() {
           If you create an account or subscribe to Pro features, we may collect your email address and
           subscription status. This information is used exclusively for account management and service
           delivery.
+        </p>
+
+        <h3 className="legal-sub-title">Newsletter &amp; Marketing Emails</h3>
+        <p className="legal-body">
+          If you subscribe to our email newsletter, we collect your email address for the purpose of
+          sending product updates, feature announcements, and promotional content related to PreFlight 107.
+          Newsletter subscriptions are entirely optional and separate from your app account. Your email
+          address is never sold or shared with third parties for marketing purposes. You may unsubscribe
+          at any time by clicking the "Unsubscribe" link in any email we send, or by emailing
+          <a href="mailto:support@preflight107.com" className="legal-link">support@preflight107.com</a>.
         </p>
 
         <h3 className="legal-sub-title">Usage Data</h3>

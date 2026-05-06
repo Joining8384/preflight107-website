@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PreFlight 107</title>
+    <script>
+      // SPA redirect for GitHub Pages.
+      // When GitHub Pages serves a 404 for a deep-link like /privacy,
+      // this page encodes the path into the query string and redirects
+      // to the root index.html, which then restores the real URL.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host + '/' +
+        '?p=' + encodeURIComponent(l.pathname + l.search) +
+        (l.hash || '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

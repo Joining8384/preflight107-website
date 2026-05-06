@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { AuthProvider } from './AuthContext.tsx';
+import BlogIndex from './BlogIndex.tsx';
+import BlogPost from './BlogPost.tsx';
 import Dashboard from './Dashboard.tsx';
 import './index.css';
 import LoginPage from './LoginPage.tsx';
 import PrivacyPage from './PrivacyPage.tsx';
 import SignUpPage from './SignUpPage.tsx';
+import SupportPage from './SupportPage.tsx';
 import TermsPage from './TermsPage.tsx';
 
 // ── Path-based Router ─────────────────────────────────────────────────────────
@@ -21,11 +24,14 @@ function Router() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
-  if (path.startsWith('/dashboard')) return <Dashboard />;
-  if (path.startsWith('/login'))     return <LoginPage />;
-  if (path.startsWith('/signup'))    return <SignUpPage />;
-  if (path.startsWith('/terms'))     return <TermsPage />;
-  if (path.startsWith('/privacy'))   return <PrivacyPage />;
+  if (path.startsWith('/dashboard'))  return <Dashboard />;
+  if (path.startsWith('/login'))      return <LoginPage />;
+  if (path.startsWith('/signup'))     return <SignUpPage />;
+  if (path.startsWith('/terms'))      return <TermsPage />;
+  if (path.startsWith('/privacy'))    return <PrivacyPage />;
+  if (path.startsWith('/support'))    return <SupportPage />;
+  if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6)} />;
+  if (path === '/blog')               return <BlogIndex />;
   return <App />;
 }
 

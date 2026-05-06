@@ -8,13 +8,19 @@ export default function TermsPage() {
       <div className="legal-header">
         <button
           className="legal-back-btn"
-          onClick={() => window.history.length > 1 ? window.history.back() : navigate('/')}
-          aria-label="Go back"
+          onClick={() => navigate('/')}
+          aria-label="Go to home page"
         >
-          ← Back
+          ← Home
         </button>
         <h1 className="legal-header-title">Terms of Service</h1>
-        <div style={{ width: 80 }} />
+        <button
+          className="legal-back-btn"
+          onClick={() => navigate('/support')}
+          aria-label="Go to support"
+        >
+          Support
+        </button>
       </div>
 
       <div className="legal-content">
@@ -22,7 +28,7 @@ export default function TermsPage() {
         <div className="legal-effective">Effective Date: {EFFECTIVE_DATE}</div>
 
         <p className="legal-intro">
-          By downloading, installing, or using DroneWeather ("the App"), you agree to be bound by the
+          By downloading, installing, or using Preflight 107 ("the App"), you agree to be bound by the
           following Terms of Service. If you do not agree, do not use the App.
         </p>
 
