@@ -2,6 +2,7 @@ import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
 import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
 import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
+import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
 
 export interface Post {
   slug: string;
@@ -33,10 +34,11 @@ export function formatDate(dateStr: string): string {
 }
 
 const rawPosts = [
-  { slug: 'ads-b-explained-drone-pilots',        raw: adsbRaw },
-  { slug: 'how-to-log-drone-flights-part-107',   raw: flightLogRaw },
-  { slug: 'what-is-laanc-drone-pilots',          raw: laancRaw },
-  { slug: 'how-to-read-a-metar-drone-pilot',     raw: metarRaw },
+  { slug: 'how-to-read-a-sectional-chart-drone-pilot', raw: sectionalRaw },
+  { slug: 'ads-b-explained-drone-pilots',               raw: adsbRaw },
+  { slug: 'how-to-log-drone-flights-part-107',          raw: flightLogRaw },
+  { slug: 'what-is-laanc-drone-pilots',                 raw: laancRaw },
+  { slug: 'how-to-read-a-metar-drone-pilot',            raw: metarRaw },
 ];
 
 export const posts: Post[] = rawPosts.map(({ slug, raw }) => {
