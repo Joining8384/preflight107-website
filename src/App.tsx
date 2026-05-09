@@ -38,7 +38,7 @@ function App() {
     if (!betaEmail.includes('@')) return;
     setBetaStatus('loading');
     try {
-      const body = `FIRSTNAME=${encodeURIComponent(betaName)}&EMAIL=${encodeURIComponent(betaEmail)}&email_address_check=&locale=en`;
+      const body = `FIRSTNAME=${encodeURIComponent(betaName)}&EMAIL=${encodeURIComponent(betaEmail)}&PLATFORM=iOS&email_address_check=&locale=en`;
       const res = await fetch(BETA_BREVO_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -60,7 +60,7 @@ function App() {
     if (!androidEmail.includes('@')) return;
     setAndroidStatus('loading');
     try {
-      const body = `EMAIL=${encodeURIComponent(androidEmail)}&email_address_check=&locale=en`;
+      const body = `EMAIL=${encodeURIComponent(androidEmail)}&PLATFORM=Android&email_address_check=&locale=en`;
       const res = await fetch(BREVO_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -143,7 +143,14 @@ function App() {
               and professional aviation intelligence — everything you need before and during every flight.
             </p>
             <div className="hero-actions">
-              <button className="cta-button">Download Free</button>
+              <a
+                className="cta-button"
+                href="https://apps.apple.com/app/preflight-107/id6760437132"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Free
+              </a>
               <button
                 className="cta-button-secondary"
                 onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
@@ -152,6 +159,15 @@ function App() {
               </button>
             </div>
             <div className="hero-store-badges">
+              <a
+                className="store-badge store-badge--apple"
+                href="https://apps.apple.com/app/preflight-107/id6760437132"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download PreFlight 107 on the App Store"
+              >
+                <img src="/app-store-badge.svg" alt="Download on the App Store" />
+              </a>
               <button className="cta-button" onClick={openBeta}>Join iOS Beta</button>
               <a
                 className="store-badge store-badge--android-soon"
@@ -284,7 +300,14 @@ function App() {
                 <li><span className="pi pi--no">✗</span> 168-hr Forecast</li>
                 <li><span className="pi pi--no">✗</span> Unlimited Flight Logs</li>
               </ul>
-              <button className="pricing-btn pricing-btn--free">Download Free</button>
+              <a
+                className="pricing-btn pricing-btn--free"
+                href="https://apps.apple.com/app/preflight-107/id6760437132"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Free
+              </a>
             </div>
 
             {/* Pro tier */}
@@ -465,6 +488,19 @@ function App() {
         <div className="footer-inner">
           <div className="footer-logo"><span style={{color: 'var(--accent)'}}>✈</span> PreFlight 107</div>
           <p className="footer-tagline">Fly safe out there.</p>
+          <div className="footer-social">
+            <a
+              className="footer-social-link"
+              href="https://x.com/PreFlight107"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow PreFlight 107 on X"
+            >
+              <svg className="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+              </svg>
+            </a>
+          </div>
           <div className="footer-legal-links">
             <a href="/privacy" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/privacy'); }}>Privacy Policy</a>
             <span className="footer-legal-sep">·</span>
