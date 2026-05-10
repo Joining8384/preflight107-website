@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { AuthProvider } from './AuthContext.tsx';
+import AdminPage from './AdminPage.tsx';
 import BlogIndex from './BlogIndex.tsx';
 import BlogPost from './BlogPost.tsx';
 import Dashboard from './Dashboard.tsx';
@@ -24,6 +25,7 @@ function Router() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  if (path.startsWith('/admin'))      return <AdminPage />;
   if (path.startsWith('/dashboard'))  return <Dashboard />;
   if (path.startsWith('/login'))      return <LoginPage />;
   if (path.startsWith('/signup'))     return <SignUpPage />;
