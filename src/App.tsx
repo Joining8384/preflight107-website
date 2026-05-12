@@ -519,6 +519,8 @@ function App() {
             <span className="footer-legal-sep">·</span>
             <a href="/support" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/support'); }}>Support</a>
             <span className="footer-legal-sep">·</span>
+            <a href="/delete-account" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/delete-account'); }}>Delete Account</a>
+            <span className="footer-legal-sep">·</span>
             <a href="/blog" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/blog'); }}>Blog</a>
           </div>
           <p className="footer-copy">&copy; 2026 PreFlight 107. All rights reserved.</p>
