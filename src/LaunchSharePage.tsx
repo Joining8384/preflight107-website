@@ -16,8 +16,13 @@ interface LaunchSnapshot {
   tempF?: number | null;
   windMph?: number | null;
   gustMph?: number | null;
+  visMiles?: string | number | null;
+  clouds?: string | null;
   ceiling?: number | null;
   flightCategory?: string | null;
+  airspaceLabel?: string | null;
+  airspaceCeiling?: number | null;
+  airspaceWarning?: string | null;
 }
 
 interface LaunchData {
@@ -172,20 +177,20 @@ export default function LaunchSharePage({ token }: { token: string }) {
           </div>
           {expectedLanding ? (
             <div style={statStyle}>
-              <div style={statLabelStyle}>Expected land</div>
+              <div style={statLabelStyle}>Active until</div>
               <div style={statValueStyle}>{formatTime(expectedLanding.toISOString())}</div>
-              <div style={{ ...statLabelStyle, fontSize: 11 }}>{data.expected_minutes} min flight</div>
+              <div style={{ ...statLabelStyle, fontSize: 11 }}>{data.expected_minutes} min session</div>
             </div>
           ) : (
             <div style={statStyle}>
-              <div style={statLabelStyle}>Link expires</div>
+              <div style={statLabelStyle}>Active until</div>
               <div style={statValueStyle}>{formatTime(data.expires_at)}</div>
               <div style={{ ...statLabelStyle, fontSize: 11 }}>{formatDate(data.expires_at)}</div>
             </div>
           )}
         </div>
 
-        {(snap.tempF != null || snap.windMph != null || snap.ceiling != null || fc) && (
+        {(snap.tempF != null || snap.windMph != null || snap.visMiles != null || snap.clouds || fc || snap.droneModel) && (
           <div style={{ background: '#161B22', borderRadius: 12, padding: 14, marginBottom: 16 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
               <span style={{ color: '#C9D1D9', fontSize: 13, fontWeight: 600 }}>Launch Conditions</span>
@@ -200,9 +205,31 @@ export default function LaunchSharePage({ token }: { token: string }) {
               {snap.windMph != null && (
                 <div>🌬️ {Math.round(snap.windMph)} mph{snap.gustMph != null ? ` · gusts ${Math.round(snap.gustMph)}` : ''}</div>
               )}
-              {snap.ceiling != null && <div>☁️ Ceiling {snap.ceiling.toLocaleString()} ft</div>}
+              {snap.visMiles != null && <div>👁️ Visibility {snap.visMiles} mi</div>}
+              {snap.clouds && <div>☁️ {snap.clouds}</div>}
+              {snap.ceiling != null && <div>📐 Ceiling {snap.ceiling.toLocaleString()} ft</div>}
               {snap.droneModel && <div>🚁 {snap.droneModel}</div>}
             </div>
+          </div>
+        )}
+
+        {(snap.airspaceLabel || snap.airspaceWarning) && (
+          <div style={{
+            background: snap.airspaceWarning ? 'rgba(239,68,68,0.15)' : '#161B22',
+            border: snap.airspaceWarning ? '1px solid #EF4444' : '1px solid transparent',
+            borderRadius: 12,
+            padding: 14,
+            marginBottom: 16,
+          }}>
+            <div style={{ color: '#C9D1D9', fontSize: 13, fontWeight: 600, marginBottom: 6 }}>Airspace</div>
+            <div style={{ color: snap.airspaceWarning ? '#EF4444' : '#F0F6FC', fontSize: 14, fontWeight: snap.airspaceWarning ? 700 : 500 }}>
+              {snap.airspaceWarning ? '⛔ ' : '🛡️ '}{snap.airspaceLabel}
+            </div>
+            {snap.airspaceCeiling != null && (
+              <div style={{ color: '#8B949E', fontSize: 12, marginTop: 4 }}>
+                LAANC ceiling: {snap.airspaceCeiling.toLocaleString()} ft AGL
+              </div>
+            )}
           </div>
         )}
 

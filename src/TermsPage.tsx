@@ -1,6 +1,6 @@
 import { navigate } from './navigate';
 
-const EFFECTIVE_DATE = 'March 10, 2026';
+const EFFECTIVE_DATE = 'May 15, 2026';
 
 export default function TermsPage() {
   return (
@@ -52,9 +52,52 @@ export default function TermsPage() {
         <h2 className="legal-section-title">3. Limitation of Liability</h2>
         <p className="legal-body">
           In no event shall the total liability of Mcuztoms LLC, its officers, directors, employees,
-          or agents, exceed the amount paid by the user for the App or service during the twelve (12)
-          months preceding the event giving rise to the claim. In no event shall Mcuztoms LLC be
-          liable for any indirect, incidental, special, consequential, or punitive damages.
+          or agents, exceed (a) for paid subscribers, the total amount paid by the user for the App
+          in the twelve (12) months preceding the event giving rise to the claim, or (b) for
+          free-tier users, fifty US dollars ($50.00), whichever applies. In no event shall
+          Mcuztoms LLC be liable for any indirect, incidental, special, consequential, or punitive
+          damages, including but not limited to loss of profits, loss of drone or equipment, FAA
+          enforcement action, regulatory fines, business interruption, or property damage to third
+          parties.
+        </p>
+
+        <h2 className="legal-section-title">3a. Informational Tool — Not a Replacement for Official Sources</h2>
+        <p className="legal-body">
+          The App is an informational planning tool. It is NOT a replacement for official FAA
+          guidance, Air Traffic Control (ATC) communications, B4UFLY, LAANC authorization, the
+          National Weather Service (NWS), or your own judgment as Pilot in Command. The pilot
+          remains solely responsible for compliance with 14 CFR Part 107 and all other applicable
+          laws. You agree to cross-reference all critical pre-flight information with official
+          sources before every flight.
+        </p>
+
+        <h2 className="legal-section-title">3b. Third-Party Data Sources</h2>
+        <p className="legal-body">
+          The App displays data sourced from third parties, including but not limited to
+          Open-Meteo, NOAA, the National Weather Service, FAA datasets, CheckWX, OpenSky Network,
+          Mapbox, and other public APIs. Mcuztoms LLC does not control, verify, or guarantee the
+          accuracy, completeness, or timeliness of any third-party data. Third-party data may be
+          delayed, incomplete, cached, or temporarily unavailable. Mcuztoms LLC accepts no
+          liability for errors, omissions, or interruptions in third-party data.
+        </p>
+
+        <h2 className="legal-section-title">3c. Indemnification</h2>
+        <p className="legal-body">
+          You agree to indemnify, defend, and hold harmless Mcuztoms LLC, its officers, employees,
+          contractors, and affiliates from and against any and all claims, liabilities, damages,
+          judgments, awards, losses, costs, expenses, and fees (including reasonable attorneys'
+          fees) arising out of or relating to: (a) your use or misuse of the App; (b) your violation
+          of these Terms; (c) your violation of any FAA regulation or applicable law; (d) any flight
+          you operate using information from the App; or (e) any damage you cause to persons or
+          property while operating a drone.
+        </p>
+
+        <h2 className="legal-section-title">3d. Force Majeure</h2>
+        <p className="legal-body">
+          Mcuztoms LLC shall not be liable for any delay, interruption, or failure of the App caused
+          by events beyond its reasonable control, including but not limited to acts of God,
+          third-party API outages, cellular or internet outages, government action, FAA system
+          changes, or natural disasters.
         </p>
 
         <h2 className="legal-section-title">4. Binding Arbitration</h2>

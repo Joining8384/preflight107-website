@@ -1,6 +1,6 @@
 import { navigate } from './navigate';
 
-const EFFECTIVE_DATE = 'March 10, 2026';
+const EFFECTIVE_DATE = 'May 15, 2026';
 
 export default function PrivacyPage() {
   return (
@@ -114,8 +114,23 @@ export default function PrivacyPage() {
         <h2 className="legal-section-title">5. Data Retention</h2>
         <p className="legal-body">
           Location data is processed in real time and is not persistently stored on our servers.
-          Flight logs and drone configurations are stored locally on your device via AsyncStorage. If
-          you opt into cloud backup, data is stored on Supabase and can be deleted upon request.
+          Flight logs, drone configurations, saved sites, and FAA ID Vault entries are stored
+          locally on your device and synced to Supabase if you have an account. When you request
+          account deletion (via Settings → Delete Account or preflight107.com/delete-account), your
+          profile is flagged for deletion immediately and you are signed out. All data tied to your
+          account is permanently purged within thirty (30) days. The 30-day grace period exists to
+          support fraud chargeback resolution and accidental-deletion recovery; you may contact
+          support@preflight107.com during this window to restore your account.
+        </p>
+
+        <h2 className="legal-section-title">5a. Saved Sites &amp; Shared Launch Links</h2>
+        <p className="legal-body">
+          Saved Sites (named launch locations) are private to your account and protected by Postgres
+          row-level security. Shared Launch links create a time-limited public token that exposes
+          your name, the drone model, weather conditions at launch time, and airspace classification
+          at the launch point. Shared Launch links automatically expire after your stated session
+          window plus a 60-minute grace period (maximum 24 hours). You can end a shared link at any
+          time from within the App.
         </p>
 
         {/* 6 */}

@@ -2,10 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>PreFlight 107</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PreFlight 107 — Live Drone Flight</title>
+    <meta name="description" content="A drone pilot is flying right now. Tap to see their live launch site, weather conditions, and airspace status." />
+    <!--
+      Open Graph + Twitter meta tags. GitHub Pages serves this 404.html for
+      every deep link (/launch/<token>, /privacy, /terms, /blog/<slug>, etc.)
+      because those paths don't exist as files. iMessage / WhatsApp / Discord
+      crawlers read THIS file — not the SPA-rendered index.html — so the OG
+      tags here drive the link preview tile.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PreFlight 107" />
+    <meta property="og:title" content="A drone pilot is flying — see live conditions" />
+    <meta property="og:description" content="Tap to view the pilot's launch location, weather, airspace status, and flight session details." />
+    <meta property="og:image" content="https://preflight107.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PreFlight 107 — drone pilot app for weather, airspace, and live flight tracking" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A drone pilot is flying — see live conditions" />
+    <meta name="twitter:description" content="Tap to view the pilot's launch location, weather, airspace status, and flight session details." />
+    <meta name="twitter:image" content="https://preflight107.com/og-image.png" />
     <script>
       // SPA redirect for GitHub Pages.
-      // When GitHub Pages serves a 404 for a deep-link like /privacy,
+      // When GitHub Pages serves a 404 for a deep-link like /launch/abc123,
       // this page encodes the path into the query string and redirects
       // to the root index.html, which then restores the real URL.
       var l = window.location;
