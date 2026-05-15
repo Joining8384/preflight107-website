@@ -7,6 +7,7 @@ import BlogIndex from './BlogIndex.tsx';
 import BlogPost from './BlogPost.tsx';
 import Dashboard from './Dashboard.tsx';
 import DeleteAccountPage from './DeleteAccountPage.tsx';
+import LaunchSharePage from './LaunchSharePage.tsx';
 import './index.css';
 import LoginPage from './LoginPage.tsx';
 import PrivacyPage from './PrivacyPage.tsx';
@@ -33,6 +34,7 @@ function Router() {
   if (path.startsWith('/terms'))      return <TermsPage />;
   if (path.startsWith('/privacy'))    return <PrivacyPage />;
   if (path.startsWith('/delete-account')) return <DeleteAccountPage />;
+  if (path.startsWith('/launch/'))    return <LaunchSharePage token={path.slice(8)} />;
   if (path.startsWith('/support'))    return <SupportPage />;
   if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6)} />;
   if (path === '/blog')               return <BlogIndex />;
