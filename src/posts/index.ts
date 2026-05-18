@@ -1,4 +1,6 @@
 import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
+import aviationHazardsRaw from './aviation-hazards-explained-drone-pilots.md?raw';
+import faaInquiryRaw from './faa-inquiry-prepared-drone-pilot.md?raw';
 import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
 import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
@@ -33,8 +35,11 @@ export function formatDate(dateStr: string): string {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
+// Newest posts first — order here drives blog index display order
 const rawPosts = [
-  { slug: 'how-to-read-a-sectional-chart-drone-pilot', raw: sectionalRaw },
+  { slug: 'aviation-hazards-explained-drone-pilots',    raw: aviationHazardsRaw },
+  { slug: 'faa-inquiry-prepared-drone-pilot',           raw: faaInquiryRaw },
+  { slug: 'how-to-read-a-sectional-chart-drone-pilot',  raw: sectionalRaw },
   { slug: 'ads-b-explained-drone-pilots',               raw: adsbRaw },
   { slug: 'how-to-log-drone-flights-part-107',          raw: flightLogRaw },
   { slug: 'what-is-laanc-drone-pilots',                 raw: laancRaw },

@@ -58,7 +58,7 @@ The spread between temperature and dewpoint matters. A gap of 5°C or less signa
 
 ### Altimeter Setting
 
-**A2992** is the current barometric pressure: 29.92 inHg. For drone pilots, this field is less operationally critical, but it's a useful indicator of weather system movement. Falling pressure often signals an approaching frontal system. Combine it with the 168-hour forecast to understand where conditions are headed.
+**A2992** is the current barometric pressure: 29.92 inHg. For drone pilots, this field is less operationally critical, but it's a useful indicator of weather system movement. Falling pressure often signals an approaching frontal system. Combine it with the 15-day forecast to understand where conditions are headed.
 
 ### Remarks
 

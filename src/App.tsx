@@ -192,7 +192,7 @@ function App() {
           <div className="hero-visual">
             <div className="gradient-orb"></div>
             <div className="hero-stat-cards">
-              <div className="stat-card"><span className="stat-value">168hr</span><span className="stat-label">Forecast Range</span></div>
+              <div className="stat-card"><span className="stat-value">15-Day</span><span className="stat-label">Forecast Range</span></div>
               <div className="stat-card"><span className="stat-value">Live</span><span className="stat-label">ADS-B Traffic</span></div>
               <div className="stat-card"><span className="stat-value">METAR</span><span className="stat-label">Aviation Intel</span></div>
             </div>
@@ -297,7 +297,7 @@ function App() {
                 <li><span className="pi pi--yes">✓</span> 24-hr Forecast</li>
                 <li><span className="pi pi--yes">✓</span> 3 Flight Logs</li>
                 <li><span className="pi pi--no">✗</span> Live ADS-B Radar</li>
-                <li><span className="pi pi--no">✗</span> 168-hr Forecast</li>
+                <li><span className="pi pi--no">✗</span> 15-Day Forecast</li>
                 <li><span className="pi pi--no">✗</span> Unlimited Flight Logs</li>
               </ul>
               <a
@@ -332,7 +332,7 @@ function App() {
               <ul className="pricing-list">
                 <li><span className="pi pi--yes">✓</span> Everything in Basic</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Live ADS-B Radar</li>
-                <li><span className="pi pi--yes pi--accent">✓</span> 168-hr Forecast</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> 15-Day Forecast</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Unlimited Flight Logs</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> 3D Wind Tower</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> METAR / TAF Briefings</li>
@@ -362,7 +362,7 @@ function App() {
                 <tr><td>24-hr Forecast</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr><td>Flight Logs</td><td className="ci-text">3 logs</td><td className="ci-text ci-text--pro">Unlimited</td></tr>
                 <tr className="compare-row--pro"><td>Live ADS-B Radar</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>168-hr Forecast</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>15-Day Forecast</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>3D Wind Tower</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>METAR / TAF</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>PDF Log Exports</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
@@ -453,7 +453,7 @@ function App() {
             </details>
             <details className="faq-item">
               <summary className="faq-question">Where does your weather data come from?</summary>
-              <p className="faq-answer">PreFlight 107 pulls aviation weather directly from the National Weather Service (NWS) and NOAA data feeds — the same sources used by professional aviation weather services. METARs and TAFs are sourced from official ASOS/AWOS stations, and the 168-hour extended forecast uses high-resolution atmospheric model data.</p>
+              <p className="faq-answer">PreFlight 107 pulls aviation weather directly from the National Weather Service (NWS) and NOAA data feeds — the same sources used by professional aviation weather services. METARs and TAFs are sourced from official ASOS/AWOS stations, and the 15-day extended forecast uses high-resolution atmospheric model data.</p>
             </details>
             <details className="faq-item">
               <summary className="faq-question">Where does ADS-B data come from?</summary>
