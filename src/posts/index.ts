@@ -5,6 +5,11 @@ import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
 import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
 import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
+import tafRaw from './how-to-read-a-taf-drone-pilot.md?raw';
+
+export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
+
+export const ALL_CATEGORIES: PostCategory[] = ['Weather', 'Airspace', 'Compliance', 'Equipment'];
 
 export interface Post {
   slug: string;
@@ -12,6 +17,7 @@ export interface Post {
   date: string;
   excerpt: string;
   readTime: string;
+  category: PostCategory;
   content: string;
 }
 
@@ -36,17 +42,18 @@ export function formatDate(dateStr: string): string {
 }
 
 // Newest posts first — order here drives blog index display order
-const rawPosts = [
-  { slug: 'aviation-hazards-explained-drone-pilots',    raw: aviationHazardsRaw },
-  { slug: 'faa-inquiry-prepared-drone-pilot',           raw: faaInquiryRaw },
-  { slug: 'how-to-read-a-sectional-chart-drone-pilot',  raw: sectionalRaw },
-  { slug: 'ads-b-explained-drone-pilots',               raw: adsbRaw },
-  { slug: 'how-to-log-drone-flights-part-107',          raw: flightLogRaw },
-  { slug: 'what-is-laanc-drone-pilots',                 raw: laancRaw },
-  { slug: 'how-to-read-a-metar-drone-pilot',            raw: metarRaw },
+const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'how-to-read-a-taf-drone-pilot',             raw: tafRaw,             category: 'Weather' },
+  { slug: 'aviation-hazards-explained-drone-pilots',   raw: aviationHazardsRaw, category: 'Weather' },
+  { slug: 'faa-inquiry-prepared-drone-pilot',          raw: faaInquiryRaw,      category: 'Compliance' },
+  { slug: 'how-to-read-a-sectional-chart-drone-pilot', raw: sectionalRaw,       category: 'Airspace' },
+  { slug: 'ads-b-explained-drone-pilots',              raw: adsbRaw,            category: 'Airspace' },
+  { slug: 'how-to-log-drone-flights-part-107',         raw: flightLogRaw,       category: 'Compliance' },
+  { slug: 'what-is-laanc-drone-pilots',                raw: laancRaw,           category: 'Airspace' },
+  { slug: 'how-to-read-a-metar-drone-pilot',           raw: metarRaw,           category: 'Weather' },
 ];
 
-export const posts: Post[] = rawPosts.map(({ slug, raw }) => {
+export const posts: Post[] = rawPosts.map(({ slug, raw, category }) => {
   const { meta, content } = parseFrontmatter(raw);
   return {
     slug,
@@ -54,6 +61,7 @@ export const posts: Post[] = rawPosts.map(({ slug, raw }) => {
     date: meta['date'] ?? '',
     excerpt: meta['excerpt'] ?? '',
     readTime: meta['readTime'] ?? '',
+    category,
     content,
   };
 });
