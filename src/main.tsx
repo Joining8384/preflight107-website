@@ -14,6 +14,7 @@ import PrivacyPage from './PrivacyPage.tsx';
 import SignUpPage from './SignUpPage.tsx';
 import SupportPage from './SupportPage.tsx';
 import TermsPage from './TermsPage.tsx';
+import VerifyPage from './VerifyPage.tsx';
 
 // ── Path-based Router ─────────────────────────────────────────────────────────
 // Listens to popstate so navigate() / replace() from navigate.ts
@@ -38,6 +39,7 @@ function Router() {
   if (path.startsWith('/support'))    return <SupportPage />;
   if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6)} />;
   if (path === '/blog')               return <BlogIndex />;
+  if (path.startsWith('/verify'))     return <VerifyPage />;
   return <App />;
 }
 

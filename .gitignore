@@ -3,3 +3,12 @@ dist
 .DS_Store
 .env
 .env*.local
+
+# Certificates & keys — never commit
+*.p12
+*.p8
+*.pem
+*.key
+*.mobileprovision
+*.jks
+*.certSigningRequest
