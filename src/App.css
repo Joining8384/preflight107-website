@@ -5112,3 +5112,283 @@ textarea.support-input {
   .pilot-page-main { padding: 1rem 0.85rem 3rem; }
   .pilot-section, .pilot-hero { padding: 16px; }
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Pro+ tier additions — Mission Briefings, Plan/Fly/Prove buckets, 3-tier pricing
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Feature tier badges ── */
+.feature-tag--free {
+  background: rgba(139, 148, 158, 0.12);
+  border: 1px solid rgba(139, 148, 158, 0.3);
+  color: var(--text-sec);
+}
+.feature-tag--proplus {
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: var(--purple);
+}
+
+/* ── Bucket headings inside the features section ── */
+.bucket-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1100px;
+  margin: 3rem auto 1.25rem;
+  padding: 0 1.5rem;
+  flex-wrap: wrap;
+}
+.bucket-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+}
+.bucket-pill--plan { background: rgba(251, 191, 36, 0.14); color: var(--yellow); border: 1px solid rgba(251, 191, 36, 0.3); }
+.bucket-pill--fly  { background: rgba(139, 92, 246, 0.14); color: var(--purple); border: 1px solid rgba(139, 92, 246, 0.35); }
+.bucket-pill--prove { background: rgba(16, 185, 129, 0.14); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+.bucket-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-sec);
+  margin: 0;
+}
+
+/* ── Mission Briefings flagship section ── */
+.briefings-section {
+  padding: 5rem 1.5rem 4rem;
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(139, 92, 246, 0.08), transparent 70%),
+    var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.briefings-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+}
+.briefings-text h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0.75rem 0 1rem;
+  line-height: 1.15;
+}
+.briefings-lede {
+  color: var(--text-sec);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.briefings-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.briefings-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-sec);
+}
+.briefings-checklist .check {
+  color: var(--accent);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.briefings-checklist code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.85em;
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--purple);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+.briefings-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Sample briefing PDF preview card ── */
+.briefings-visual {
+  position: relative;
+}
+.briefing-doc-preview {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.18);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.78rem;
+  position: relative;
+  overflow: hidden;
+}
+.briefing-doc-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), transparent 50%);
+  pointer-events: none;
+}
+.briefing-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.briefing-doc-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.briefing-doc-code {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.briefing-doc-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-sec);
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+}
+.briefing-doc-meta strong {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+.briefing-doc-section {
+  background: rgba(13, 17, 23, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+.briefing-doc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bd-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+.bd-val {
+  color: var(--text-sec);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.bd-val--ok { color: var(--accent); }
+.briefing-doc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.bd-hash {
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: 0.04em;
+}
+.bd-verify {
+  font-style: italic;
+}
+
+/* ── 3-column pricing grid + Pro+ card ── */
+.pricing-grid--triple {
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1100px;
+}
+
+.pricing-card--proplus {
+  background: var(--card);
+  border: 1px solid var(--purple);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.14), 0 12px 40px rgba(139, 92, 246, 0.1);
+}
+.pricing-badge-proplus {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.85rem;
+  background: var(--purple);
+  color: #0D1117;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 9999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pricing-tier--proplus { color: var(--purple); }
+
+.pi--proplus { color: var(--purple); }
+
+.pricing-btn--proplus {
+  background: var(--purple);
+  color: #0D1117;
+}
+.pricing-btn--proplus:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+/* ── Comparison table — Pro+ column ── */
+.compare-wrap--triple {
+  max-width: 880px;
+}
+.th-proplus { color: var(--purple) !important; }
+.ci--proplus { color: var(--purple); }
+.compare-row--proplus td:first-child {
+  color: var(--text);
+}
+.compare-row--proplus td {
+  background: rgba(139, 92, 246, 0.03);
+}
+
+/* ── Responsive: collapse 3-col grid + briefings layout ── */
+@media (max-width: 960px) {
+  .briefings-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .briefings-text h2 { font-size: 2rem; }
+  .pricing-grid--triple {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .briefings-section { padding: 3.5rem 1.25rem 3rem; }
+  .briefings-text h2 { font-size: 1.75rem; }
+  .briefing-doc-preview { font-size: 0.72rem; padding: 1.15rem; }
+  .bucket-heading { margin: 2rem auto 1rem; }
+  .bucket-title { font-size: 1rem; }
+  .compare-wrap--triple { font-size: 0.75rem; }
+}

@@ -136,11 +136,11 @@ function App() {
         {/* ── Hero ── */}
         <section className="hero" id="download">
           <div className="hero-content">
-            <div className="hero-badge">For Drone Pilots</div>
-            <h1 className="hero-title">Fly with Total Airspace Awareness</h1>
+            <div className="hero-badge">For Part 107 Pilots</div>
+            <h1 className="hero-title">Plan it. Fly it. Prove it.</h1>
             <p className="hero-subtitle">
-              PreFlight 107 gives drone pilots real-time weather, live airspace data,
-              and professional aviation intelligence — everything you need before and during every flight.
+              The Part 107 operations platform — file FAA-style Mission Briefings, fly with
+              live ADS-B and aviation weather, and share a verifiable digital pilot card with every client.
             </p>
             <div className="hero-actions">
               <a
@@ -192,25 +192,110 @@ function App() {
           <div className="hero-visual">
             <div className="gradient-orb"></div>
             <div className="hero-stat-cards">
-              <div className="stat-card"><span className="stat-value">15-Day</span><span className="stat-label">Forecast Range</span></div>
+              <div className="stat-card"><span className="stat-value">FAA-Style</span><span className="stat-label">Mission Briefings</span></div>
               <div className="stat-card"><span className="stat-value">Live</span><span className="stat-label">ADS-B Traffic</span></div>
-              <div className="stat-card"><span className="stat-value">METAR</span><span className="stat-label">Aviation Intel</span></div>
+              <div className="stat-card"><span className="stat-value">Verifiable</span><span className="stat-label">Pilot Card</span></div>
             </div>
           </div>
         </section>
 
-        {/* ── Pro Features ── */}
+        {/* ── Mission Briefings (flagship) ── */}
+        <section className="briefings-section" id="briefings">
+          <div className="briefings-inner">
+            <div className="briefings-text">
+              <span className="section-eyebrow">New · Pro+</span>
+              <h2>FAA-Style Mission Briefings</h2>
+              <p className="briefings-lede">
+                One tap generates a tamper-evident, multi-page Pre-Flight Briefing PDF — the same kind
+                of document manned-aviation flight departments file. Live METAR/TAF, SIGMETs, AIRMETs,
+                PIREPs, NOTAMs, sun &amp; lunar data, LAANC status, and your full pilot/aircraft block.
+              </p>
+              <ul className="briefings-checklist">
+                <li><span className="check">✓</span> Plain-English weather decode alongside the raw codes</li>
+                <li><span className="check">✓</span> SHA-256 tamper hash + public <code>/verify</code> page</li>
+                <li><span className="check">✓</span> White-label "Client Mode" — your logo, your branding</li>
+                <li><span className="check">✓</span> Recurring briefings on schedule (Pro+)</li>
+                <li><span className="check">✓</span> Public profile link clients can verify in any browser</li>
+              </ul>
+              <div className="briefings-actions">
+                <a className="cta-button" href="#pricing">See Pro+ Plans →</a>
+                <a className="cta-button-secondary" href="/blog" onClick={e => { e.preventDefault(); navigate('/blog'); }}>Read the briefing post</a>
+              </div>
+            </div>
+            <div className="briefings-visual">
+              <div className="briefing-doc-preview">
+                <div className="briefing-doc-header">
+                  <span className="briefing-doc-eyebrow">PRE-FLIGHT MISSION BRIEFING</span>
+                  <span className="briefing-doc-code">MB-XKA5RC</span>
+                </div>
+                <div className="briefing-doc-meta">
+                  <div><strong>Pilot:</strong> J. Doe · Part 107 #4117XXX</div>
+                  <div><strong>Site:</strong> 43.2342° N · 86.2484° W</div>
+                  <div><strong>Window:</strong> 14:00–16:30 local</div>
+                </div>
+                <div className="briefing-doc-section">
+                  <div className="briefing-doc-row"><span className="bd-label">METAR</span><span className="bd-val bd-val--ok">VFR · 8 kt</span></div>
+                  <div className="briefing-doc-row"><span className="bd-label">TAF</span><span className="bd-val bd-val--ok">VFR window</span></div>
+                  <div className="briefing-doc-row"><span className="bd-label">SIGMETs</span><span className="bd-val">None active</span></div>
+                  <div className="briefing-doc-row"><span className="bd-label">NOTAMs</span><span className="bd-val">2 reviewed</span></div>
+                  <div className="briefing-doc-row"><span className="bd-label">LAANC</span><span className="bd-val bd-val--ok">Auto-approve</span></div>
+                </div>
+                <div className="briefing-doc-footer">
+                  <span className="bd-hash">SHA-256 · 7f3a…b9e1</span>
+                  <span className="bd-verify">verify at /verify</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Plan · Fly · Prove ── */}
         <section className="features" id="features">
-          <h2>Built for the Skies</h2>
-          <p className="features-subtitle">Pro features that change how you plan, check, and fly.</p>
+          <h2>Plan it. Fly it. Prove it.</h2>
+          <p className="features-subtitle">Everything a commercial Part 107 operation needs, in one app.</p>
+
+          {/* PLAN bucket */}
+          <div className="bucket-heading">
+            <span className="bucket-pill bucket-pill--plan">Plan</span>
+            <h3 className="bucket-title">Pre-flight, briefings, and authorization</h3>
+          </div>
           <div className="features-grid">
             <div className="feature-card feature-card--ar">
               <div className="feature-accent-bar feature-accent-bar--yellow"></div>
+              <div className="feature-icon">📄</div>
+              <h3>Mission Briefings</h3>
+              <p>Tamper-evident PDF briefings with weather, hazards, NOTAMs, LAANC status, and pilot block — generated in seconds and verifiable by anyone.</p>
+              <span className="feature-tag feature-tag--proplus">Pro+</span>
+            </div>
+            <div className="feature-card feature-card--forecast">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
               <div className="feature-icon">🛰️</div>
-              <h3>METAR / TAF Briefings</h3>
-              <p>Full aviation weather briefings with METARs, TAFs, and decoded PIREPs — the same intel manned pilots rely on. Know your airspace before you're in it.</p>
+              <h3>METAR / TAF / SIGMET</h3>
+              <p>Full aviation weather product suite with decoded plain-English versions alongside the raw codes — the same intel manned pilots use.</p>
               <span className="feature-tag feature-tag--pro">Pro</span>
             </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
+              <div className="feature-icon">📅</div>
+              <h3>Recurring Briefings</h3>
+              <p>Schedule a daily or weekly briefing for a recurring site (inspection routes, surveys, real-estate beats). Delivered automatically.</p>
+              <span className="feature-tag feature-tag--proplus">Pro+</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
+              <div className="feature-icon">🗺️</div>
+              <h3>LAANC Grid Overlays</h3>
+              <p>UAS facility map overlays show ceiling limits and authorization status before you ever open the LAANC portal.</p>
+              <span className="feature-tag feature-tag--pro">Pro</span>
+            </div>
+          </div>
+
+          {/* FLY bucket */}
+          <div className="bucket-heading">
+            <span className="bucket-pill bucket-pill--fly">Fly</span>
+            <h3 className="bucket-title">In-flight awareness and weather</h3>
+          </div>
+          <div className="features-grid">
             <div className="feature-card feature-card--radar">
               <div className="feature-accent-bar feature-accent-bar--purple"></div>
               <div className="feature-icon">📡</div>
@@ -224,6 +309,56 @@ function App() {
               <h3>3D Wind Tower</h3>
               <p>Visualize wind speed and direction at multiple altitudes in a 3D tower view. Know what the wind is doing at 50ft, 100ft, and 400ft before you climb.</p>
               <span className="feature-tag feature-tag--pro">Pro</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--yellow"></div>
+              <div className="feature-icon">🌤️</div>
+              <h3>15-Day Forecast</h3>
+              <p>High-resolution atmospheric model data extended out two weeks. Plan job windows around the weather you'll actually have.</p>
+              <span className="feature-tag feature-tag--pro">Pro</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--purple"></div>
+              <div className="feature-icon">🗺️</div>
+              <h3>Live Airspace Map</h3>
+              <p>Class B/C/D/E airspace, restricted zones, TFRs, and your current position — included free, forever.</p>
+              <span className="feature-tag feature-tag--free">Free</span>
+            </div>
+          </div>
+
+          {/* PROVE bucket */}
+          <div className="bucket-heading">
+            <span className="bucket-pill bucket-pill--prove">Prove</span>
+            <h3 className="bucket-title">Records, credentials, and client deliverables</h3>
+          </div>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--yellow"></div>
+              <div className="feature-icon">🪪</div>
+              <h3>Apple Wallet Pilot Card</h3>
+              <p>A real PassKit card with your Part 107 number, account code, and a tap-to-verify link. Hand a client your phone and they see your credentials.</p>
+              <span className="feature-tag feature-tag--pro">Pro</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
+              <div className="feature-icon">🔗</div>
+              <h3>Public Pilot Profile</h3>
+              <p>A shareable web profile at <code>/pilot/[code]</code> any client can open in any browser. Verified Part 107 badge, flight history, hour count.</p>
+              <span className="feature-tag feature-tag--pro">Pro</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--yellow"></div>
+              <div className="feature-icon">🏢</div>
+              <h3>White-Label Client Mode</h3>
+              <p>Swap PreFlight 107 branding for your own business logo on briefing PDFs. Hand clients a polished deliverable that looks like your company.</p>
+              <span className="feature-tag feature-tag--proplus">Pro+</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--purple"></div>
+              <div className="feature-icon">🔐</div>
+              <h3>Tamper-Evident PDFs</h3>
+              <p>Every briefing carries a SHA-256 hash and a unique briefing code. Anyone can verify authenticity at <code>preflight107.com/verify</code>.</p>
+              <span className="feature-tag feature-tag--proplus">Pro+</span>
             </div>
           </div>
         </section>
@@ -281,7 +416,7 @@ function App() {
             >Annual <span className="billing-save">Save 33%</span></button>
           </div>
 
-          <div className="pricing-grid">
+          <div className="pricing-grid pricing-grid--triple">
 
             {/* Free tier */}
             <div className="pricing-card pricing-card--free">
@@ -293,12 +428,12 @@ function App() {
               <ul className="pricing-list">
                 <li><span className="pi pi--yes">✓</span> Live Airspace Map</li>
                 <li><span className="pi pi--yes">✓</span> Current Weather Dashboard</li>
-                <li><span className="pi pi--yes">✓</span> Standard Maps</li>
                 <li><span className="pi pi--yes">✓</span> 24-hr Forecast</li>
+                <li><span className="pi pi--yes">✓</span> LAANC Status Lookup</li>
                 <li><span className="pi pi--yes">✓</span> 3 Flight Logs</li>
                 <li><span className="pi pi--no">✗</span> Live ADS-B Radar</li>
-                <li><span className="pi pi--no">✗</span> 15-Day Forecast</li>
-                <li><span className="pi pi--no">✗</span> Unlimited Flight Logs</li>
+                <li><span className="pi pi--no">✗</span> METAR / TAF</li>
+                <li><span className="pi pi--no">✗</span> Mission Briefings</li>
               </ul>
               <a
                 className="pricing-btn pricing-btn--free"
@@ -328,24 +463,55 @@ function App() {
                   </>
                 )}
               </div>
-              <p className="pricing-desc">Everything a professional pilot needs. One subscription, zero limits.</p>
+              <p className="pricing-desc">For the working Part 107 pilot. Unlimited flying, full aviation weather, verified pilot card.</p>
               <ul className="pricing-list">
                 <li><span className="pi pi--yes">✓</span> Everything in Basic</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Live ADS-B Radar</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> METAR / TAF / SIGMET</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> 15-Day Forecast</li>
-                <li><span className="pi pi--yes pi--accent">✓</span> Unlimited Flight Logs</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> 3D Wind Tower</li>
-                <li><span className="pi pi--yes pi--accent">✓</span> METAR / TAF Briefings</li>
-                <li><span className="pi pi--yes pi--accent">✓</span> PDF Log Exports</li>
-                <li><span className="pi pi--yes pi--accent">✓</span> LAANC Grid Overlays</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> Unlimited Flight Logs</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> Apple Wallet Pilot Card</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> Public Pilot Profile</li>
               </ul>
               <button className="pricing-btn pricing-btn--pro">Get Pro Pilot →</button>
+            </div>
+
+            {/* Pro+ tier */}
+            <div className="pricing-card pricing-card--proplus">
+              <div className="pricing-badge-proplus">For Commercial Ops</div>
+              <div className="pricing-tier pricing-tier--proplus">Pro+ Operator</div>
+              <div className="pricing-price">
+                {billing === 'monthly' ? (
+                  <>
+                    <span className="price-amount">$19.99</span>
+                    <span className="price-period">/mo</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="price-amount">$159.99</span>
+                    <span className="price-period">/yr</span>
+                    <span className="price-monthly-equiv">$13.33/mo</span>
+                  </>
+                )}
+              </div>
+              <p className="pricing-desc">For pilots who deliver to clients. Mission Briefings, white-label PDFs, and recurring schedules.</p>
+              <ul className="pricing-list">
+                <li><span className="pi pi--yes">✓</span> Everything in Pro Pilot</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> FAA-Style Mission Briefings</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> Tamper-Evident PDFs + /verify</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> Plain-English Weather Decode</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> White-Label Client Mode</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> Recurring Briefings</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> Priority Support</li>
+              </ul>
+              <button className="pricing-btn pricing-btn--proplus">Get Pro+ Operator →</button>
             </div>
 
           </div>
 
           {/* Comparison table */}
-          <div className="compare-wrap">
+          <div className="compare-wrap compare-wrap--triple">
             <h3 className="compare-title">Full Feature Comparison</h3>
             <table className="compare-table">
               <thead>
@@ -353,20 +519,29 @@ function App() {
                   <th>Feature</th>
                   <th>Basic</th>
                   <th className="th-pro">Pro Pilot</th>
+                  <th className="th-proplus">Pro+ Operator</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Live Airspace Map</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr><td>Current Weather</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr><td>Standard Maps</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr><td>24-hr Forecast</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr><td>Flight Logs</td><td className="ci-text">3 logs</td><td className="ci-text ci-text--pro">Unlimited</td></tr>
-                <tr className="compare-row--pro"><td>Live ADS-B Radar</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>15-Day Forecast</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>3D Wind Tower</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>METAR / TAF</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>PDF Log Exports</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
-                <tr className="compare-row--pro"><td>LAANC Grid Overlays</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>Live Airspace Map</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>Current Weather</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>24-hr Forecast</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>LAANC Status Lookup</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>Flight Logs</td><td className="ci-text">3 logs</td><td className="ci-text ci-text--pro">Unlimited</td><td className="ci-text ci-text--pro">Unlimited</td></tr>
+                <tr className="compare-row--pro"><td>Live ADS-B Radar</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>METAR / TAF / SIGMET</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>15-Day Forecast</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>3D Wind Tower</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>LAANC Grid Overlays</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>Apple Wallet Pilot Card</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>Public Pilot Profile</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>PDF Log Exports</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Mission Briefings (PDF)</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Tamper Hash + /verify</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Plain-English Decode</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>White-Label Client Mode</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Recurring Briefings</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Priority Support</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -429,7 +604,19 @@ function App() {
             </details>
             <details className="faq-item">
               <summary className="faq-question">Is the app free?</summary>
-              <p className="faq-answer">Yes. The core features — airspace map, basic weather, and LAANC status — are completely free. PreFlight 107 Pro ($9.99/month or $79.99/year) unlocks ADS-B live traffic radar, METAR/TAF briefings, 3D Wind Tower visualizations, and advanced route planning.</p>
+              <p className="faq-answer">Yes. The core features — airspace map, basic weather, and LAANC status — are completely free. <strong>Pro Pilot</strong> ($9.99/month or $79.99/year) unlocks ADS-B live traffic radar, METAR/TAF briefings, 3D Wind Tower, the Apple Wallet pilot card, and unlimited flight logs. <strong>Pro+ Operator</strong> ($19.99/month or $159.99/year) adds FAA-style Mission Briefings, tamper-evident PDFs, white-label client mode, and recurring briefings.</p>
+            </details>
+            <details className="faq-item">
+              <summary className="faq-question">What is a Mission Briefing?</summary>
+              <p className="faq-answer">A Mission Briefing is a multi-page, FAA-style pre-flight PDF generated by the app in seconds. It pulls live METAR/TAF, SIGMETs, AIRMETs, PIREPs, NOTAMs, sun &amp; lunar data, and LAANC status for your site and combines it with your pilot/aircraft block. Every briefing carries a SHA-256 tamper hash and a unique briefing code, so anyone can verify it at <a href="/verify">preflight107.com/verify</a>. It's a Pro+ feature designed for commercial pilots who need to hand clients real documentation.</p>
+            </details>
+            <details className="faq-item">
+              <summary className="faq-question">What is White-Label Client Mode?</summary>
+              <p className="faq-answer">Pro+ subscribers can upload a business logo and toggle "Client Mode" on any Mission Briefing. The output PDF swaps PreFlight 107 branding for yours, so the deliverable your client receives looks like it came from your company — not from an app. Great for inspection, real-estate, mapping, and survey operators who bill clients directly.</p>
+            </details>
+            <details className="faq-item">
+              <summary className="faq-question">Can clients verify a briefing or pilot card I share?</summary>
+              <p className="faq-answer">Yes. Every Mission Briefing PDF includes a briefing code (like MB-XKA5RC) and a SHA-256 hash. Anyone can paste those into <a href="/verify">preflight107.com/verify</a> in a browser and confirm the briefing is authentic and unmodified. Your Apple Wallet pilot card and public profile (<code>preflight107.com/pilot/[code]</code>) are also verifiable — clients can open the link without installing anything.</p>
             </details>
             <details className="faq-item">
               <summary className="faq-question">What is LAANC?</summary>
