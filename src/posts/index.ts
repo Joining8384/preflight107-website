@@ -4,6 +4,7 @@ import faaInquiryRaw from './faa-inquiry-prepared-drone-pilot.md?raw';
 import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
 import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
+import missionBriefingRaw from './what-is-a-mission-briefing-drone-pilots.md?raw';
 import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
 import tafRaw from './how-to-read-a-taf-drone-pilot.md?raw';
 
@@ -43,6 +44,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'what-is-a-mission-briefing-drone-pilots',   raw: missionBriefingRaw, category: 'Compliance' },
   { slug: 'how-to-read-a-taf-drone-pilot',             raw: tafRaw,             category: 'Weather' },
   { slug: 'aviation-hazards-explained-drone-pilots',   raw: aviationHazardsRaw, category: 'Weather' },
   { slug: 'faa-inquiry-prepared-drone-pilot',          raw: faaInquiryRaw,      category: 'Compliance' },
