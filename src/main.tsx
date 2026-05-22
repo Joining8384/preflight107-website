@@ -5,6 +5,7 @@ import { AuthProvider } from './AuthContext.tsx';
 import AdminPage from './AdminPage.tsx';
 import BlogIndex from './BlogIndex.tsx';
 import BlogPost from './BlogPost.tsx';
+import ComparePage from './ComparePage.tsx';
 import Dashboard from './Dashboard.tsx';
 import DeleteAccountPage from './DeleteAccountPage.tsx';
 import LaunchSharePage from './LaunchSharePage.tsx';
@@ -41,6 +42,7 @@ function Router() {
   if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6)} />;
   if (path === '/blog')               return <BlogIndex />;
   if (path.startsWith('/verify'))     return <VerifyPage />;
+  if (path.startsWith('/compare'))    return <ComparePage />;
   if (path.startsWith('/pilot/'))     return <PilotProfile />;
   return <App />;
 }

@@ -125,9 +125,21 @@ export default function VerifyPage() {
           <div className="verify-eyebrow">Tamper Verification</div>
           <h1 className="verify-title">Verify a Mission Briefing</h1>
           <p className="verify-sub">
-            Paste the verification hash from the footer of any PreFlight 107 Mission Briefing PDF.
-            We'll confirm whether it matches a real briefing we generated, and that it hasn't been modified.
+            Paste the SHA-256 hash from the "How to Verify This Briefing" section on the
+            signature page of any PreFlight 107 Mission Briefing PDF. We'll confirm whether
+            the document matches a real briefing on file and hasn't been modified.
           </p>
+        </section>
+
+        <section className="verify-help">
+          <div className="verify-help-icon">📄</div>
+          <div className="verify-help-text">
+            <strong>Where to find the hash:</strong> open the briefing PDF, jump to the
+            final <em>Signature &amp; Verification</em> page, and look for the box labeled
+            <em> TAMPER HASH (SHA-256)</em>. It's a 64-character hex string. The
+            <em> BRIEFING CODE</em> next to it (like <code>MB-XKA5RC</code>) is the
+            human-readable record locator — the hash is what actually proves authenticity.
+          </div>
         </section>
 
         <form className="verify-form" onSubmit={onSubmit}>
@@ -145,9 +157,24 @@ export default function VerifyPage() {
             autoCorrect="off"
             rows={2}
           />
-          <button type="submit" className="verify-btn" disabled={submitting || !hashInput.trim()}>
-            {submitting ? 'Checking…' : 'Verify briefing'}
-          </button>
+          <div className="verify-form-actions">
+            <button type="submit" className="verify-btn" disabled={submitting || !hashInput.trim()}>
+              {submitting ? 'Checking…' : 'Verify briefing'}
+            </button>
+            {hashInput.trim() !== '' && (
+              <button
+                type="button"
+                className="verify-btn-clear"
+                onClick={() => { setHashInput(''); setResult(null); }}
+              >
+                Clear
+              </button>
+            )}
+          </div>
+          <p className="verify-form-hint">
+            Whitespace and line breaks are okay. A <code>sha256:</code> prefix is also fine —
+            we'll strip it for you.
+          </p>
         </form>
 
         {result === 'invalid' && (

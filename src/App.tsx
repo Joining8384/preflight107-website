@@ -15,6 +15,8 @@ function App() {
   const [betaEmail, setBetaEmail]   = useState('');
   const [betaStatus, setBetaStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
+  const [briefingHelpOpen, setBriefingHelpOpen] = useState(false);
+
   const BREVO_URL =
     'https://db0a234c.sibforms.com/serve/MUIFAERwrnycogWcTeXCk-WX-03RO6ZjUHkjIAdE_NwNNAWyQWiJ_t3_rnHHdvQRQPKQv3yZATdR1w6nH5Kp3Lv4kGi3Lw0TWVt5Ux1lh5zSq4Bqan98KbfGT3aWlbqrqnCb3hV6d9m6LRDaA-Hl03qGwwBgla5-vS7yjP2fIJ1AMP7sHoq6vtkChyF61S5Pi8w7uHKmJmwm9b8m';
   const BETA_BREVO_URL = 'https://db0a234c.sibforms.com/serve/MUIFACJte8IZE6oqdY2AVPhUu5HAldkQTf5T32EO-fy17ZXlMQ0hfhDxPH89D7-mAUDE_JMPwKwCQ0oHJFdA8fE_5IT5t8arz78N-iXg4JFn7yXRx-xvUnt9pLSYCHbAoeDP0CAM3hZ8ZdVbrj0AzADJtH-nM9pp7x0wByBYNixkb9Tzm1Pmr-gSPalmZy29biI03dpWfoCuwzcK';
@@ -25,6 +27,13 @@ function App() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [betaOpen]);
+
+  useEffect(() => {
+    if (!briefingHelpOpen) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setBriefingHelpOpen(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [briefingHelpOpen]);
 
   function openBeta() {
     setBetaStatus('idle');
@@ -96,6 +105,7 @@ function App() {
             <li><a href="#features" onClick={() => setMenuOpen(false)}>Features</a></li>
             <li><a href="#logs" onClick={() => setMenuOpen(false)}>Flight Logs</a></li>
             <li><a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a></li>
+            <li><a href="/compare" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/compare'); }}>Compare</a></li>
             <li><a href="/blog" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/blog'); }}>Blog</a></li>
             <li><a href="/support" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/support'); }}>Support</a></li>
             <li><a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Download Free</a></li>
@@ -203,7 +213,19 @@ function App() {
         <section className="briefings-section" id="briefings">
           <div className="briefings-inner">
             <div className="briefings-text">
-              <span className="section-eyebrow">New · Pro+</span>
+              <div className="briefings-eyebrow-row">
+                <span className="section-eyebrow">New · Pro+</span>
+                <button
+                  type="button"
+                  className="briefings-help-btn"
+                  onClick={() => setBriefingHelpOpen(true)}
+                  aria-label="How Mission Briefings work"
+                  title="How Mission Briefings work"
+                >
+                  <span className="briefings-help-icon">?</span>
+                  <span className="briefings-help-label">How does this work?</span>
+                </button>
+              </div>
               <h2>FAA-Style Mission Briefings</h2>
               <p className="briefings-lede">
                 One tap generates a tamper-evident, multi-page Pre-Flight Briefing PDF — the same kind
@@ -219,7 +241,13 @@ function App() {
               </ul>
               <div className="briefings-actions">
                 <a className="cta-button" href="#pricing">See Pro+ Plans →</a>
-                <a className="cta-button-secondary" href="/blog" onClick={e => { e.preventDefault(); navigate('/blog'); }}>Read the briefing post</a>
+                <a
+                  className="cta-button-secondary"
+                  href="/blog/what-is-a-mission-briefing-drone-pilots"
+                  onClick={e => { e.preventDefault(); navigate('/blog/what-is-a-mission-briefing-drone-pilots'); }}
+                >
+                  Read the briefing post
+                </a>
               </div>
             </div>
             <div className="briefings-visual">
@@ -474,7 +502,14 @@ function App() {
                 <li><span className="pi pi--yes pi--accent">✓</span> Apple Wallet Pilot Card</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Public Pilot Profile</li>
               </ul>
-              <button className="pricing-btn pricing-btn--pro">Get Pro Pilot →</button>
+              <a
+                className="pricing-btn pricing-btn--pro"
+                href="https://apps.apple.com/app/preflight-107/id6760437132"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Pro Pilot →
+              </a>
             </div>
 
             {/* Pro+ tier */}
@@ -505,10 +540,21 @@ function App() {
                 <li><span className="pi pi--yes pi--proplus">✓</span> Recurring Briefings</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> Priority Support</li>
               </ul>
-              <button className="pricing-btn pricing-btn--proplus">Get Pro+ Operator →</button>
+              <a
+                className="pricing-btn pricing-btn--proplus"
+                href="https://apps.apple.com/app/preflight-107/id6760437132"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Pro+ Operator →
+              </a>
             </div>
 
           </div>
+
+          <p className="pricing-fineprint">
+            Subscriptions are managed inside the app via your Apple ID — tap a plan to download, then pick your tier on the in-app paywall. Cancel anytime in Settings.
+          </p>
 
           {/* Comparison table */}
           <div className="compare-wrap compare-wrap--triple">
@@ -713,6 +759,155 @@ function App() {
           <p className="footer-copy">&copy; 2026 PreFlight 107. All rights reserved.</p>
         </div>
       </footer>
+
+      {briefingHelpOpen && (
+        <div
+          className="brief-help-backdrop"
+          onClick={() => setBriefingHelpOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="How Mission Briefings work"
+        >
+          <div className="brief-help-sheet" onClick={e => e.stopPropagation()}>
+            <header className="brief-help-header">
+              <div>
+                <h2 className="brief-help-title">How Mission Briefings work</h2>
+                <p className="brief-help-subtitle">The plan side of your paper trail</p>
+              </div>
+              <button className="brief-help-close" onClick={() => setBriefingHelpOpen(false)} aria-label="Close">✕</button>
+            </header>
+
+            <div className="brief-help-scroll">
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--gold">?</span>
+                  <h3 className="brief-help-section-title">What is a Mission Briefing?</h3>
+                </div>
+                <p className="brief-help-body">
+                  It's the document you create BEFORE you fly — your written plan.
+                  It proves to a client, the FAA, or an insurance adjuster that you
+                  did your homework: weather forecast, airspace check, NOTAMs, risk
+                  assessment, crew, emergency contacts, landowner permission, the works.
+                </p>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--green">✓</span>
+                  <h3 className="brief-help-section-title">Who needs one?</h3>
+                </div>
+                <ul className="brief-help-list">
+                  <li><span className="bh-yes">✓</span> Commercial Part 107 pilots taking paid jobs</li>
+                  <li><span className="bh-yes">✓</span> Complex missions (BVLOS, multi-aircraft, dense airspace)</li>
+                  <li><span className="bh-yes">✓</span> Recurring inspections — pair with the briefing scheduler</li>
+                  <li><span className="bh-no">✗</span> Casual hobby flights at the local park don't need one.</li>
+                </ul>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--blue">🕒</span>
+                  <h3 className="brief-help-section-title">When do I create one?</h3>
+                </div>
+                <p className="brief-help-body">
+                  Any time before takeoff — minutes ahead, days ahead, weeks ahead.
+                  The form asks WHEN you plan to fly, and the weather section pulls the
+                  FORECAST for that exact time (NWS gridded data covers ~10 days out).
+                  If you're flying tomorrow at 9am, you get tomorrow's 9am forecast —
+                  not today's METAR.
+                </p>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--gold">📍</span>
+                  <h3 className="brief-help-section-title">How the workflow goes</h3>
+                </div>
+                <ol className="brief-help-steps">
+                  <li>
+                    <strong>PLAN</strong> — Create a Mission Briefing. You get a code
+                    (MB-XXXXXX), a tamper-verified 6-page PDF, and a row in 'My Briefings.'
+                  </li>
+                  <li>
+                    <strong>FLY</strong> — On the Dashboard, tap Start Flight. The app asks
+                    "Link this flight to MB-XXXXXX?" — tap Yes.
+                  </li>
+                  <li>
+                    <strong>DOCUMENT</strong> — After landing, your flight log card shows
+                    three buttons: Flight Log, FAA Evidence, and Mission Brief. The Evidence
+                    PDF footer references your briefing code, tying the plan to what actually
+                    happened.
+                  </li>
+                </ol>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--green">🔒</span>
+                  <h3 className="brief-help-section-title">Why briefings are locked once generated</h3>
+                </div>
+                <p className="brief-help-body">
+                  Every generated briefing carries a SHA-256 tamper hash. That hash is
+                  what makes it admissible as evidence — change one character and the
+                  hash mismatches. So we don't let you edit a briefing after generation.
+                </p>
+                <p className="brief-help-body">
+                  If forecast was wrong on flight day, don't edit — tap "Update" on the
+                  briefing card. We clone it, you tweak weather + risks, and you get
+                  a fresh briefing (e.g. MB-8L4K2M — updated from MB-7K3F9P). Both stay
+                  in your list, so your paper trail shows you reassessed when conditions
+                  changed. That's STRONGER legally, not weaker.
+                </p>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--blue">⇄</span>
+                  <h3 className="brief-help-section-title">Mission Briefing vs. FAA Evidence</h3>
+                </div>
+                <p className="brief-help-body">
+                  Two different documents, both per-flight, both important:
+                </p>
+                <div className="brief-help-compare">
+                  <div className="brief-help-compare-col">
+                    <div className="brief-help-compare-h">Mission Briefing <em>(the PLAN)</em></div>
+                    <ul>
+                      <li>Forecast weather, planned crew, intended mitigations</li>
+                      <li>Pre-flight, locked, anti-falsification</li>
+                      <li>Shows due diligence</li>
+                    </ul>
+                  </div>
+                  <div className="brief-help-compare-col">
+                    <div className="brief-help-compare-h">FAA Evidence Packet <em>(the RECORD)</em></div>
+                    <ul>
+                      <li>Realtime METAR, server-stamped GPS + timestamps</li>
+                      <li>Captured at Depart, locked at Land</li>
+                      <li>Shows what was actually true at takeoff</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="brief-help-body">Together they tell the complete story.</p>
+              </section>
+
+              <section className="brief-help-section">
+                <div className="brief-help-section-head">
+                  <span className="brief-help-chip brief-help-chip--muted">⚙</span>
+                  <h3 className="brief-help-section-title">Briefing Defaults (Settings)</h3>
+                </div>
+                <p className="brief-help-body">
+                  Tired of re-typing your business contact, default crew, and emergency
+                  contacts every time? Set them once in Settings → Briefing Defaults and
+                  they pre-fill every new briefing. You can still override per-mission.
+                </p>
+              </section>
+            </div>
+
+            <footer className="brief-help-footer">
+              <button className="brief-help-cta" onClick={() => setBriefingHelpOpen(false)}>Got it</button>
+            </footer>
+          </div>
+        </div>
+      )}
 
       {betaOpen && (
         <div

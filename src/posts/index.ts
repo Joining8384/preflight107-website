@@ -7,6 +7,7 @@ import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
 import missionBriefingRaw from './what-is-a-mission-briefing-drone-pilots.md?raw';
 import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
 import tafRaw from './how-to-read-a-taf-drone-pilot.md?raw';
+import verifiableCredentialsRaw from './verifiable-credentials-drone-pilots.md?raw';
 
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
 
@@ -44,6 +45,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'verifiable-credentials-drone-pilots',       raw: verifiableCredentialsRaw, category: 'Compliance' },
   { slug: 'what-is-a-mission-briefing-drone-pilots',   raw: missionBriefingRaw, category: 'Compliance' },
   { slug: 'how-to-read-a-taf-drone-pilot',             raw: tafRaw,             category: 'Weather' },
   { slug: 'aviation-hazards-explained-drone-pilots',   raw: aviationHazardsRaw, category: 'Weather' },
