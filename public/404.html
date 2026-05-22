@@ -4,26 +4,31 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PreFlight 107 — Live Drone Flight</title>
-    <meta name="description" content="A drone pilot is flying right now. Tap to see their live launch site, weather conditions, and airspace status." />
+    <title>PreFlight 107 — Verified Drone Pilot</title>
+    <meta name="description" content="View a verified Part 107 drone pilot's profile, mission briefing, or live flight session." />
     <!--
       Open Graph + Twitter meta tags. GitHub Pages serves this 404.html for
-      every deep link (/launch/<token>, /privacy, /terms, /blog/<slug>, etc.)
-      because those paths don't exist as files. iMessage / WhatsApp / Discord
-      crawlers read THIS file — not the SPA-rendered index.html — so the OG
-      tags here drive the link preview tile.
+      every deep link that doesn't have a matching static file —
+      /launch/<token>, /pilot/<account_number>, /privacy, /terms,
+      /blog/<slug>, etc. iMessage / WhatsApp / Discord crawlers read THIS
+      file — not the SPA-rendered index.html — so the OG tags here drive
+      the link preview tile for any shared deep link.
+
+      Per-route static HTML (e.g. /verify/index.html) overrides this when
+      the path matches exactly. The neutral copy below works for the
+      uncovered cases (pilot card profiles, launches, blog posts).
     -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PreFlight 107" />
-    <meta property="og:title" content="A drone pilot is flying — see live conditions" />
-    <meta property="og:description" content="Tap to view the pilot's launch location, weather, airspace status, and flight session details." />
+    <meta property="og:title" content="PreFlight 107 — Verified Drone Pilot" />
+    <meta property="og:description" content="View a verified Part 107 drone pilot's profile, mission briefing, or live flight session." />
     <meta property="og:image" content="https://preflight107.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="PreFlight 107 — drone pilot app for weather, airspace, and live flight tracking" />
+    <meta property="og:image:alt" content="PreFlight 107 — verified profile and flight data for FAA Part 107 drone pilots" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A drone pilot is flying — see live conditions" />
-    <meta name="twitter:description" content="Tap to view the pilot's launch location, weather, airspace status, and flight session details." />
+    <meta name="twitter:title" content="PreFlight 107 — Verified Drone Pilot" />
+    <meta name="twitter:description" content="View a verified Part 107 drone pilot's profile, mission briefing, or live flight session." />
     <meta name="twitter:image" content="https://preflight107.com/og-image.png" />
     <script>
       // SPA redirect for GitHub Pages.
