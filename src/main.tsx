@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { AuthProvider } from './AuthContext.tsx';
 import AdminPage from './AdminPage.tsx';
+import AppBriefingDetailPage from './AppBriefingDetailPage.tsx';
+import AppBriefingNewPage from './AppBriefingNewPage.tsx';
+import AppBriefingsListPage from './AppBriefingsListPage.tsx';
 import BlogIndex from './BlogIndex.tsx';
 import BlogPost from './BlogPost.tsx';
 import ComparePage from './ComparePage.tsx';
@@ -44,6 +47,14 @@ function Router() {
   if (path.startsWith('/verify'))     return <VerifyPage />;
   if (path.startsWith('/compare'))    return <ComparePage />;
   if (path.startsWith('/pilot/'))     return <PilotProfile />;
+  if (path === '/app/briefings/new')  return <AppBriefingNewPage />;
+  if (path.startsWith('/app/briefings/')) {
+    const id = path.slice('/app/briefings/'.length);
+    return <AppBriefingDetailPage id={id} />;
+  }
+  if (path === '/app/briefings' || path === '/app/briefings/' || path === '/app' || path === '/app/') {
+    return <AppBriefingsListPage />;
+  }
   return <App />;
 }
 

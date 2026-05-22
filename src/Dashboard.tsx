@@ -1635,6 +1635,12 @@ export default function Dashboard() {
             📊 Reports
           </button>
           <button
+            className="db-nav-item"
+            onClick={() => navigate('/app/briefings')}
+          >
+            📄 Mission Briefings
+          </button>
+          <button
             className={`db-nav-item${tab === 'settings' ? ' active' : ''}`}
             onClick={() => setTab('settings')}
           >
