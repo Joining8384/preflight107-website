@@ -3313,10 +3313,21 @@ main {
 .db-checklist-modal {
   width: min(560px, 95vw);
   max-height: 85vh;
-  overflow-y: auto;
+  /* Important: hidden here so the inner items div handles scrolling and the
+     footer (save button) stays pinned to the bottom. Without this the whole
+     modal scrolls, the save button drifts offscreen, and on small viewports
+     the user thinks they can't reach it. */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+.db-checklist-modal .db-checklist-drone-row,
+.db-checklist-modal .db-checklist-drone-warning,
+.db-checklist-modal .db-checklist-progress,
+.db-checklist-modal .db-checklist-footer {
+  flex-shrink: 0;
 }
 
 .db-checklist-drone-row {
@@ -3339,6 +3350,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  /* This is the scrollable region. flex: 1 + min-height: 0 lets it grow
+     into available space and scroll its overflow without pushing the
+     footer offscreen. */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .db-checklist-item {
