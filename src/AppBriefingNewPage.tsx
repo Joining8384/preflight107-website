@@ -10,7 +10,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useAuth } from './AuthContext';
 import DashboardSidebar from './DashboardSidebar';
 import { navigate } from './navigate';
-import { SUPABASE_URL, insertRow, updateRow } from './supabase';
+import { fetchTable, SUPABASE_URL, insertRow, updateRow } from './supabase';
 
 type Tier = 'free' | 'pro' | 'pro_plus';
 
@@ -142,6 +142,75 @@ export default function AppBriefingNewPage() {
       return;
     }
     fetchTier(session.access_token, user.id).then(setTier);
+  }, [session?.access_token, user?.id]);
+
+  // ── Pre-fill pilot + drone fields from profile + most-recent drone.
+  //    Mirrors the iOS app's behavior so a web pilot doesn't have to retype
+  //    their name, cert, insurance, and drone details every briefing.
+  //    Empty fields stay empty; we never overwrite something the user typed.
+  useEffect(() => {
+    if (!session?.access_token || !user?.id) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        // Fetch profile and most-recent drone in parallel
+        const [profileRows, droneRows] = await Promise.all([
+          fetchTable<{
+            full_name: string | null;
+            faa_certificate: string | null;
+            last_recurrent_date: string | null;
+            insurance_provider: string | null;
+            insurance_policy: string | null;
+            insurance_type: string | null;
+          }>('profiles', session.access_token, {
+            select: 'full_name,faa_certificate,last_recurrent_date,insurance_provider,insurance_policy,insurance_type',
+            id: `eq.${user.id}`,
+            order: 'updated_at.desc',
+            limit: '1',
+          }),
+          fetchTable<{
+            id: string;
+            name: string | null;
+            manufacturer: string | null;
+            faa_reg_number: string | null;
+            serial_number: string | null;
+            firmware_version: string | null;
+            max_wind_kt: number | null;
+            max_flight_time_min: number | null;
+          }>('drones', session.access_token, {
+            select: 'id,name,manufacturer,faa_reg_number,serial_number,firmware_version,max_wind_kt,max_flight_time_min',
+            order: 'created_at.desc',
+            limit: '1',
+          }).catch(() => []),
+        ]);
+        if (cancelled) return;
+
+        const p = profileRows[0];
+        const d = droneRows[0];
+
+        setForm(f => ({
+          ...f,
+          // Only seed if the user hasn't already typed something
+          pilot_name:                f.pilot_name                || p?.full_name              || '',
+          pilot_part107_cert:        f.pilot_part107_cert        || p?.faa_certificate        || '',
+          pilot_recurrent_date:      f.pilot_recurrent_date      || p?.last_recurrent_date    || '',
+          insurance_carrier:         f.insurance_carrier         || p?.insurance_provider     || '',
+          insurance_policy_number:   f.insurance_policy_number   || p?.insurance_policy       || '',
+          insurance_coverage_amount: f.insurance_coverage_amount || p?.insurance_type         || '',
+          drone_model:               f.drone_model               || d?.name                   || '',
+          drone_manufacturer:        f.drone_manufacturer        || d?.manufacturer           || '',
+          drone_faa_registration:    f.drone_faa_registration    || d?.faa_reg_number         || '',
+          drone_serial:              f.drone_serial              || d?.serial_number          || '',
+          drone_firmware_version:    f.drone_firmware_version    || d?.firmware_version       || '',
+          drone_max_wind_kt:         f.drone_max_wind_kt         || (d?.max_wind_kt         != null ? String(d.max_wind_kt)         : ''),
+          drone_max_flight_time_min: f.drone_max_flight_time_min || (d?.max_flight_time_min != null ? String(d.max_flight_time_min) : ''),
+        }));
+      } catch (e) {
+        // Pre-fill is best-effort. Form still works empty.
+        console.warn('[PreFlight107] Briefing form pre-fill failed:', e);
+      }
+    })();
+    return () => { cancelled = true; };
   }, [session?.access_token, user?.id]);
 
   const set = <K extends keyof Form>(k: K, v: Form[K]) => setForm(f => ({ ...f, [k]: v }));
