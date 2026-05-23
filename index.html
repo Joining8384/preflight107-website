@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <!-- AI training opt-out (unofficial but increasingly honored by crawlers;
+         pairs with robots.txt's per-bot Disallow rules). -->
+    <meta name="robots" content="noai, noimageai" />
     <title>PreFlight 107 — Fly with Total Airspace Awareness</title>
     <meta name="description" content="Real-time weather, live airspace data, ADS-B traffic, METAR briefings, and professional flight logging for drone pilots." />
     <!-- Open Graph (iMessage, Messenger, WhatsApp, Discord, Facebook) -->
@@ -32,6 +35,9 @@
     </script>
   </head>
   <body>
+    <!-- Skip link: screen reader / keyboard users land here first; one Tab to
+         activate, jumps past the nav into the main content. -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

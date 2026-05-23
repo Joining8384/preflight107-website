@@ -141,7 +141,7 @@ function App() {
         </div>
       </nav>
 
-      <main>
+      <main id="main-content">
 
         {/* ── Hero ── */}
         <section className="hero" id="download">
