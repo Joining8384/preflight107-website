@@ -90,18 +90,47 @@ interface PreflightRecord {
 }
 
 interface Profile {
-  full_name:           string | null;
-  subscription_status: string | null;
-  total_flight_hours:  number | null;
-  pilot_license_type:  string | null;
-  faa_certificate:     string | null;
-  insurance_policy:    string | null;
-  insurance_provider:  string | null;
-  insurance_type:      string | null;
+  full_name:                string | null;
+  subscription_status:      string | null;
+  total_flight_hours:       number | null;
+  pilot_license_type:       string | null;
+  faa_certificate:          string | null;
+  insurance_policy:         string | null;
+  insurance_provider:       string | null;
+  insurance_type:           string | null;
+  account_number:           string | null;
+  certificate_issued_date:  string | null;
+  last_recurrent_date:      string | null;
 }
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const FREE_LOG_LIMIT = 3;
+
+// ── Part 107 currency helper ──────────────────────────────────────────────────
+// Currency expires 24 months after the LATER of (certificate_issued_date,
+// last_recurrent_date). Mirrors the iOS app's pilot-currency logic.
+function currencyStatus(certIssued: string | null, lastRecurrent: string | null):
+  { label: string; tone: 'ok' | 'warn' | 'bad' | 'unknown'; expiresAt: Date | null }
+{
+  const dates: number[] = [];
+  if (certIssued)     dates.push(new Date(certIssued).getTime());
+  if (lastRecurrent)  dates.push(new Date(lastRecurrent).getTime());
+  if (dates.length === 0) {
+    return { label: 'Not set', tone: 'unknown', expiresAt: null };
+  }
+  const newest    = Math.max(...dates);
+  const expiresAt = new Date(newest);
+  expiresAt.setMonth(expiresAt.getMonth() + 24);
+  const now       = Date.now();
+  const sixMonths = 6 * 30 * 24 * 60 * 60 * 1000;
+  if (expiresAt.getTime() < now) {
+    return { label: 'Expired', tone: 'bad', expiresAt };
+  }
+  if (expiresAt.getTime() - now < sixMonths) {
+    return { label: 'Expiring soon', tone: 'warn', expiresAt };
+  }
+  return { label: 'Current', tone: 'ok', expiresAt };
+}
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function fmt(ts: number) {
@@ -889,13 +918,17 @@ export default function Dashboard() {
   const [preflightHistory,  setPreflightHistory]  = useState<PreflightRecord[]>([]);
 
   // ── Pilot credentials (Settings tab) ─────────────────────────────────────
+  const [fullNameInput,          setFullNameInput]          = useState('');
   const [faaInput,               setFaaInput]               = useState('');
+  const [certIssuedInput,        setCertIssuedInput]        = useState('');
+  const [recurrentInput,         setRecurrentInput]         = useState('');
   const [insurancePolicyInput,   setInsurancePolicyInput]   = useState('');
   const [insuranceProviderInput, setInsuranceProviderInput] = useState('');
   const [insuranceTypeInput,     setInsuranceTypeInput]     = useState('');
   const [savingCreds,            setSavingCreds]            = useState(false);
   const [credsSaved,             setCredsSaved]             = useState(false);
   const [credsError,             setCredsError]             = useState('');
+  const [accountCodeCopied,      setAccountCodeCopied]      = useState(false);
 
   // ── Edit drone modal ──────────────────────────────────────────────────────
   const [editingDrone,         setEditingDrone]         = useState<Drone | null>(null);
@@ -1070,7 +1103,7 @@ export default function Dashboard() {
     //    PostgREST returns PGRST116 ("JSON object requested, multiple rows").
     try {
       const profileRows = await fetchTable<Profile>('profiles', session.access_token, {
-        select: 'full_name,subscription_status,total_flight_hours,pilot_license_type,faa_certificate,insurance_policy,insurance_provider,insurance_type',
+        select: 'full_name,subscription_status,total_flight_hours,pilot_license_type,faa_certificate,insurance_policy,insurance_provider,insurance_type,account_number,certificate_issued_date,last_recurrent_date',
         id:     `eq.${user.id}`,
         order:  'updated_at.desc',   // ← profiles has updated_at, NOT created_at
         limit:  '1',
@@ -1079,7 +1112,7 @@ export default function Dashboard() {
         // No profile row → this looks like a brand-new or orphaned account.
         // Surface a one-time prompt so the user can switch to their real account.
         setIsNewAccount(true);
-        setProfile({ subscription_status: 'free', full_name: null, total_flight_hours: null, pilot_license_type: null, faa_certificate: null, insurance_policy: null, insurance_provider: null, insurance_type: null });
+        setProfile({ subscription_status: 'free', full_name: null, total_flight_hours: null, pilot_license_type: null, faa_certificate: null, insurance_policy: null, insurance_provider: null, insurance_type: null, account_number: null, certificate_issued_date: null, last_recurrent_date: null });
       } else {
         setIsNewAccount(false);
         setProfile(profileRows[0]);
@@ -1129,7 +1162,10 @@ export default function Dashboard() {
   // Seed credential inputs whenever profile loads / changes
   useEffect(() => {
     if (profile) {
+      setFullNameInput(profile.full_name ?? '');
       setFaaInput(profile.faa_certificate ?? '');
+      setCertIssuedInput(profile.certificate_issued_date ?? '');
+      setRecurrentInput(profile.last_recurrent_date ?? '');
       setInsurancePolicyInput(profile.insurance_policy ?? '');
       setInsuranceProviderInput(profile.insurance_provider ?? '');
       setInsuranceTypeInput(profile.insurance_type ?? '');
@@ -1583,13 +1619,16 @@ export default function Dashboard() {
     }
   }
 
-  // ── Save pilot credentials (FAA cert + all insurance fields) ────────────
+  // ── Save pilot credentials (full name + FAA cert + dates + insurance) ───
   async function handleSavePilotCreds() {
     if (!session || !user) return;
     setSavingCreds(true);
     setCredsSaved(false);
     setCredsError('');
-    const newFaa      = faaInput.trim()               || null;
+    const newFullName = fullNameInput.trim()           || null;
+    const newFaa      = faaInput.trim()                || null;
+    const newCertIss  = certIssuedInput || null;
+    const newRecur    = recurrentInput || null;
     const newPolicy   = insurancePolicyInput.trim()   || null;
     const newProvider = insuranceProviderInput.trim() || null;
     const newType     = insuranceTypeInput             || null;
@@ -1598,20 +1637,26 @@ export default function Dashboard() {
         'profiles',
         user.id,
         {
-          faa_certificate:    newFaa,
-          insurance_policy:   newPolicy,
-          insurance_provider: newProvider,
-          insurance_type:     newType,
+          full_name:               newFullName,
+          faa_certificate:         newFaa,
+          certificate_issued_date: newCertIss,
+          last_recurrent_date:     newRecur,
+          insurance_policy:        newPolicy,
+          insurance_provider:      newProvider,
+          insurance_type:          newType,
         },
         session.access_token,
       );
       // Instantly reflect in state so any PDF export uses the newest values
       setProfile(prev => prev ? {
         ...prev,
-        faa_certificate:    newFaa,
-        insurance_policy:   newPolicy,
-        insurance_provider: newProvider,
-        insurance_type:     newType,
+        full_name:               newFullName,
+        faa_certificate:         newFaa,
+        certificate_issued_date: newCertIss,
+        last_recurrent_date:     newRecur,
+        insurance_policy:        newPolicy,
+        insurance_provider:      newProvider,
+        insurance_type:          newType,
       } : prev);
       setCredsSaved(true);
       setTimeout(() => setCredsSaved(false), 3000);
@@ -2734,8 +2779,52 @@ export default function Dashboard() {
             <section className="db-settings-section">
               <h2 className="db-settings-section__title">Account</h2>
               <div className="db-settings-row">
+                <span className="db-settings-label">Name</span>
+                <span className="db-settings-value">{profile?.full_name || <em className="muted">Not set — edit below in Pilot Credentials</em>}</span>
+              </div>
+              <div className="db-settings-row">
                 <span className="db-settings-label">Email</span>
                 <span className="db-settings-value">{user.email}</span>
+              </div>
+              <div className="db-settings-row">
+                <span className="db-settings-label">Plan</span>
+                <span className="db-settings-value">
+                  {isProPlus
+                    ? <span className="db-badge db-badge--pro">★ Pro+ Operator</span>
+                    : isPro
+                      ? <span className="db-badge db-badge--pro">★ Pro Pilot</span>
+                      : <span className="db-badge db-badge--gray">Free Tier</span>}
+                </span>
+              </div>
+              {profile?.account_number && (
+                <div className="db-settings-row">
+                  <span className="db-settings-label">Account code</span>
+                  <span className="db-settings-value db-settings-account-code">
+                    <code>{profile.account_number}</code>
+                    <button
+                      className="db-btn-copy"
+                      onClick={async () => {
+                        try {
+                          await navigator.clipboard.writeText(profile.account_number!);
+                          setAccountCodeCopied(true);
+                          setTimeout(() => setAccountCodeCopied(false), 2000);
+                        } catch {/* clipboard unavailable */}
+                      }}
+                    >
+                      {accountCodeCopied ? '✓ Copied' : 'Copy'}
+                    </button>
+                  </span>
+                </div>
+              )}
+              <div className="db-settings-actions">
+                <button className="db-btn-ghost" onClick={handleSignOut}>Sign Out</button>
+                <a
+                  className="db-btn-ghost db-btn-ghost--danger"
+                  href="/delete-account"
+                  onClick={e => { e.preventDefault(); navigate('/delete-account'); }}
+                >
+                  Delete Account
+                </a>
               </div>
             </section>
 
@@ -2744,10 +2833,50 @@ export default function Dashboard() {
               <h2 className="db-settings-section__title">Pilot Credentials</h2>
               <p className="db-settings-desc">
                 These details are embedded in the footer of every exported PDF report
-                for FAA Part 107 compliance.
+                and in Mission Briefings. The FAA Part 107 currency badge below
+                tracks the 24-month rule based on your certificate date or last
+                recurrent training (whichever is later).
               </p>
 
+              {/* Part 107 currency badge */}
+              {(() => {
+                const c = currencyStatus(certIssuedInput || null, recurrentInput || null);
+                const cls =
+                  c.tone === 'ok'    ? 'db-currency-badge db-currency-badge--ok' :
+                  c.tone === 'warn'  ? 'db-currency-badge db-currency-badge--warn' :
+                  c.tone === 'bad'   ? 'db-currency-badge db-currency-badge--bad' :
+                                       'db-currency-badge';
+                return (
+                  <div className="db-currency-row">
+                    <span className="db-currency-label">Part 107 Currency</span>
+                    <span className={cls}>{c.label}</span>
+                    {c.expiresAt && (
+                      <span className="db-currency-expires">
+                        Expires {c.expiresAt.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+                      </span>
+                    )}
+                  </div>
+                );
+              })()}
+
               <div className="db-settings-creds-grid">
+
+                {/* Row 0 — Full name (was account-only on iOS; lives here on web) */}
+                <div className="db-settings-field-group">
+                  <label className="db-settings-field-label" htmlFor="full-name-input">
+                    Pilot Full Name
+                  </label>
+                  <input
+                    id="full-name-input"
+                    type="text"
+                    className="db-settings-input"
+                    placeholder="e.g. Salvador López"
+                    maxLength={120}
+                    value={fullNameInput}
+                    onChange={e => { setFullNameInput(e.target.value); setCredsSaved(false); setCredsError(''); }}
+                  />
+                </div>
+                <div className="db-settings-field-group" />
 
                 {/* Row 1 — FAA cert + Insurance Policy */}
                 <div className="db-settings-field-group">
@@ -2777,6 +2906,32 @@ export default function Dashboard() {
                     maxLength={40}
                     value={insurancePolicyInput}
                     onChange={e => { setInsurancePolicyInput(e.target.value); setCredsSaved(false); setCredsError(''); }}
+                  />
+                </div>
+
+                {/* Row 1.5 — Certificate issued + Last recurrent training */}
+                <div className="db-settings-field-group">
+                  <label className="db-settings-field-label" htmlFor="cert-issued-input">
+                    Certificate Issued
+                  </label>
+                  <input
+                    id="cert-issued-input"
+                    type="date"
+                    className="db-settings-input"
+                    value={certIssuedInput}
+                    onChange={e => { setCertIssuedInput(e.target.value); setCredsSaved(false); setCredsError(''); }}
+                  />
+                </div>
+                <div className="db-settings-field-group">
+                  <label className="db-settings-field-label" htmlFor="recurrent-input">
+                    Last Recurrent Training
+                  </label>
+                  <input
+                    id="recurrent-input"
+                    type="date"
+                    className="db-settings-input"
+                    value={recurrentInput}
+                    onChange={e => { setRecurrentInput(e.target.value); setCredsSaved(false); setCredsError(''); }}
                   />
                 </div>
 

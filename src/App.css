@@ -2644,15 +2644,100 @@ main {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 0.4rem 0;
 }
 .db-settings-label {
   font-size: 0.8rem;
   color: var(--text-muted);
-  min-width: 60px;
+  min-width: 110px;
 }
 .db-settings-value {
   font-size: 0.9rem;
   color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.db-settings-value .muted { color: var(--text-muted); font-style: italic; }
+.db-settings-account-code code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.92rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent);
+  padding: 0.18em 0.55em;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+}
+.db-btn-copy {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.2rem 0.7rem;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.db-btn-copy:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.db-settings-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.db-btn-ghost--danger {
+  color: #FCA5A5 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+.db-btn-ghost--danger:hover {
+  background: rgba(239, 68, 68, 0.08);
+  color: #EF4444 !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+/* Part 107 currency badge in Pilot Credentials */
+.db-currency-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+}
+.db-currency-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.db-currency-badge {
+  display: inline-block;
+  padding: 0.22rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(139, 148, 158, 0.12);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.db-currency-badge--ok   { background: rgba(16, 185, 129, 0.15);  color: var(--accent); border-color: rgba(16, 185, 129, 0.35); }
+.db-currency-badge--warn { background: rgba(251, 191, 36, 0.15); color: var(--yellow); border-color: rgba(251, 191, 36, 0.35); }
+.db-currency-badge--bad  { background: rgba(239, 68, 68, 0.15);  color: #FCA5A5;       border-color: rgba(239, 68, 68, 0.35); }
+.db-currency-expires {
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 .db-settings-value--mono {
   font-family: 'Courier New', Courier, monospace;
