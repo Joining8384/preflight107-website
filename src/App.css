@@ -205,6 +205,12 @@ main {
   line-height: 1.7;
   max-width: 480px;
 }
+.hero-subtitle-rec {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
 
 .hero-actions {
   display: flex;
