@@ -1224,6 +1224,31 @@ main {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* Right-hand main column used by /app/briefings/* pages when they share
+   the Dashboard sidebar. Keeps the existing app-shell-header (sticky page
+   title) and app-shell-main (scrolling content) markup unchanged. */
+.app-shell-with-sidebar {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+.app-shell-with-sidebar .app-shell-header {
+  /* Match the Dashboard's right-pane header padding so the page title
+     aligns visually with /dashboard's flight-logs / drones / etc headers. */
+  position: sticky;
+  top: 0;
+  background: rgba(13, 17, 23, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+.app-shell-with-sidebar .app-shell-main {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
 /* ── Sidebar ── */
 .db-sidebar {
   width: 240px;

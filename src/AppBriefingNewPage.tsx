@@ -8,6 +8,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth } from './AuthContext';
+import DashboardSidebar from './DashboardSidebar';
 import { navigate } from './navigate';
 import { SUPABASE_URL, insertRow, updateRow } from './supabase';
 
@@ -128,7 +129,7 @@ function parseCrew(text: string): Array<{ name: string; role: string }> {
 }
 
 export default function AppBriefingNewPage() {
-  const { session, user } = useAuth();
+  const { session, user, signOut } = useAuth();
   const [tier, setTier] = useState<Tier | null>(null);
   const [form, setForm] = useState<Form>(EMPTY);
   const [submitting, setSubmitting] = useState(false);
@@ -246,24 +247,29 @@ export default function AppBriefingNewPage() {
 
   if (tier === null) {
     return (
-      <div className="app-shell">
-        <main className="app-shell-main"><div className="app-loading">Loading…</div></main>
+      <div className="db-shell">
+        <DashboardSidebar active="briefings" userEmail={user?.email} onSignOut={() => { signOut(); navigate('/'); }} />
+        <main className="app-shell-with-sidebar">
+          <div className="app-shell-main"><div className="app-loading">Loading…</div></div>
+        </main>
       </div>
     );
   }
 
   if (tier !== 'pro_plus') {
     return (
-      <div className="app-shell">
-        <header className="app-shell-header">
-          <button className="app-shell-back" onClick={() => navigate('/app/briefings')}>← Briefings</button>
-          <div className="app-shell-title">New Briefing</div>
-          <div style={{ width: 80 }} />
-        </header>
-        <main className="app-shell-main">
-          <div className="app-tier-banner">
-            <strong>Mission Briefings are a Pro+ feature.</strong>{' '}
-            Upgrade in the iOS app or <a href="/#pricing" onClick={e => { e.preventDefault(); navigate('/#pricing'); }}>see plans</a> to generate tamper-evident briefing PDFs from the web.
+      <div className="db-shell">
+        <DashboardSidebar active="briefings" userEmail={user?.email} onSignOut={() => { signOut(); navigate('/'); }} />
+        <main className="app-shell-with-sidebar">
+          <header className="app-shell-header">
+            <div className="app-shell-title">New Briefing</div>
+            <div style={{ width: 80 }} />
+          </header>
+          <div className="app-shell-main">
+            <div className="app-tier-banner">
+              <strong>Mission Briefings are a Pro+ feature.</strong>{' '}
+              Upgrade in the iOS app or <a href="/#pricing" onClick={e => { e.preventDefault(); navigate('/#pricing'); }}>see plans</a> to generate tamper-evident briefing PDFs from the web.
+            </div>
           </div>
         </main>
       </div>
@@ -271,21 +277,23 @@ export default function AppBriefingNewPage() {
   }
 
   return (
-    <div className="app-shell">
-      <header className="app-shell-header">
-        <button className="app-shell-back" onClick={() => navigate('/app/briefings')} disabled={submitting}>← Briefings</button>
-        <div className="app-shell-title">New Mission Briefing</div>
-        <button
-          className="app-shell-cta app-shell-cta--gen"
-          onClick={handleGenerate}
-          disabled={submitting}
-        >
-          {submitting ? (progress || 'Generating…') : 'Generate PDF'}
-        </button>
-      </header>
+    <div className="db-shell">
+      <DashboardSidebar active="briefings" userEmail={user?.email} onSignOut={() => { signOut(); navigate('/'); }} />
+      <main className="app-shell-with-sidebar">
+        <header className="app-shell-header">
+          <button className="app-shell-back" onClick={() => navigate('/app/briefings')} disabled={submitting}>← Briefings</button>
+          <div className="app-shell-title">New Mission Briefing</div>
+          <button
+            className="app-shell-cta app-shell-cta--gen"
+            onClick={handleGenerate}
+            disabled={submitting}
+          >
+            {submitting ? (progress || 'Generating…') : 'Generate PDF'}
+          </button>
+        </header>
 
-      <main className="app-shell-main">
-        <p className="app-form-intro">
+        <div className="app-shell-main">
+          <p className="app-form-intro">
           The same 6-step briefing the iOS app produces. Weather, airspace, hazards, and NOTAMs are auto-fetched and locked at generation time — you can't edit them after.
           A SHA-256 tamper hash is stamped on every page; clients verify at <code>/verify</code>.
         </p>
@@ -423,6 +431,7 @@ export default function AppBriefingNewPage() {
             {submitting ? (progress || 'Generating…') : 'Generate PDF →'}
           </button>
         </section>
+        </div>
       </main>
     </div>
   );

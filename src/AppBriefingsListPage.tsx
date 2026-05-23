@@ -9,6 +9,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useAuth } from './AuthContext';
+import DashboardSidebar from './DashboardSidebar';
 import { navigate } from './navigate';
 import { SUPABASE_URL, fetchTable } from './supabase';
 
@@ -66,7 +67,7 @@ function StatusPill({ status }: { status: Briefing['status'] }) {
 }
 
 export default function AppBriefingsListPage() {
-  const { session, user } = useAuth();
+  const { session, user, signOut } = useAuth();
   const [briefings, setBriefings] = useState<Briefing[] | null>(null);
   const [tier, setTier] = useState<Tier>('free');
   const [error, setError] = useState<string | null>(null);
@@ -108,21 +109,26 @@ export default function AppBriefingsListPage() {
   const canCreate = tier === 'pro_plus';
 
   return (
-    <div className="app-shell">
-      <header className="app-shell-header">
-        <button className="app-shell-back" onClick={() => navigate('/dashboard')}>← Dashboard</button>
-        <div className="app-shell-title">My Briefings</div>
-        <button
-          className="app-shell-cta"
-          onClick={() => canCreate ? navigate('/app/briefings/new') : navigate('/#pricing')}
-          disabled={!session}
-          title={canCreate ? 'Create a new Mission Briefing' : 'Pro+ required to create briefings'}
-        >
-          {canCreate ? '+ New Briefing' : 'Upgrade to Pro+'}
-        </button>
-      </header>
+    <div className="db-shell">
+      <DashboardSidebar
+        active="briefings"
+        userEmail={user?.email}
+        onSignOut={() => { signOut(); navigate('/'); }}
+      />
+      <main className="app-shell-with-sidebar">
+        <header className="app-shell-header">
+          <div className="app-shell-title">My Briefings</div>
+          <button
+            className="app-shell-cta"
+            onClick={() => canCreate ? navigate('/app/briefings/new') : navigate('/#pricing')}
+            disabled={!session}
+            title={canCreate ? 'Create a new Mission Briefing' : 'Pro+ required to create briefings'}
+          >
+            {canCreate ? '+ New Briefing' : 'Upgrade to Pro+'}
+          </button>
+        </header>
 
-      <main className="app-shell-main">
+        <div className="app-shell-main">
         {!canCreate && (
           <div className="app-tier-banner">
             <strong>Mission Briefings are a Pro+ feature.</strong>{' '}
@@ -200,6 +206,7 @@ export default function AppBriefingsListPage() {
             </div>
           </>
         )}
+        </div>
       </main>
     </div>
   );

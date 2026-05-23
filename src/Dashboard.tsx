@@ -1105,13 +1105,19 @@ export default function Dashboard() {
         },
         body: JSON.stringify({ uid: user.id }),
       });
-      if (tierRes.ok) {
-        const t = await tierRes.json();
-        if (t === 'pro' || t === 'pro_plus') {
-          setTier(t);
-        } else {
-          setTier('free');
-        }
+      const raw = tierRes.ok ? await tierRes.json() : null;
+      // PostgREST returns scalar RPC values as JSON strings ("pro_plus"),
+      // but some configs wrap them in arrays. Handle both shapes defensively.
+      const t: unknown =
+        typeof raw === 'string'              ? raw :
+        Array.isArray(raw) && raw.length > 0 ? raw[0] :
+                                                null;
+      // eslint-disable-next-line no-console
+      console.log('[PreFlight107] get_user_tier →', JSON.stringify(raw), '→ normalized:', t);
+      if (t === 'pro' || t === 'pro_plus') {
+        setTier(t);
+      } else {
+        setTier('free');
       }
     } catch (err) {
       console.warn('[PreFlight107] Tier RPC failed (non-fatal):', err);

@@ -7,6 +7,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from './AuthContext';
+import DashboardSidebar from './DashboardSidebar';
 import { navigate } from './navigate';
 import { SUPABASE_URL, fetchTable, updateRow } from './supabase';
 
@@ -77,7 +78,8 @@ async function getSignedPdfUrl(path: string, accessToken: string): Promise<strin
 }
 
 export default function AppBriefingDetailPage({ id }: { id: string }) {
-  const { session } = useAuth();
+  const { session, user, signOut } = useAuth();
+  const [copyState, setCopyState] = useState<'idle' | 'copied'>('idle');
   const [briefing, setBriefing] = useState<Briefing | null>(null);
   const [signedUrl, setSignedUrl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -126,6 +128,23 @@ export default function AppBriefingDetailPage({ id }: { id: string }) {
     }
   }
 
+  async function handleCopyShareLink() {
+    if (!briefing) return;
+    // We share the canonical app URL — pilots can paste it anywhere and the
+    // recipient (after sign-in) sees the briefing detail. Optionally we could
+    // share a verify-page link prefilled with the hash for unauthenticated
+    // recipients; offering both via a dropdown is post-launch polish.
+    const url = `${window.location.origin}/app/briefings/${briefing.id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopyState('copied');
+      setTimeout(() => setCopyState('idle'), 2000);
+    } catch {
+      // Clipboard API failure (uncommon on https): fallback to prompt
+      window.prompt('Copy this link to share the briefing:', url);
+    }
+  }
+
   async function handleUnarchive() {
     if (!session?.access_token || !briefing) return;
     setBusy(true);
@@ -140,14 +159,20 @@ export default function AppBriefingDetailPage({ id }: { id: string }) {
   }
 
   return (
-    <div className="app-shell">
-      <header className="app-shell-header">
-        <button className="app-shell-back" onClick={() => navigate('/app/briefings')}>← Briefings</button>
-        <div className="app-shell-title">{briefing?.mission_name || 'Briefing'}</div>
-        <div style={{ width: 80 }} />
-      </header>
+    <div className="db-shell">
+      <DashboardSidebar
+        active="briefings"
+        userEmail={user?.email}
+        onSignOut={() => { signOut(); navigate('/'); }}
+      />
+      <main className="app-shell-with-sidebar">
+        <header className="app-shell-header">
+          <button className="app-shell-back" onClick={() => navigate('/app/briefings')}>← Briefings</button>
+          <div className="app-shell-title">{briefing?.mission_name || 'Briefing'}</div>
+          <div style={{ width: 80 }} />
+        </header>
 
-      <main className="app-shell-main">
+        <div className="app-shell-main">
         {error && <div className="app-error">{error}</div>}
 
         {!briefing && !error && <div className="app-loading">Loading…</div>}
@@ -169,6 +194,11 @@ export default function AppBriefingDetailPage({ id }: { id: string }) {
               </div>
 
               <div className="app-detail-actions">
+                {briefing.status === 'generated' && (
+                  <button className="app-shell-cta-secondary" onClick={handleCopyShareLink}>
+                    {copyState === 'copied' ? '✓ Link copied' : '🔗 Copy share link'}
+                  </button>
+                )}
                 {briefing.status === 'generated' && signedUrl && (
                   <a
                     className="app-shell-cta app-shell-cta--gen"
@@ -253,6 +283,7 @@ export default function AppBriefingDetailPage({ id }: { id: string }) {
             </section>
           </>
         )}
+        </div>
       </main>
     </div>
   );
