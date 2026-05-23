@@ -1,5 +1,6 @@
 import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
 import aviationHazardsRaw from './aviation-hazards-explained-drone-pilots.md?raw';
+import faaEvidenceRaw from './faa-evidence-packet-drone-pilots.md?raw';
 import faaInquiryRaw from './faa-inquiry-prepared-drone-pilot.md?raw';
 import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
@@ -46,6 +47,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'faa-evidence-packet-drone-pilots',          raw: faaEvidenceRaw, category: 'Compliance' },
   { slug: 'white-label-client-mode-drone-pilots',      raw: whiteLabelRaw, category: 'Compliance' },
   { slug: 'verifiable-credentials-drone-pilots',       raw: verifiableCredentialsRaw, category: 'Compliance' },
   { slug: 'what-is-a-mission-briefing-drone-pilots',   raw: missionBriefingRaw, category: 'Compliance' },
