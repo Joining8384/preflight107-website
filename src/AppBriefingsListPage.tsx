@@ -20,7 +20,6 @@ interface Briefing {
   launch_address: string | null;
   planned_departure_at: string | null;
   briefing_code: string | null;
-  generated_pdf_path: string | null;
   tamper_hash: string | null;
   client_mode_enabled: boolean;
   generated_at: string | null;
@@ -84,7 +83,7 @@ export default function AppBriefingsListPage() {
       try {
         const [rows, t] = await Promise.all([
           fetchTable<Briefing>('briefings', session.access_token, {
-            select: 'id,status,mission_name,client_name,launch_address,planned_departure_at,briefing_code,generated_pdf_path,tamper_hash,client_mode_enabled,generated_at,created_at',
+            select: 'id,status,mission_name,client_name,launch_address,planned_departure_at,briefing_code,tamper_hash,client_mode_enabled,generated_at,created_at',
             order: 'created_at.desc',
           }),
           fetchTier(session.access_token, user.id),
