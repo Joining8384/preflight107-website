@@ -10,7 +10,7 @@ import {
 } from './pdfExport';
 import {
     deleteRow, fetchTable, fetchUserIdentities, getLinkIdentityUrl,
-    Identity, insertRow, updateRow,
+    Identity, insertRow, SUPABASE_ANON, SUPABASE_URL, updateRow,
 } from './supabase';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -861,6 +861,7 @@ export default function Dashboard() {
   const [drones,         setDrones]         = useState<Drone[]>([]);
   const [batteries,      setBatteries]      = useState<Battery[]>([]);
   const [profile,        setProfile]        = useState<Profile | null>(null);
+  const [tier,           setTier]           = useState<'free' | 'pro' | 'pro_plus'>('free');
   const [loading,        setLoading]        = useState(false);
   const [error,          setError]          = useState('');
   const [tab,            setTab]            = useState<'logs' | 'drones' | 'reports' | 'settings'>('logs');
@@ -1087,6 +1088,33 @@ export default function Dashboard() {
       console.warn('[PreFlight107] Profile fetch failed (non-fatal):', err);
       // Safe fallback — treat any profile error as free tier, dashboard still works
       setProfile({ subscription_status: 'free', full_name: null, total_flight_hours: null, pilot_license_type: null, faa_certificate: null, insurance_policy: null, insurance_provider: null, insurance_type: null });
+    }
+
+    // ── Tier: call the canonical get_user_tier RPC the iOS app uses. This
+    //    accounts for subscription_status (RevenueCat) AND complementary_plan /
+    //    complementary_plus_plan / pro_override_until / pro_plus_override_until
+    //    (admin grants). Checking subscription_status alone misses founders
+    //    and complimentary Pro+ accounts.
+    try {
+      const tierRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_user_tier`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_ANON,
+          Authorization: `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ uid: user.id }),
+      });
+      if (tierRes.ok) {
+        const t = await tierRes.json();
+        if (t === 'pro' || t === 'pro_plus') {
+          setTier(t);
+        } else {
+          setTier('free');
+        }
+      }
+    } catch (err) {
+      console.warn('[PreFlight107] Tier RPC failed (non-fatal):', err);
     }
   }, [session, user]);
 
@@ -1602,8 +1630,11 @@ export default function Dashboard() {
   }
   if (!user) return null;
 
-  // Treat null profile (failed fetch / new user) as free tier — never throw
-  const isPro     = (profile?.subscription_status ?? 'free') === 'pro';
+  // Treat null profile (failed fetch / new user) as free tier — never throw.
+  // isPro is true for BOTH Pro and Pro+ (Pro+ inherits all Pro features).
+  // Sourced from get_user_tier RPC so complimentary grants are honored.
+  const isPro     = tier === 'pro' || tier === 'pro_plus';
+  const isProPlus = tier === 'pro_plus';
   const logsCount = logs.length;
 
   return (
@@ -1666,9 +1697,11 @@ export default function Dashboard() {
             )}
           </div>
           <div className="db-header-right">
-            {isPro
-              ? <span className="db-badge db-badge--pro">★ Pro Pilot</span>
-              : <span className="db-badge db-badge--gray">Free Tier</span>}
+            {isProPlus
+              ? <span className="db-badge db-badge--pro">★ Pro+ Operator</span>
+              : isPro
+                ? <span className="db-badge db-badge--pro">★ Pro Pilot</span>
+                : <span className="db-badge db-badge--gray">Free Tier</span>}
 
             {tab === 'logs' && (
               <button className="db-btn-new-log" onClick={() => setShowModal(true)}>
