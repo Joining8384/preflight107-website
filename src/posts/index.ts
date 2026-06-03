@@ -8,6 +8,8 @@ import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
 import missionBriefingRaw from './what-is-a-mission-briefing-drone-pilots.md?raw';
 import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
 import tafRaw from './how-to-read-a-taf-drone-pilot.md?raw';
+import tfrRaw from './what-is-a-tfr-drone-pilots.md?raw';
+import windRaw from './how-much-wind-can-a-drone-fly-in.md?raw';
 import verifiableCredentialsRaw from './verifiable-credentials-drone-pilots.md?raw';
 import whiteLabelRaw from './white-label-client-mode-drone-pilots.md?raw';
 
@@ -47,6 +49,8 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'how-much-wind-can-a-drone-fly-in',          raw: windRaw,            category: 'Weather' },
+  { slug: 'what-is-a-tfr-drone-pilots',                raw: tfrRaw,             category: 'Airspace' },
   { slug: 'faa-evidence-packet-drone-pilots',          raw: faaEvidenceRaw, category: 'Compliance' },
   { slug: 'white-label-client-mode-drone-pilots',      raw: whiteLabelRaw, category: 'Compliance' },
   { slug: 'verifiable-credentials-drone-pilots',       raw: verifiableCredentialsRaw, category: 'Compliance' },
