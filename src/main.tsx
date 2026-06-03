@@ -43,13 +43,13 @@ function Router() {
   if (path.startsWith('/delete-account')) return <DeleteAccountPage />;
   if (path.startsWith('/launch/'))    return <LaunchSharePage token={path.slice(8)} />;
   if (path.startsWith('/support'))    return <SupportPage />;
-  if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6)} />;
-  if (path === '/blog')               return <BlogIndex />;
+  if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6).replace(/\/$/, '')} />;
+  if (path === '/blog' || path === '/blog/') return <BlogIndex />;
   if (path.startsWith('/verify'))     return <VerifyPage />;
   if (path.startsWith('/compare'))    return <ComparePage />;
   if (path.startsWith('/pilot/'))     return <PilotProfile />;
-  if (path.startsWith('/flyable/'))   return <FlyablePage citySlug={path.slice('/flyable/'.length)} />;
-  if (path === '/flyable')            return <FlyablePage />;
+  if (path.startsWith('/flyable/'))   return <FlyablePage citySlug={path.slice('/flyable/'.length).replace(/\/$/, '')} />;
+  if (path === '/flyable' || path === '/flyable/') return <FlyablePage />;
   if (path === '/app/briefings/new')  return <AppBriefingNewPage />;
   if (path.startsWith('/app/briefings/')) {
     const id = path.slice('/app/briefings/'.length);
