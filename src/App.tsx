@@ -147,7 +147,7 @@ function App() {
         {/* ── Hero ── */}
         <section className="hero" id="download">
           <div className="hero-content">
-            <div className="hero-badge">For Part 107 Pilots</div>
+            <div className="hero-badge">For Part 107 &amp; Recreational Pilots</div>
             <h1 className="hero-title">Plan it. Fly it. Prove it.</h1>
             <p className="hero-subtitle">
               The Part 107 operations platform — file FAA-style Mission Briefings, fly with
