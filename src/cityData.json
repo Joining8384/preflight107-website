@@ -1,0 +1,14 @@
+[
+  { "slug": "grand-rapids-mi", "city": "Grand Rapids", "state": "MI", "lat": 42.9634, "lng": -85.6681, "airspaceClass": "Class C", "facility": "Gerald R. Ford International Airport (GRR)" },
+  { "slug": "austin-tx", "city": "Austin", "state": "TX", "lat": 30.2672, "lng": -97.7431, "airspaceClass": "Class C", "facility": "Austin-Bergstrom International Airport (AUS)" },
+  { "slug": "phoenix-az", "city": "Phoenix", "state": "AZ", "lat": 33.4484, "lng": -112.0740, "airspaceClass": "Class B", "facility": "Phoenix Sky Harbor International Airport (PHX)" },
+  { "slug": "denver-co", "city": "Denver", "state": "CO", "lat": 39.7392, "lng": -104.9903, "airspaceClass": "Class B", "facility": "Denver International Airport (DEN)" },
+  { "slug": "orlando-fl", "city": "Orlando", "state": "FL", "lat": 28.5384, "lng": -81.3789, "airspaceClass": "Class B", "facility": "Orlando International Airport (MCO)" },
+  { "slug": "nashville-tn", "city": "Nashville", "state": "TN", "lat": 36.1627, "lng": -86.7816, "airspaceClass": "Class C", "facility": "Nashville International Airport (BNA)" },
+  { "slug": "las-vegas-nv", "city": "Las Vegas", "state": "NV", "lat": 36.1699, "lng": -115.1398, "airspaceClass": "Class B", "facility": "Harry Reid International Airport (LAS)" },
+  { "slug": "san-diego-ca", "city": "San Diego", "state": "CA", "lat": 32.7157, "lng": -117.1611, "airspaceClass": "Class B", "facility": "San Diego International Airport (SAN)" },
+  { "slug": "charlotte-nc", "city": "Charlotte", "state": "NC", "lat": 35.2271, "lng": -80.8431, "airspaceClass": "Class B", "facility": "Charlotte Douglas International Airport (CLT)" },
+  { "slug": "portland-or", "city": "Portland", "state": "OR", "lat": 45.5152, "lng": -122.6784, "airspaceClass": "Class C", "facility": "Portland International Airport (PDX)" },
+  { "slug": "kansas-city-mo", "city": "Kansas City", "state": "MO", "lat": 39.0997, "lng": -94.5786, "airspaceClass": "Class B", "facility": "Kansas City International Airport (MCI)" },
+  { "slug": "raleigh-nc", "city": "Raleigh", "state": "NC", "lat": 35.7796, "lng": -78.6382, "airspaceClass": "Class C", "facility": "Raleigh-Durham International Airport (RDU)" }
+]

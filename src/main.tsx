@@ -20,6 +20,7 @@ import SupportPage from './SupportPage.tsx';
 import TermsPage from './TermsPage.tsx';
 import VerifyPage from './VerifyPage.tsx';
 import PilotProfile from './PilotProfile.tsx';
+import FlyablePage from './FlyablePage.tsx';
 
 // ── Path-based Router ─────────────────────────────────────────────────────────
 // Listens to popstate so navigate() / replace() from navigate.ts
@@ -47,6 +48,8 @@ function Router() {
   if (path.startsWith('/verify'))     return <VerifyPage />;
   if (path.startsWith('/compare'))    return <ComparePage />;
   if (path.startsWith('/pilot/'))     return <PilotProfile />;
+  if (path.startsWith('/flyable/'))   return <FlyablePage citySlug={path.slice('/flyable/'.length)} />;
+  if (path === '/flyable')            return <FlyablePage />;
   if (path === '/app/briefings/new')  return <AppBriefingNewPage />;
   if (path.startsWith('/app/briefings/')) {
     const id = path.slice('/app/briefings/'.length);

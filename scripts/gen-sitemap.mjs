@@ -19,6 +19,7 @@ import url from 'node:url';
 const __dirname  = path.dirname(url.fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, '..');
 const postsDir   = path.join(projectDir, 'src', 'posts');
+const cityFile   = path.join(projectDir, 'src', 'cityData.json');
 const publicDir  = path.join(projectDir, 'public');
 const siteOrigin = 'https://preflight107.com';
 
@@ -29,6 +30,7 @@ const staticRoutes = [
   { loc: '/',        priority: '1.0', changefreq: 'weekly'  },
   { loc: '/blog',    priority: '0.9', changefreq: 'weekly'  },
   { loc: '/compare', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/flyable', priority: '0.8', changefreq: 'weekly'  },
   { loc: '/verify',  priority: '0.6', changefreq: 'monthly' },
   { loc: '/support', priority: '0.4', changefreq: 'monthly' },
   { loc: '/privacy', priority: '0.3', changefreq: 'yearly'  },
@@ -68,8 +70,14 @@ function urlEntry({ loc, lastmod, priority, changefreq }) {
   ].filter(Boolean).join('\n');
 }
 
+function getCities() {
+  if (!fs.existsSync(cityFile)) return [];
+  try { return JSON.parse(fs.readFileSync(cityFile, 'utf8')); } catch { return []; }
+}
+
 function main() {
   const posts = getPosts();
+  const cities = getCities();
 
   const entries = [
     ...staticRoutes.map((r) => urlEntry({ ...r, lastmod: buildDate })),
@@ -77,6 +85,12 @@ function main() {
       loc: `/blog/${p.slug}`,
       lastmod: p.lastmod,
       changefreq: 'monthly',
+      priority: '0.7',
+    })),
+    ...cities.map((c) => urlEntry({
+      loc: `/flyable/${c.slug}`,
+      lastmod: buildDate,
+      changefreq: 'weekly',
       priority: '0.7',
     })),
   ];
@@ -88,7 +102,7 @@ function main() {
     '</urlset>\n';
 
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml, 'utf8');
-  console.log(`[gen-sitemap] wrote sitemap.xml — ${staticRoutes.length} static + ${posts.length} blog = ${staticRoutes.length + posts.length} URLs`);
+  console.log(`[gen-sitemap] wrote sitemap.xml — ${staticRoutes.length} static + ${posts.length} blog + ${cities.length} flyable = ${staticRoutes.length + posts.length + cities.length} URLs`);
 }
 
 main();
