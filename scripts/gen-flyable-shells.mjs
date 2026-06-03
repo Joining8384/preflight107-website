@@ -85,6 +85,58 @@ function buildShellHtml(c) {
 `;
 }
 
+// Index shell so sharing the bare /flyable URL produces its own preview card
+// (instead of falling back to a generic/blank preview).
+function buildIndexShellHtml() {
+  const title = 'Can I Fly a Drone Today? Live Conditions by City';
+  const fullTitle = `${title} — PreFlight 107`;
+  const canonical = `${siteOrigin}/flyable`;
+  const desc = 'Check live drone-flying conditions for your city — current wind, gusts, and the airspace you need to clear before you fly. Free, no download. Powered by PreFlight 107.';
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <title>${escapeHtml(fullTitle)}</title>
+    <meta name="description" content="${escapeHtml(desc)}" />
+    <link rel="canonical" href="${escapeHtml(canonical)}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PreFlight 107" />
+    <meta property="og:url" content="${escapeHtml(canonical)}" />
+    <meta property="og:title" content="${escapeHtml(fullTitle)}" />
+    <meta property="og:description" content="${escapeHtml(desc)}" />
+    <meta property="og:image" content="${defaultOgImage}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(fullTitle)}" />
+    <meta name="twitter:description" content="${escapeHtml(desc)}" />
+    <meta name="twitter:image" content="${defaultOgImage}" />
+
+    <script>
+      (function () {
+        var l = window.location;
+        l.replace(l.protocol + '//' + l.host + '/?p=' + encodeURIComponent(l.pathname + l.search + l.hash));
+      })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=${escapeHtml(canonical)}" /></noscript>
+  </head>
+  <body>
+    <main style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;margin:48px auto;padding:0 16px;color:#222;">
+      <h1>${escapeHtml(title)}</h1>
+      <p>${escapeHtml(desc)}</p>
+      <p><a href="${escapeHtml(canonical)}">Check your city →</a></p>
+    </main>
+  </body>
+</html>
+`;
+}
+
 function main() {
   if (!fs.existsSync(dataFile)) {
     console.warn(`[gen-flyable-shells] cityData.json not found at ${dataFile} — skipping`);
@@ -92,6 +144,9 @@ function main() {
   }
   const cities = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
   fs.mkdirSync(outRoot, { recursive: true });
+
+  // Index page shell (public/flyable/index.html)
+  fs.writeFileSync(path.join(outRoot, 'index.html'), buildIndexShellHtml(), 'utf8');
 
   let written = 0;
   for (const c of cities) {
@@ -101,7 +156,7 @@ function main() {
     fs.writeFileSync(path.join(outDir, 'index.html'), buildShellHtml(c), 'utf8');
     written++;
   }
-  console.log(`[gen-flyable-shells] wrote ${written} city shells under public/flyable/`);
+  console.log(`[gen-flyable-shells] wrote 1 index + ${written} city shells under public/flyable/`);
 }
 
 main();
