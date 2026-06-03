@@ -20,7 +20,9 @@ const dataFile   = path.join(projectDir, 'src', 'cityData.json');
 const publicDir  = path.join(projectDir, 'public');
 const outRoot    = path.join(publicDir, 'flyable');
 const siteOrigin = 'https://preflight107.com';
-const defaultOgImage = `${siteOrigin}/og-image.png`;
+// Custom "Can I Fly a Drone Today?" share card (generated from
+// public/og-flyable.html via `node scripts/gen-og-image.mjs og-flyable.html og-flyable.png`).
+const defaultOgImage = `${siteOrigin}/og-flyable.png`;
 
 function escapeHtml(s) {
   return String(s ?? '')

@@ -15,8 +15,12 @@ import url from 'node:url';
 
 const __dirname  = path.dirname(url.fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, '..');
-const htmlFile   = path.join(projectDir, 'public', 'og-preview.html');
-const outFile    = path.join(projectDir, 'public', 'og-image.png');
+// Optional args: node gen-og-image.mjs [sourceHtml] [outputPng]
+// Defaults preserve original behavior (og-preview.html → og-image.png).
+const srcName    = process.argv[2] || 'og-preview.html';
+const outName    = process.argv[3] || 'og-image.png';
+const htmlFile   = path.join(projectDir, 'public', srcName);
+const outFile    = path.join(projectDir, 'public', outName);
 
 if (!fs.existsSync(htmlFile)) {
   console.error(`[gen-og-image] Source not found: ${htmlFile}`);
