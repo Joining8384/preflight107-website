@@ -6,6 +6,7 @@ import flightLogRaw from './how-to-log-drone-flights-part-107.md?raw';
 import laancRaw from './what-is-laanc-drone-pilots.md?raw';
 import metarRaw from './how-to-read-a-metar-drone-pilot.md?raw';
 import missionBriefingRaw from './what-is-a-mission-briefing-drone-pilots.md?raw';
+import part107LicenseRaw from './do-you-need-a-part-107-license.md?raw';
 import sectionalRaw from './how-to-read-a-sectional-chart-drone-pilot.md?raw';
 import tafRaw from './how-to-read-a-taf-drone-pilot.md?raw';
 import tfrRaw from './what-is-a-tfr-drone-pilots.md?raw';
@@ -49,6 +50,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'do-you-need-a-part-107-license',            raw: part107LicenseRaw,  category: 'Compliance' },
   { slug: 'how-much-wind-can-a-drone-fly-in',          raw: windRaw,            category: 'Weather' },
   { slug: 'what-is-a-tfr-drone-pilots',                raw: tfrRaw,             category: 'Airspace' },
   { slug: 'faa-evidence-packet-drone-pilots',          raw: faaEvidenceRaw, category: 'Compliance' },
