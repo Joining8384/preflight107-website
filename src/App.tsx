@@ -48,17 +48,19 @@ function App() {
     setBetaStatus('loading');
     try {
       const body = `FIRSTNAME=${encodeURIComponent(betaName)}&EMAIL=${encodeURIComponent(betaEmail)}&PLATFORM=iOS&email_address_check=&locale=en`;
-      const res = await fetch(BETA_BREVO_URL, {
+      // Brevo's sibforms endpoint sends no CORS headers, so a normal fetch
+      // rejects on the response read even though the signup succeeds
+      // server-side. no-cors submits the simple POST and returns an opaque
+      // response we can't inspect — so we report success optimistically.
+      // Genuine network failures (offline) still hit the catch below.
+      await fetch(BETA_BREVO_URL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
-      if (res.status < 400) {
-        setBetaStatus('success');
-        setTimeout(() => { setBetaOpen(false); setBetaStatus('idle'); }, 2500);
-      } else {
-        setBetaStatus('error');
-      }
+      setBetaStatus('success');
+      setTimeout(() => { setBetaOpen(false); setBetaStatus('idle'); }, 2500);
     } catch {
       setBetaStatus('error');
     }
@@ -70,12 +72,17 @@ function App() {
     setAndroidStatus('loading');
     try {
       const body = `EMAIL=${encodeURIComponent(androidEmail)}&PLATFORM=Android&email_address_check=&locale=en`;
-      const res = await fetch(BREVO_URL, {
+      // no-cors: Brevo's endpoint sends no CORS headers so a normal fetch
+      // rejects on the response read despite the signup succeeding. The simple
+      // POST still submits; opaque response can't be inspected → optimistic
+      // success. Network failures (offline) still hit the catch.
+      await fetch(BREVO_URL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
-      setAndroidStatus(res.status < 400 ? 'success' : 'error');
+      setAndroidStatus('success');
     } catch {
       setAndroidStatus('error');
     }
