@@ -14,7 +14,8 @@ import citiesRaw from './cityData.json';
 // local rules require the full check in the app. Every verdict says so.
 
 const APP_STORE = 'https://apps.apple.com/app/preflight-107/id6760437132';
-const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mcuztoms.preflight107';
+// Android is still in closed testing — no public Play Store listing yet, so no
+// Android download CTA on the site. Re-add when the public listing goes live.
 
 interface City {
   slug: string; city: string; state: string;
@@ -224,8 +225,7 @@ export default function FlyablePage({ citySlug }: { citySlug?: string }) {
           <div className="blog-article-cta">
             <p className="blog-cta-text">Get the full {city.city} airspace + weather check, free:</p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a className="cta-button" href={APP_STORE} target="_blank" rel="noopener noreferrer">Download for iPhone</a>
-              <a className="cta-button" href={PLAY_STORE} target="_blank" rel="noopener noreferrer">Download for Android</a>
+              <a className="cta-button" href={APP_STORE} target="_blank" rel="noopener noreferrer">Download Free for iPhone</a>
             </div>
           </div>
         </div>
