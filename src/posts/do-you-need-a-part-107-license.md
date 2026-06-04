@@ -68,7 +68,7 @@ If you've honestly landed on "purely for fun," the recreational path is refreshi
 
 1. **Pass TRUST.** The Recreational UAS Safety Test — TRUST — is a free, online, multiple-choice test you take through an FAA-approved provider. You can't actually fail it in a way that matters; it walks you through the answers and you finish with a completion certificate. It never expires. Print or save that certificate — you're required to carry proof you've passed and show it to FAA or law enforcement on request.
 
-2. **Register your drone if it weighs 0.55 lb (250 grams) or more.** Registration costs **$5**, is done online, and is valid for **three years**. Most camera drones cross the 250g line; many of the smallest "sub-250" models don't require registration for recreational flying (though they still must follow the rest of the rules). When you register, you get a registration number that must be marked on the aircraft.
+2. **Register your drone if it weighs 0.55 lb (250 grams) or more.** Registration costs **$5**, is done online, and is valid for **three years**. Most camera drones cross the 250g line; many of the smallest "sub-250" models don't require registration for recreational flying (though they still must follow the rest of the rules). When you register, you get a registration number that must be marked on the aircraft. One nice perk of the recreational path: a single registration covers **all** the drones you fly for fun — you register yourself once, not each aircraft. (That's different on the commercial side, as you'll see below.)
 
 3. **Fly within community-based safety guidelines.** Stay at or below **400 feet AGL**, keep the drone within **visual line of sight** (yours or a visual observer's), give way to and never interfere with manned aircraft, and don't fly carelessly or recklessly.
 
@@ -84,7 +84,7 @@ The commercial path asks more, because you're being trusted to operate in shared
 
 1. **Be at least 16 years old.** Hard floor.
 
-2. **Pass the Part 107 Aeronautical Knowledge Test.** This is a real, proctored exam taken at an **FAA-approved testing center**, and it costs around **$175**. It covers airspace classifications, reading sectional charts, weather and METAR/TAF interpretation, aircraft loading, crew resource management, and the regulations themselves. It's studyable — most people pass with a few weeks of focused prep — but it is not a walk-through like TRUST. After passing, you apply for your **Remote Pilot Certificate**.
+2. **Pass the Part 107 Aeronautical Knowledge Test.** This is a real, proctored exam taken at an **FAA-approved testing center**, and it costs around **$175**. It covers airspace classifications, reading sectional charts, weather and METAR/TAF interpretation, aircraft loading, crew resource management, and the regulations themselves. It's studyable — most people pass with a few weeks of focused prep — but it is not a walk-through like TRUST. After passing, you apply for your **Remote Pilot Certificate**, which includes a one-time **TSA security background check** as part of the application — routine for most applicants, but build in a little time for it to clear.
 
 3. **Register every drone you fly commercially — regardless of weight.** This is a key difference from the recreational rules. There's no 250g exemption on the commercial side. Even a sub-250g drone must be registered if you're flying it commercially.
 
@@ -128,3 +128,5 @@ You asked the right question at the right time. Now you know the answer.
 Plan it. Fly it. Prove it.
 
 *Fly safe out there.*
+
+*This article is educational, not legal advice — verify current rules at [faa.gov](https://www.faa.gov/uas) before you fly.*
