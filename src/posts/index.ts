@@ -1,4 +1,5 @@
 import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
+import airspaceClassesRaw from './controlled-vs-uncontrolled-airspace-drone-pilots.md?raw';
 import aviationHazardsRaw from './aviation-hazards-explained-drone-pilots.md?raw';
 import faaEvidenceRaw from './faa-evidence-packet-drone-pilots.md?raw';
 import faaInquiryRaw from './faa-inquiry-prepared-drone-pilot.md?raw';
@@ -51,6 +52,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'controlled-vs-uncontrolled-airspace-drone-pilots', raw: airspaceClassesRaw, category: 'Airspace' },
   { slug: 'what-is-remote-id-drone-pilots',            raw: remoteIdRaw,        category: 'Compliance' },
   { slug: 'do-you-need-a-part-107-license',            raw: part107LicenseRaw,  category: 'Compliance' },
   { slug: 'how-much-wind-can-a-drone-fly-in',          raw: windRaw,            category: 'Weather' },
