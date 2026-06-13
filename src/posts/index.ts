@@ -1,6 +1,7 @@
 import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
 import airspaceClassesRaw from './controlled-vs-uncontrolled-airspace-drone-pilots.md?raw';
 import nightOpsRaw from './can-you-fly-a-drone-at-night.md?raw';
+import whereToFlyRaw from './where-can-you-fly-a-drone.md?raw';
 import aviationHazardsRaw from './aviation-hazards-explained-drone-pilots.md?raw';
 import faaEvidenceRaw from './faa-evidence-packet-drone-pilots.md?raw';
 import faaInquiryRaw from './faa-inquiry-prepared-drone-pilot.md?raw';
@@ -53,6 +54,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'where-can-you-fly-a-drone',                  raw: whereToFlyRaw,      category: 'Airspace' },
   { slug: 'can-you-fly-a-drone-at-night',                raw: nightOpsRaw,        category: 'Compliance' },
   { slug: 'controlled-vs-uncontrolled-airspace-drone-pilots', raw: airspaceClassesRaw, category: 'Airspace' },
   { slug: 'what-is-remote-id-drone-pilots',            raw: remoteIdRaw,        category: 'Compliance' },
