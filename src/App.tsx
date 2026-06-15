@@ -159,7 +159,7 @@ function App() {
             <p className="hero-subtitle">
               The Part 107 operations platform — file FAA-style Mission Briefings, fly with
               live ADS-B and aviation weather, and share a verifiable digital pilot card with every client.
-              <span className="hero-subtitle-rec">Free for recreational pilots; Pro tools for working commercial operators.</span>
+              <span className="hero-subtitle-rec">Free for recreational pilots — plus a 7-day free Pro+ trial for commercial work.</span>
             </p>
             <div className="hero-actions">
               <a
@@ -177,7 +177,7 @@ function App() {
                 className="cta-button-secondary"
                 onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Pro →
+                Try Pro+ Free for 7 Days →
               </button>
             </div>
             <div className="hero-store-badges">
