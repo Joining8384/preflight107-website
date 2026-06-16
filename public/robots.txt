@@ -92,5 +92,17 @@ Disallow: /
 User-agent: *
 Allow: /
 
+# Private / auth / admin app routes — no SEO value, and on GitHub Pages these
+# client-side routes have no static shell so they return 404 to crawlers
+# (real users are redirected into the SPA and they work fine). Telling Google
+# to skip them keeps these out of Search Console's "Not found (404)" report.
+# Public SEO routes (/blog, /flyable, /pilot, /verify, /compare, /terms,
+# /privacy, /delete-account, /support) are intentionally NOT listed here.
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /login
+Disallow: /signup
+Disallow: /app
+
 # ── Sitemap ─────────────────────────────────────────────────────────────────
 Sitemap: https://preflight107.com/sitemap.xml
