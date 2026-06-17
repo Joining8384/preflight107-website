@@ -1,4 +1,5 @@
 import adsbRaw from './ads-b-explained-drone-pilots.md?raw';
+import densityAltitudeRaw from './density-altitude-drone-performance.md?raw';
 import airspaceClassesRaw from './controlled-vs-uncontrolled-airspace-drone-pilots.md?raw';
 import nightOpsRaw from './can-you-fly-a-drone-at-night.md?raw';
 import whereToFlyRaw from './where-can-you-fly-a-drone.md?raw';
@@ -54,6 +55,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'density-altitude-drone-performance',         raw: densityAltitudeRaw, category: 'Weather' },
   { slug: 'where-can-you-fly-a-drone',                  raw: whereToFlyRaw,      category: 'Airspace' },
   { slug: 'can-you-fly-a-drone-at-night',                raw: nightOpsRaw,        category: 'Compliance' },
   { slug: 'controlled-vs-uncontrolled-airspace-drone-pilots', raw: airspaceClassesRaw, category: 'Airspace' },
