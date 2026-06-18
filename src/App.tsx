@@ -327,6 +327,20 @@ function App() {
             <h3 className="bucket-title">In-flight awareness and weather</h3>
           </div>
           <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
+              <div className="feature-icon">🎯</div>
+              <h3>Fly Now Score</h3>
+              <p>One 0–100 go/no-go number that fuses wind, gusts, ceiling, visibility, hazards, and airspace into a single read — tap it for a plain-English breakdown of exactly why. Included free.</p>
+              <span className="feature-tag feature-tag--free">Free</span>
+            </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--green"></div>
+              <div className="feature-icon">🏔️</div>
+              <h3>Density Altitude</h3>
+              <p>Hot, high, and humid air is thinner — and thin air robs your drone of thrust, climb, and flight time. We compute it live for your exact spot and flag it before you fly. Included free.</p>
+              <span className="feature-tag feature-tag--free">Free</span>
+            </div>
             <div className="feature-card feature-card--radar">
               <div className="feature-accent-bar feature-accent-bar--purple"></div>
               <div className="feature-icon">📡</div>

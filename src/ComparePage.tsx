@@ -30,6 +30,8 @@ const ROWS: Row[] = [
   { feature: 'Plain-English weather decode',        preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: '15-day forecast',                     preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'limited' },
   { feature: '3D wind tower at altitude',           preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
+  { feature: 'Fly Now Score (0–100 go/no-go)',      preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
+  { feature: 'Density altitude performance alerts', preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
 
   // Awareness
   { feature: 'Live ADS-B manned traffic',           preflight: 'yes', b4ufly: 'no',      airmap: 'limited', aloft: 'no' },
