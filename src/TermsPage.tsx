@@ -100,6 +100,20 @@ export default function TermsPage() {
           changes, or natural disasters.
         </p>
 
+        <h2 className="legal-section-title">3e. AI Risk Assessments</h2>
+        <p className="legal-body">
+          The App may offer AI-generated risk assessments (a "Pro+" feature, with a limited number of
+          free previews). These assessments are produced by an automated system and are provided
+          strictly "as is," for situational awareness and informational purposes only. They may contain
+          errors, omissions, or inaccuracies, do not constitute aviation, legal, or professional advice,
+          and are not a substitute for official FAA sources, current aeronautical information, or your
+          own preflight planning and judgment. As remote pilot in command, you are solely responsible
+          for the decision to fly, for compliance with all applicable regulations, and for the safety of
+          every operation. To the maximum extent permitted by law, Mcuztoms LLC disclaims all liability
+          for any damages, losses, or decisions arising from your use of or reliance on these
+          AI-generated assessments.
+        </p>
+
         <h2 className="legal-section-title">4. Binding Arbitration</h2>
         <p className="legal-body">
           Any dispute, controversy, or claim arising out of or relating to these Terms, or the breach,

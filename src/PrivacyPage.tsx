@@ -91,6 +91,15 @@ export default function PrivacyPage() {
           geographic coordinates and no personal identifiers.
         </p>
 
+        <h3 className="legal-sub-title">AI Risk Assessments (Anthropic)</h3>
+        <p className="legal-body">
+          When you request an AI Risk Assessment, the current weather, airspace, and flight-condition
+          data for your location is sent to our AI provider, Anthropic, to generate a plain-language
+          summary. These requests contain only the conditions snapshot and your coordinates — no name,
+          email, or account identifiers — and the data is used solely to produce your assessment. It is
+          <strong> not used to train AI models.</strong>
+        </p>
+
         {/* 3 */}
         <h2 className="legal-section-title">3. Data We Do NOT Collect or Sell</h2>
         <p className="legal-body">
