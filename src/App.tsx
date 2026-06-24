@@ -341,6 +341,13 @@ function App() {
               <p>Hot, high, and humid air is thinner — and thin air robs your drone of thrust, climb, and flight time. We compute it live for your exact spot and flag it before you fly. Included free.</p>
               <span className="feature-tag feature-tag--free">Free</span>
             </div>
+            <div className="feature-card">
+              <div className="feature-accent-bar feature-accent-bar--purple"></div>
+              <div className="feature-icon">🤖</div>
+              <h3>AI Risk Assessment</h3>
+              <p>Tap once for an AI go/no-go read on your exact conditions — plain-English reasoning plus recommended mitigations, in seconds. 3 free previews; unlimited with Pro+.</p>
+              <span className="feature-tag feature-tag--proplus">Pro+</span>
+            </div>
             <div className="feature-card feature-card--radar">
               <div className="feature-accent-bar feature-accent-bar--purple"></div>
               <div className="feature-icon">📡</div>
