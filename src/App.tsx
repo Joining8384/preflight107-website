@@ -522,6 +522,7 @@ function App() {
                 <li><span className="pi pi--yes pi--accent">✓</span> 15-Day Forecast</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> 3D Wind Tower</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Unlimited Flight Logs</li>
+                <li><span className="pi pi--yes pi--accent">✓</span> Flying Insights + Client Bundle</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Apple Wallet Pilot Card</li>
                 <li><span className="pi pi--yes pi--accent">✓</span> Public Pilot Profile</li>
               </ul>
@@ -561,6 +562,7 @@ function App() {
                 <li><span className="pi pi--yes pi--proplus">✓</span> Plain-English Weather Decode</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> White-Label Client Mode</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> Recurring Briefings</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> AI Morning Brief</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> Priority Support</li>
               </ul>
               <a
@@ -598,6 +600,7 @@ function App() {
                 <tr><td>LAANC Status Lookup</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr><td>Live ADS-B Radar</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr><td>Cinematographer's Forecast</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr><td>Compliance Reminders</td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr><td>Flight Logs</td><td className="ci-text">3 logs</td><td className="ci-text ci-text--pro">Unlimited</td><td className="ci-text ci-text--pro">Unlimited</td></tr>
                 <tr className="compare-row--pro"><td>METAR / TAF / SIGMET</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>15-Day Forecast</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
@@ -606,11 +609,14 @@ function App() {
                 <tr className="compare-row--pro"><td>Apple Wallet Pilot Card</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>Public Pilot Profile</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--pro"><td>PDF Log Exports</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>Flying Insights</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
+                <tr className="compare-row--pro"><td>Client Bundle (per-job PDF)</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes">✓</span></td><td><span className="ci ci--yes">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Mission Briefings (PDF)</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Tamper Hash + /verify</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Plain-English Decode</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>White-Label Client Mode</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Recurring Briefings</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>AI Morning Brief</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Priority Support</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
               </tbody>
             </table>

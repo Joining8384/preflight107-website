@@ -33,6 +33,7 @@ const ROWS: Row[] = [
   { feature: 'Fly Now Score (0–100 go/no-go)',      preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'Density altitude performance alerts', preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'AI risk assessment',                  preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
+  { feature: 'AI morning flight brief',             preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
 
   // Awareness
   { feature: 'Live ADS-B manned traffic',           preflight: 'yes', b4ufly: 'no',      airmap: 'limited', aloft: 'no' },
@@ -40,7 +41,9 @@ const ROWS: Row[] = [
   // Records & deliverables
   { feature: 'Cloud-synced flight logs',            preflight: 'yes', b4ufly: 'no',      airmap: 'yes',     aloft: 'yes' },
   { feature: 'PDF flight log exports',              preflight: 'yes', b4ufly: 'no',      airmap: 'limited', aloft: 'yes' },
+  { feature: 'Personal flying analytics',           preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'FAA-style Mission Briefing PDFs',     preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
+  { feature: 'Per-job client report bundle',        preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'SHA-256 tamper-evident briefings',    preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'Public /verify page for clients',     preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
   { feature: 'Apple Wallet pilot card',             preflight: 'yes', b4ufly: 'no',      airmap: 'no',      aloft: 'no' },
