@@ -563,6 +563,7 @@ function App() {
                 <li><span className="pi pi--yes pi--proplus">✓</span> White-Label Client Mode</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> Recurring Briefings</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> AI Morning Brief</li>
+                <li><span className="pi pi--yes pi--proplus">✓</span> Live Observer Link</li>
                 <li><span className="pi pi--yes pi--proplus">✓</span> Priority Support</li>
               </ul>
               <a
@@ -617,6 +618,7 @@ function App() {
                 <tr className="compare-row--proplus"><td>White-Label Client Mode</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Recurring Briefings</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>AI Morning Brief</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
+                <tr className="compare-row--proplus"><td>Live Observer Link</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
                 <tr className="compare-row--proplus"><td>Priority Support</td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--no">—</span></td><td><span className="ci ci--yes ci--proplus">✓</span></td></tr>
               </tbody>
             </table>
