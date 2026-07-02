@@ -35,6 +35,18 @@ interface LaunchData {
   expected_minutes: number | null;
   created_at: string;
   expires_at: string;
+  is_live?: boolean;
+  updated_at?: string | null;
+}
+
+function timeAgo(iso: string | null | undefined, nowMs: number): string {
+  if (!iso) return '';
+  const s = Math.max(0, Math.floor((nowMs - new Date(iso).getTime()) / 1000));
+  if (s < 5) return 'just now';
+  if (s < 60) return `${s}s ago`;
+  const m = Math.floor(s / 60);
+  if (m < 60) return `${m}m ago`;
+  return `${Math.floor(m / 60)}h ago`;
 }
 
 async function fetchLaunch(token: string): Promise<LaunchData | null> {
@@ -92,15 +104,29 @@ function categoryColor(cat?: string | null): string {
 
 export default function LaunchSharePage({ token }: { token: string }) {
   const [data, setData] = useState<LaunchData | null | undefined>(undefined);
+  const [now, setNow] = useState<number>(() => Date.now());
 
+  // Fetch once; for LIVE links, re-fetch every 25s so the map pin + conditions
+  // follow the pilot. Snapshots never change, so we don't poll them.
   useEffect(() => {
     let cancelled = false;
-    (async () => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const load = async () => {
       const result = await fetchLaunch(token);
-      if (!cancelled) setData(result);
-    })();
-    return () => { cancelled = true; };
+      if (cancelled) return;
+      setData(result);
+      if (result?.is_live) timer = setTimeout(load, 25_000);
+    };
+    load();
+    return () => { cancelled = true; if (timer) clearTimeout(timer); };
   }, [token]);
+
+  // Tick every second so "updated Ns ago" counts up smoothly on live links.
+  useEffect(() => {
+    if (!data?.is_live) return;
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, [data?.is_live]);
 
   if (data === undefined) {
     return (
@@ -145,15 +171,24 @@ export default function LaunchSharePage({ token }: { token: string }) {
           <span style={{ color: 'var(--accent, #06B6D4)', fontWeight: 700, fontSize: 14, letterSpacing: 0.4 }}>
             PREFLIGHT 107
           </span>
-          <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6, color: '#10B981', fontSize: 13, fontWeight: 600 }}>
-            <span style={{ width: 8, height: 8, borderRadius: 8, background: '#10B981', display: 'inline-block', animation: 'pulse 2s infinite' }}></span>
-            LIVE
-          </span>
+          {data.is_live ? (
+            <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6, color: '#10B981', fontSize: 13, fontWeight: 600 }}>
+              <span style={{ width: 8, height: 8, borderRadius: 8, background: '#10B981', display: 'inline-block', animation: 'pulse 2s infinite' }}></span>
+              LIVE
+            </span>
+          ) : (
+            <span style={{ marginLeft: 'auto', color: '#8B949E', fontSize: 12, fontWeight: 700, letterSpacing: 0.4 }}>SNAPSHOT</span>
+          )}
         </div>
 
         <h1 style={titleStyle}>{pilotName} is flying now</h1>
         {data.location_name && (
-          <p style={{ ...subtitleStyle, marginBottom: 16 }}>{data.location_name}</p>
+          <p style={{ ...subtitleStyle, marginBottom: data.is_live ? 4 : 16 }}>{data.location_name}</p>
+        )}
+        {data.is_live && (
+          <p style={{ color: '#10B981', fontSize: 12, fontWeight: 600, margin: '0 0 16px' }}>
+            Tracking live · updated {timeAgo(data.updated_at || data.created_at, now)}
+          </p>
         )}
 
         {mapUrl && (
