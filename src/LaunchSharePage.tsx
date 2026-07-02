@@ -23,6 +23,7 @@ interface LaunchSnapshot {
   airspaceLabel?: string | null;
   airspaceCeiling?: number | null;
   airspaceWarning?: string | null;
+  tfrs?: Array<{ title: string; contains?: boolean }> | null;
 }
 
 interface LaunchData {
@@ -265,6 +266,25 @@ export default function LaunchSharePage({ token }: { token: string }) {
                 LAANC ceiling: {snap.airspaceCeiling.toLocaleString()} ft AGL
               </div>
             )}
+          </div>
+        )}
+
+        {Array.isArray(snap.tfrs) && snap.tfrs.length > 0 && (
+          <div style={{
+            background: snap.tfrs.some(t => t.contains) ? 'rgba(239,68,68,0.15)' : 'rgba(245,158,11,0.12)',
+            border: `1px solid ${snap.tfrs.some(t => t.contains) ? '#EF4444' : '#F59E0B'}`,
+            borderRadius: 12,
+            padding: 14,
+            marginBottom: 16,
+          }}>
+            <div style={{ color: '#C9D1D9', fontSize: 13, fontWeight: 600, marginBottom: 6 }}>
+              Temporary Flight Restrictions
+            </div>
+            {snap.tfrs.map((t, i) => (
+              <div key={i} style={{ color: t.contains ? '#EF4444' : '#F59E0B', fontSize: 13, fontWeight: t.contains ? 700 : 500, marginTop: i === 0 ? 0 : 4 }}>
+                {t.contains ? '⛔ Over launch site — ' : '⚠️ Nearby — '}{t.title}
+              </div>
+            ))}
           </div>
         )}
 
