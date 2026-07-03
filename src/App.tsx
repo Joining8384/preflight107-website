@@ -155,10 +155,12 @@ function App() {
         <section className="hero" id="download">
           <div className="hero-content">
             <div className="hero-badge">For Part 107 &amp; Recreational Pilots</div>
-            <h1 className="hero-title">Plan it. Fly it. Prove it.</h1>
+            <h1 className="hero-title">Is it safe to fly today? Get your answer in one tap.</h1>
+            <p style={{ color: '#06B6D4', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', fontSize: '0.95rem', margin: '0.25rem 0 1.1rem' }}>Plan it. Fly it. Prove it.</p>
             <p className="hero-subtitle">
-              The Part 107 operations platform — file FAA-style Mission Briefings, fly with
-              live ADS-B and aviation weather, and share a verifiable digital pilot card with every client.
+              A free 0–100 go/no-go score for every flight — wind, gusts, airspace, and weather decoded
+              into one number you can trust. Plus FAA-style Mission Briefings, live ADS-B traffic, and a
+              verifiable pilot card for commercial work.
               <span className="hero-subtitle-rec">Free for recreational pilots — plus a 7-day free Pro+ trial for commercial work.</span>
             </p>
             <div className="hero-actions">
