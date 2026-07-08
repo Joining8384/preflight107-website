@@ -20,6 +20,8 @@ import tfrRaw from './what-is-a-tfr-drone-pilots.md?raw';
 import windRaw from './how-much-wind-can-a-drone-fly-in.md?raw';
 import verifiableCredentialsRaw from './verifiable-credentials-drone-pilots.md?raw';
 import whiteLabelRaw from './white-label-client-mode-drone-pilots.md?raw';
+import weatherMinimumsRaw from './part-107-weather-minimums-drone-pilots.md?raw';
+import droneInsuranceRaw from './drone-insurance-part-107-pilots.md?raw';
 
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
 
@@ -57,6 +59,8 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'part-107-weather-minimums-drone-pilots',     raw: weatherMinimumsRaw, category: 'Weather' },
+  { slug: 'drone-insurance-part-107-pilots',            raw: droneInsuranceRaw,  category: 'Compliance' },
   { slug: 'faa-deadlines-drone-pilots',                 raw: faaDeadlinesRaw,    category: 'Compliance' },
   { slug: 'drone-go-no-go-decision',                    raw: goNoGoRaw,          category: 'Compliance' },
   { slug: 'density-altitude-drone-performance',         raw: densityAltitudeRaw, category: 'Weather' },
