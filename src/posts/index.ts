@@ -22,6 +22,8 @@ import verifiableCredentialsRaw from './verifiable-credentials-drone-pilots.md?r
 import whiteLabelRaw from './white-label-client-mode-drone-pilots.md?raw';
 import weatherMinimumsRaw from './part-107-weather-minimums-drone-pilots.md?raw';
 import droneInsuranceRaw from './drone-insurance-part-107-pilots.md?raw';
+import thunderstormsRaw from './flying-near-thunderstorms-drone-pilots.md?raw';
+import batteryCareRaw from './drone-battery-care-lipo-safety.md?raw';
 
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
 
@@ -59,6 +61,8 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'flying-near-thunderstorms-drone-pilots',     raw: thunderstormsRaw,   category: 'Weather' },
+  { slug: 'drone-battery-care-lipo-safety',             raw: batteryCareRaw,     category: 'Equipment' },
   { slug: 'part-107-weather-minimums-drone-pilots',     raw: weatherMinimumsRaw, category: 'Weather' },
   { slug: 'drone-insurance-part-107-pilots',            raw: droneInsuranceRaw,  category: 'Compliance' },
   { slug: 'faa-deadlines-drone-pilots',                 raw: faaDeadlinesRaw,    category: 'Compliance' },
