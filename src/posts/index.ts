@@ -25,6 +25,8 @@ import droneInsuranceRaw from './drone-insurance-part-107-pilots.md?raw';
 import thunderstormsRaw from './flying-near-thunderstorms-drone-pilots.md?raw';
 import batteryCareRaw from './drone-battery-care-lipo-safety.md?raw';
 import airportMythRaw from './flying-drone-near-airport-5-mile-myth.md?raw';
+import privatePropertyRaw from './can-you-fly-a-drone-over-private-property.md?raw';
+import overPeopleRaw from './operations-over-people-drone-part-107.md?raw';
 
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
 
@@ -62,6 +64,8 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'can-you-fly-a-drone-over-private-property',  raw: privatePropertyRaw, category: 'Airspace' },
+  { slug: 'operations-over-people-drone-part-107',      raw: overPeopleRaw,      category: 'Compliance' },
   { slug: 'flying-drone-near-airport-5-mile-myth',      raw: airportMythRaw,     category: 'Airspace' },
   { slug: 'flying-near-thunderstorms-drone-pilots',     raw: thunderstormsRaw,   category: 'Weather' },
   { slug: 'drone-battery-care-lipo-safety',             raw: batteryCareRaw,     category: 'Equipment' },
