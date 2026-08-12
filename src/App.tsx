@@ -115,6 +115,7 @@ function App() {
             <li><a href="/compare" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/compare'); }}>Compare</a></li>
             <li><a href="/flyable" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/flyable'); }}>Can I Fly?</a></li>
             <li><a href="/blog" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/blog'); }}>Blog</a></li>
+            <li><a href="/help" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/help'); }}>Help</a></li>
             <li><a href="/support" onClick={e => { e.preventDefault(); setMenuOpen(false); navigate('/support'); }}>Support</a></li>
             <li><a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Download Free</a></li>
             {user ? (
@@ -811,6 +812,7 @@ function App() {
             <a href="/delete-account" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/delete-account'); }}>Delete Account</a>
             <span className="footer-legal-sep">·</span>
             <a href="/blog" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/blog'); }}>Blog</a>
+            <a href="/help" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/help'); }}>Help</a>
             <span className="footer-legal-sep">·</span>
             <a href="/flyable" className="footer-legal-link" onClick={e => { e.preventDefault(); navigate('/flyable'); }}>Can I Fly?</a>
           </div>

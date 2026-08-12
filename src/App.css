@@ -4640,6 +4640,27 @@ textarea.support-input {
   margin: 2rem 0;
 }
 
+/* Images in articles/guides. Phone screenshots are tall, so cap the height and
+   center them; wide diagrams scale to the column width. */
+.blog-figure {
+  margin: 1.75rem 0;
+  text-align: center;
+}
+.blog-img {
+  max-width: 100%;
+  max-height: 620px;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+.blog-figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted, #8B949E);
+  font-style: italic;
+}
+
 /* ── Article footer CTA ── */
 .blog-article-cta {
   margin-top: 3rem;

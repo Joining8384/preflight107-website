@@ -8,6 +8,8 @@ import AppBriefingNewPage from './AppBriefingNewPage.tsx';
 import AppBriefingsListPage from './AppBriefingsListPage.tsx';
 import BlogIndex from './BlogIndex.tsx';
 import BlogPost from './BlogPost.tsx';
+import GuidesIndex from './GuidesIndex.tsx';
+import GuidePost from './GuidePost.tsx';
 import ComparePage from './ComparePage.tsx';
 import Dashboard from './Dashboard.tsx';
 import DeleteAccountPage from './DeleteAccountPage.tsx';
@@ -45,6 +47,8 @@ function Router() {
   if (path.startsWith('/support'))    return <SupportPage />;
   if (path.startsWith('/blog/'))      return <BlogPost slug={path.slice(6).replace(/\/$/, '')} />;
   if (path === '/blog' || path === '/blog/') return <BlogIndex />;
+  if (path.startsWith('/help/'))      return <GuidePost slug={path.slice(6).replace(/\/$/, '')} />;
+  if (path === '/help' || path === '/help/') return <GuidesIndex />;
   if (path.startsWith('/verify'))     return <VerifyPage />;
   if (path.startsWith('/compare'))    return <ComparePage />;
   if (path.startsWith('/pilot/'))     return <PilotProfile />;
