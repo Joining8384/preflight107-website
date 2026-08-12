@@ -27,6 +27,10 @@ import batteryCareRaw from './drone-battery-care-lipo-safety.md?raw';
 import airportMythRaw from './flying-drone-near-airport-5-mile-myth.md?raw';
 import privatePropertyRaw from './can-you-fly-a-drone-over-private-property.md?raw';
 import overPeopleRaw from './operations-over-people-drone-part-107.md?raw';
+import recurrentTrainingRaw from './part-107-recurrent-training-renewal.md?raw';
+import coldWeatherRaw from './cold-weather-drone-flying-winter.md?raw';
+import preflightChecklistRaw from './drone-preflight-checklist-part-107.md?raw';
+import travelingRaw from './traveling-with-a-drone-rules.md?raw';
 
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
 
@@ -64,6 +68,10 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'part-107-recurrent-training-renewal',        raw: recurrentTrainingRaw, category: 'Compliance' },
+  { slug: 'drone-preflight-checklist-part-107',         raw: preflightChecklistRaw, category: 'Equipment' },
+  { slug: 'cold-weather-drone-flying-winter',           raw: coldWeatherRaw,     category: 'Weather' },
+  { slug: 'traveling-with-a-drone-rules',               raw: travelingRaw,       category: 'Airspace' },
   { slug: 'can-you-fly-a-drone-over-private-property',  raw: privatePropertyRaw, category: 'Airspace' },
   { slug: 'operations-over-people-drone-part-107',      raw: overPeopleRaw,      category: 'Compliance' },
   { slug: 'flying-drone-near-airport-5-mile-myth',      raw: airportMythRaw,     category: 'Airspace' },
