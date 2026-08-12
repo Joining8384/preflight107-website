@@ -27,14 +27,18 @@ import batteryCareRaw from './drone-battery-care-lipo-safety.md?raw';
 import airportMythRaw from './flying-drone-near-airport-5-mile-myth.md?raw';
 import privatePropertyRaw from './can-you-fly-a-drone-over-private-property.md?raw';
 import overPeopleRaw from './operations-over-people-drone-part-107.md?raw';
+import pricingRaw from './how-much-to-charge-drone-services.md?raw';
+import firstClientRaw from './how-to-get-first-drone-client.md?raw';
+import contractRaw from './drone-service-contract-what-to-include.md?raw';
+import realEstateRaw from './real-estate-drone-photography-workflow.md?raw';
 import recurrentTrainingRaw from './part-107-recurrent-training-renewal.md?raw';
 import coldWeatherRaw from './cold-weather-drone-flying-winter.md?raw';
 import preflightChecklistRaw from './drone-preflight-checklist-part-107.md?raw';
 import travelingRaw from './traveling-with-a-drone-rules.md?raw';
 
-export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment';
+export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment' | 'Business';
 
-export const ALL_CATEGORIES: PostCategory[] = ['Weather', 'Airspace', 'Compliance', 'Equipment'];
+export const ALL_CATEGORIES: PostCategory[] = ['Weather', 'Airspace', 'Compliance', 'Equipment', 'Business'];
 
 export interface Post {
   slug: string;
@@ -68,6 +72,10 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'how-much-to-charge-drone-services',          raw: pricingRaw,         category: 'Business' },
+  { slug: 'how-to-get-first-drone-client',              raw: firstClientRaw,     category: 'Business' },
+  { slug: 'real-estate-drone-photography-workflow',     raw: realEstateRaw,      category: 'Business' },
+  { slug: 'drone-service-contract-what-to-include',     raw: contractRaw,        category: 'Business' },
   { slug: 'part-107-recurrent-training-renewal',        raw: recurrentTrainingRaw, category: 'Compliance' },
   { slug: 'drone-preflight-checklist-part-107',         raw: preflightChecklistRaw, category: 'Equipment' },
   { slug: 'cold-weather-drone-flying-winter',           raw: coldWeatherRaw,     category: 'Weather' },
