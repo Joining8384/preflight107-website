@@ -1,10 +1,68 @@
 import { useMemo, useState } from 'react';
 import { navigate } from './navigate';
 import { guides, GUIDE_SECTIONS, type GuideSection } from './guides/index';
+import { withLang, type Lang } from './lang';
+import LanguageToggle from './LanguageToggle';
 
 type Filter = 'All' | GuideSection;
 
-export default function GuidesIndex() {
+// UI chrome only. Guide titles/excerpts/body stay English (frontmatter fallback).
+// Brand, 'Fly Now Score', 'Mission Briefing(s)' and acronyms stay canonical English.
+const en = {
+  home: '← Home',
+  support: 'Support',
+  eyebrow: 'Help & Guides',
+  title: 'How can we help?',
+  sub: 'Guides for getting the most out of PreFlight 107.',
+  filterAria: 'Filter guides by section',
+  searchPlaceholder: 'Search help…',
+  searchAria: 'Search help guides',
+  empty: 'No guides match your search.',
+  clear: 'Clear search',
+  readGuide: 'Read guide →',
+  all: 'All',
+  sections: {
+    'Getting Started': 'Getting Started',
+    'Using the App': 'Using the App',
+    'Account & Billing': 'Account & Billing',
+  } as Record<GuideSection, string>,
+  tagline: 'Fly safe out there.',
+  privacy: 'Privacy',
+  terms: 'Terms',
+  footerSupport: 'Support',
+};
+
+const es: typeof en = {
+  home: '← Inicio',
+  support: 'Soporte',
+  eyebrow: 'Ayuda y guías',
+  title: '¿Cómo podemos ayudarte?',
+  sub: 'Guías para sacar el máximo provecho de PreFlight 107.',
+  filterAria: 'Filtrar guías por sección',
+  searchPlaceholder: 'Buscar ayuda…',
+  searchAria: 'Buscar en las guías de ayuda',
+  empty: 'Ninguna guía coincide con tu búsqueda.',
+  clear: 'Borrar búsqueda',
+  readGuide: 'Leer guía →',
+  all: 'Todas',
+  sections: {
+    'Getting Started': 'Primeros pasos',
+    'Using the App': 'Uso de la app',
+    'Account & Billing': 'Cuenta y facturación',
+  },
+  tagline: 'Vuela con seguridad.',
+  privacy: 'Privacidad',
+  terms: 'Términos',
+  footerSupport: 'Soporte',
+};
+
+const T = { en, es };
+
+export default function GuidesIndex({ lang = 'en' }: { lang?: Lang }) {
+  const t = T[lang];
+  const to = (path: string) => withLang(path, lang);
+  const sectionLabel = (s: Filter) => (s === 'All' ? t.all : t.sections[s]);
+
   const [filter, setFilter] = useState<Filter>('All');
   const [query, setQuery] = useState('');
 
@@ -31,21 +89,24 @@ export default function GuidesIndex() {
   return (
     <div className="blog-page">
       <header className="blog-header">
-        <button className="blog-nav-btn" onClick={() => navigate('/')}>← Home</button>
+        <button className="blog-nav-btn" onClick={() => navigate(to('/'))}>{t.home}</button>
         <div className="blog-logo-link">
           <span style={{ color: 'var(--accent)' }}>✈</span> PreFlight 107
         </div>
-        <button className="blog-nav-btn" onClick={() => navigate('/support')}>Support</button>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+          <LanguageToggle />
+          <button className="blog-nav-btn" onClick={() => navigate(to('/support'))}>{t.support}</button>
+        </div>
       </header>
 
       <div className="blog-index-hero">
-        <div className="blog-eyebrow">Help &amp; Guides</div>
-        <h1 className="blog-index-title">How can we help?</h1>
-        <p className="blog-index-sub">Guides for getting the most out of PreFlight 107.</p>
+        <div className="blog-eyebrow">{t.eyebrow}</div>
+        <h1 className="blog-index-title">{t.title}</h1>
+        <p className="blog-index-sub">{t.sub}</p>
       </div>
 
       <div className="blog-controls">
-        <div className="blog-filters" role="tablist" aria-label="Filter guides by section">
+        <div className="blog-filters" role="tablist" aria-label={t.filterAria}>
           {(['All', ...GUIDE_SECTIONS] as Filter[]).map(s => {
             const count = countBySection[s] ?? 0;
             if (s !== 'All' && count === 0) return null;
@@ -58,7 +119,7 @@ export default function GuidesIndex() {
                 className={`blog-filter-chip${active ? ' is-active' : ''}`}
                 onClick={() => setFilter(s)}
               >
-                {s}
+                {sectionLabel(s)}
                 <span className="blog-filter-count">{count}</span>
               </button>
             );
@@ -68,10 +129,10 @@ export default function GuidesIndex() {
           <input
             type="search"
             className="blog-search"
-            placeholder="Search help…"
+            placeholder={t.searchPlaceholder}
             value={query}
             onChange={e => setQuery(e.target.value)}
-            aria-label="Search help guides"
+            aria-label={t.searchAria}
           />
         </div>
       </div>
@@ -79,9 +140,9 @@ export default function GuidesIndex() {
       <div className="blog-grid-container">
         {filtered.length === 0 ? (
           <div className="blog-empty">
-            <p>No guides match your search.</p>
+            <p>{t.empty}</p>
             <button className="blog-clear-btn" onClick={() => { setFilter('All'); setQuery(''); }}>
-              Clear search
+              {t.clear}
             </button>
           </div>
         ) : (
@@ -90,17 +151,17 @@ export default function GuidesIndex() {
               <article
                 key={guide.slug}
                 className="blog-card"
-                onClick={() => navigate(`/help/${guide.slug}`)}
+                onClick={() => navigate(to(`/help/${guide.slug}`))}
                 role="link"
                 tabIndex={0}
-                onKeyDown={e => { if (e.key === 'Enter') navigate(`/help/${guide.slug}`); }}
+                onKeyDown={e => { if (e.key === 'Enter') navigate(to(`/help/${guide.slug}`)); }}
               >
                 <div className="blog-card-meta">
-                  <span className="blog-card-category">{guide.section}</span>
+                  <span className="blog-card-category">{t.sections[guide.section]}</span>
                 </div>
                 <h2 className="blog-card-title">{guide.title}</h2>
                 <p className="blog-card-excerpt">{guide.excerpt}</p>
-                <span className="blog-card-cta">Read guide →</span>
+                <span className="blog-card-cta">{t.readGuide}</span>
               </article>
             ))}
           </div>
@@ -112,13 +173,13 @@ export default function GuidesIndex() {
           <span className="blog-footer-logo">
             <span style={{ color: 'var(--accent)' }}>✈</span> PreFlight 107
           </span>
-          <p className="blog-footer-tagline">Fly safe out there.</p>
+          <p className="blog-footer-tagline">{t.tagline}</p>
           <div className="blog-footer-links">
-            <a href="/privacy" onClick={e => { e.preventDefault(); navigate('/privacy'); }}>Privacy</a>
+            <a href={to('/privacy')} onClick={e => { e.preventDefault(); navigate(to('/privacy')); }}>{t.privacy}</a>
             <span>·</span>
-            <a href="/terms" onClick={e => { e.preventDefault(); navigate('/terms'); }}>Terms</a>
+            <a href={to('/terms')} onClick={e => { e.preventDefault(); navigate(to('/terms')); }}>{t.terms}</a>
             <span>·</span>
-            <a href="/support" onClick={e => { e.preventDefault(); navigate('/support'); }}>Support</a>
+            <a href={to('/support')} onClick={e => { e.preventDefault(); navigate(to('/support')); }}>{t.footerSupport}</a>
           </div>
         </div>
       </footer>

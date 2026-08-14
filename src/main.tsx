@@ -57,16 +57,16 @@ function Router() {
   if (p.startsWith('/privacy'))    return <PrivacyPage />;
   if (p.startsWith('/delete-account')) return <DeleteAccountPage />;
   if (p.startsWith('/launch/'))    return <LaunchSharePage token={p.slice(8)} />;
-  if (p.startsWith('/support'))    return <SupportPage />;
+  if (p.startsWith('/support'))    return <SupportPage lang={lang} />;
   if (p.startsWith('/blog/'))      return <BlogPost slug={p.slice(6).replace(/\/$/, '')} />;
   if (p === '/blog' || p === '/blog/') return <BlogIndex />;
-  if (p.startsWith('/help/'))      return <GuidePost slug={p.slice(6).replace(/\/$/, '')} />;
-  if (p === '/help' || p === '/help/') return <GuidesIndex />;
+  if (p.startsWith('/help/'))      return <GuidePost slug={p.slice(6).replace(/\/$/, '')} lang={lang} />;
+  if (p === '/help' || p === '/help/') return <GuidesIndex lang={lang} />;
   if (p.startsWith('/verify'))     return <VerifyPage />;
-  if (p.startsWith('/compare'))    return <ComparePage />;
+  if (p.startsWith('/compare'))    return <ComparePage lang={lang} />;
   if (p.startsWith('/pilot/'))     return <PilotProfile />;
-  if (p.startsWith('/flyable/'))   return <FlyablePage citySlug={p.slice('/flyable/'.length).replace(/\/$/, '')} />;
-  if (p === '/flyable' || p === '/flyable/') return <FlyablePage />;
+  if (p.startsWith('/flyable/'))   return <FlyablePage citySlug={p.slice('/flyable/'.length).replace(/\/$/, '')} lang={lang} />;
+  if (p === '/flyable' || p === '/flyable/') return <FlyablePage lang={lang} />;
   if (p === '/app/briefings/new')  return <AppBriefingNewPage />;
   if (p.startsWith('/app/briefings/')) {
     const id = p.slice('/app/briefings/'.length);
