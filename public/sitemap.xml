@@ -1,243 +1,1120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://preflight107.com/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/" />
   </url>
   <url>
     <loc>https://preflight107.com/blog</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help" />
   </url>
   <url>
     <loc>https://preflight107.com/compare</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/compare" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/compare" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/compare" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/compare</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/compare" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/compare" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/compare" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/support</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/support" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/support" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/support" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/support</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/support" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/support" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/support" />
   </url>
   <url>
     <loc>https://preflight107.com/verify</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://preflight107.com/support</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://preflight107.com/privacy</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://preflight107.com/terms</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/real-estate-drone-photography-workflow</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/real-estate-drone-photography-workflow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/real-estate-drone-photography-workflow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/real-estate-drone-photography-workflow" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/real-estate-drone-photography-workflow</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/real-estate-drone-photography-workflow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/real-estate-drone-photography-workflow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/real-estate-drone-photography-workflow" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/how-to-get-first-drone-client</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-get-first-drone-client" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-get-first-drone-client" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-get-first-drone-client" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-to-get-first-drone-client</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-get-first-drone-client" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-get-first-drone-client" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-get-first-drone-client" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/how-much-to-charge-drone-services</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-much-to-charge-drone-services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-much-to-charge-drone-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-much-to-charge-drone-services" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-much-to-charge-drone-services</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-much-to-charge-drone-services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-much-to-charge-drone-services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-much-to-charge-drone-services" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/drone-service-contract-what-to-include</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-service-contract-what-to-include" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-service-contract-what-to-include" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-service-contract-what-to-include" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/drone-service-contract-what-to-include</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-service-contract-what-to-include" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-service-contract-what-to-include" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-service-contract-what-to-include" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/traveling-with-a-drone-rules</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/traveling-with-a-drone-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/traveling-with-a-drone-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/traveling-with-a-drone-rules" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/traveling-with-a-drone-rules</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/traveling-with-a-drone-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/traveling-with-a-drone-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/traveling-with-a-drone-rules" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/part-107-recurrent-training-renewal</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/part-107-recurrent-training-renewal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/part-107-recurrent-training-renewal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/part-107-recurrent-training-renewal" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/part-107-recurrent-training-renewal</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/part-107-recurrent-training-renewal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/part-107-recurrent-training-renewal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/part-107-recurrent-training-renewal" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/operations-over-people-drone-part-107</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/operations-over-people-drone-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/operations-over-people-drone-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/operations-over-people-drone-part-107" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/operations-over-people-drone-part-107</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/operations-over-people-drone-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/operations-over-people-drone-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/operations-over-people-drone-part-107" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/drone-preflight-checklist-part-107</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-preflight-checklist-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-preflight-checklist-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-preflight-checklist-part-107" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/drone-preflight-checklist-part-107</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-preflight-checklist-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-preflight-checklist-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-preflight-checklist-part-107" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/cold-weather-drone-flying-winter</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/cold-weather-drone-flying-winter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/cold-weather-drone-flying-winter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/cold-weather-drone-flying-winter" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/cold-weather-drone-flying-winter</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/cold-weather-drone-flying-winter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/cold-weather-drone-flying-winter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/cold-weather-drone-flying-winter" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/can-you-fly-a-drone-over-private-property</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/can-you-fly-a-drone-over-private-property" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/can-you-fly-a-drone-over-private-property" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/can-you-fly-a-drone-over-private-property" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/can-you-fly-a-drone-over-private-property</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/can-you-fly-a-drone-over-private-property" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/can-you-fly-a-drone-over-private-property" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/can-you-fly-a-drone-over-private-property" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/flying-drone-near-airport-5-mile-myth</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/flying-drone-near-airport-5-mile-myth" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/flying-drone-near-airport-5-mile-myth" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/flying-drone-near-airport-5-mile-myth" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/flying-drone-near-airport-5-mile-myth</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/flying-drone-near-airport-5-mile-myth" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/flying-drone-near-airport-5-mile-myth" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/flying-drone-near-airport-5-mile-myth" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/flying-near-thunderstorms-drone-pilots</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/flying-near-thunderstorms-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/flying-near-thunderstorms-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/flying-near-thunderstorms-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/flying-near-thunderstorms-drone-pilots</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/flying-near-thunderstorms-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/flying-near-thunderstorms-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/flying-near-thunderstorms-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/drone-battery-care-lipo-safety</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-battery-care-lipo-safety" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-battery-care-lipo-safety" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-battery-care-lipo-safety" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/drone-battery-care-lipo-safety</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-battery-care-lipo-safety" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-battery-care-lipo-safety" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-battery-care-lipo-safety" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/part-107-weather-minimums-drone-pilots</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/part-107-weather-minimums-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/part-107-weather-minimums-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/part-107-weather-minimums-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/part-107-weather-minimums-drone-pilots</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/part-107-weather-minimums-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/part-107-weather-minimums-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/part-107-weather-minimums-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/drone-insurance-part-107-pilots</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-insurance-part-107-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-insurance-part-107-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-insurance-part-107-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/drone-insurance-part-107-pilots</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-insurance-part-107-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-insurance-part-107-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-insurance-part-107-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/faa-deadlines-drone-pilots</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-deadlines-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-deadlines-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-deadlines-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/faa-deadlines-drone-pilots</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-deadlines-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-deadlines-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-deadlines-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/blog/drone-go-no-go-decision</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-go-no-go-decision" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-go-no-go-decision" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-go-no-go-decision" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/drone-go-no-go-decision</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/drone-go-no-go-decision" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/drone-go-no-go-decision" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/drone-go-no-go-decision" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/density-altitude-drone-performance</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/density-altitude-drone-performance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/density-altitude-drone-performance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/density-altitude-drone-performance" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/density-altitude-drone-performance</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/density-altitude-drone-performance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/density-altitude-drone-performance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/density-altitude-drone-performance" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/where-can-you-fly-a-drone</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/where-can-you-fly-a-drone" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/where-can-you-fly-a-drone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/where-can-you-fly-a-drone" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/where-can-you-fly-a-drone</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/where-can-you-fly-a-drone" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/where-can-you-fly-a-drone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/where-can-you-fly-a-drone" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/can-you-fly-a-drone-at-night</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/can-you-fly-a-drone-at-night" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/can-you-fly-a-drone-at-night" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/can-you-fly-a-drone-at-night" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/can-you-fly-a-drone-at-night</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/can-you-fly-a-drone-at-night" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/can-you-fly-a-drone-at-night" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/can-you-fly-a-drone-at-night" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/controlled-vs-uncontrolled-airspace-drone-pilots</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/controlled-vs-uncontrolled-airspace-drone-pilots</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/controlled-vs-uncontrolled-airspace-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/what-is-remote-id-drone-pilots</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-remote-id-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-remote-id-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-remote-id-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/what-is-remote-id-drone-pilots</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-remote-id-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-remote-id-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-remote-id-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/do-you-need-a-part-107-license</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/do-you-need-a-part-107-license" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/do-you-need-a-part-107-license" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/do-you-need-a-part-107-license" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/do-you-need-a-part-107-license</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/do-you-need-a-part-107-license" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/do-you-need-a-part-107-license" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/do-you-need-a-part-107-license" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/what-is-a-tfr-drone-pilots</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-a-tfr-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-a-tfr-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-a-tfr-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/what-is-a-tfr-drone-pilots</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-a-tfr-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-a-tfr-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-a-tfr-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/how-much-wind-can-a-drone-fly-in</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-much-wind-can-a-drone-fly-in" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-much-wind-can-a-drone-fly-in" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-much-wind-can-a-drone-fly-in" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-much-wind-can-a-drone-fly-in</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-much-wind-can-a-drone-fly-in" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-much-wind-can-a-drone-fly-in" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-much-wind-can-a-drone-fly-in" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/faa-evidence-packet-drone-pilots</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-evidence-packet-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-evidence-packet-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-evidence-packet-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/faa-evidence-packet-drone-pilots</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-evidence-packet-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-evidence-packet-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-evidence-packet-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/white-label-client-mode-drone-pilots</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/white-label-client-mode-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/white-label-client-mode-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/white-label-client-mode-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/white-label-client-mode-drone-pilots</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/white-label-client-mode-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/white-label-client-mode-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/white-label-client-mode-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/verifiable-credentials-drone-pilots</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/verifiable-credentials-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/verifiable-credentials-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/verifiable-credentials-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/verifiable-credentials-drone-pilots</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/verifiable-credentials-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/verifiable-credentials-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/verifiable-credentials-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/what-is-a-mission-briefing-drone-pilots</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-a-mission-briefing-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-a-mission-briefing-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-a-mission-briefing-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/what-is-a-mission-briefing-drone-pilots</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-a-mission-briefing-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-a-mission-briefing-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-a-mission-briefing-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/how-to-read-a-taf-drone-pilot</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-taf-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-taf-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-taf-drone-pilot" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-to-read-a-taf-drone-pilot</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-taf-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-taf-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-taf-drone-pilot" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/faa-inquiry-prepared-drone-pilot</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-inquiry-prepared-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-inquiry-prepared-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-inquiry-prepared-drone-pilot" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/faa-inquiry-prepared-drone-pilot</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/faa-inquiry-prepared-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/faa-inquiry-prepared-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/faa-inquiry-prepared-drone-pilot" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/aviation-hazards-explained-drone-pilots</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/aviation-hazards-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/aviation-hazards-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/aviation-hazards-explained-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/aviation-hazards-explained-drone-pilots</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/aviation-hazards-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/aviation-hazards-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/aviation-hazards-explained-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/how-to-read-a-sectional-chart-drone-pilot</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-sectional-chart-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-sectional-chart-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-sectional-chart-drone-pilot" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-to-read-a-sectional-chart-drone-pilot</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-sectional-chart-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-sectional-chart-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-sectional-chart-drone-pilot" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/what-is-laanc-drone-pilots</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-laanc-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-laanc-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-laanc-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/what-is-laanc-drone-pilots</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/what-is-laanc-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/what-is-laanc-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/what-is-laanc-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/how-to-log-drone-flights-part-107</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-log-drone-flights-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-log-drone-flights-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-log-drone-flights-part-107" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-to-log-drone-flights-part-107</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-log-drone-flights-part-107" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-log-drone-flights-part-107" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-log-drone-flights-part-107" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/ads-b-explained-drone-pilots</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/ads-b-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/ads-b-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/ads-b-explained-drone-pilots" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/ads-b-explained-drone-pilots</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/ads-b-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/ads-b-explained-drone-pilots" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/ads-b-explained-drone-pilots" />
   </url>
   <url>
     <loc>https://preflight107.com/blog/how-to-read-a-metar-drone-pilot</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-metar-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-metar-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-metar-drone-pilot" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/blog/how-to-read-a-metar-drone-pilot</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/blog/how-to-read-a-metar-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/blog/how-to-read-a-metar-drone-pilot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/blog/how-to-read-a-metar-drone-pilot" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/understanding-fly-now-score</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/understanding-fly-now-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/understanding-fly-now-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/understanding-fly-now-score" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/understanding-fly-now-score</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/understanding-fly-now-score" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/understanding-fly-now-score" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/understanding-fly-now-score" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/subscription-and-account</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/subscription-and-account" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/subscription-and-account" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/subscription-and-account" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/subscription-and-account</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/subscription-and-account" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/subscription-and-account" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/subscription-and-account" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/recurring-briefings</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/recurring-briefings" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/recurring-briefings" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/recurring-briefings" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/recurring-briefings</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/recurring-briefings" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/recurring-briefings" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/recurring-briefings" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/live-observer-link</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/live-observer-link" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/live-observer-link" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/live-observer-link" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/live-observer-link</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/live-observer-link" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/live-observer-link" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/live-observer-link" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/getting-started</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/getting-started" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/getting-started</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/getting-started" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/create-mission-briefing-client-bundle</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/create-mission-briefing-client-bundle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/create-mission-briefing-client-bundle</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/create-mission-briefing-client-bundle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/grand-rapids-mi</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/grand-rapids-mi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/grand-rapids-mi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/grand-rapids-mi" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/grand-rapids-mi</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/grand-rapids-mi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/grand-rapids-mi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/grand-rapids-mi" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/austin-tx</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/austin-tx" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/austin-tx" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/austin-tx" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/austin-tx</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/austin-tx" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/austin-tx" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/austin-tx" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/phoenix-az</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/phoenix-az" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/phoenix-az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/phoenix-az" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/phoenix-az</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/phoenix-az" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/phoenix-az" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/phoenix-az" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/denver-co</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/denver-co" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/denver-co" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/denver-co" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/denver-co</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/denver-co" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/denver-co" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/denver-co" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/orlando-fl</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/orlando-fl" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/orlando-fl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/orlando-fl" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/orlando-fl</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/orlando-fl" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/orlando-fl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/orlando-fl" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/nashville-tn</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/nashville-tn" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/nashville-tn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/nashville-tn" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/nashville-tn</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/nashville-tn" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/nashville-tn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/nashville-tn" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/las-vegas-nv</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/las-vegas-nv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/las-vegas-nv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/las-vegas-nv" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/las-vegas-nv</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/las-vegas-nv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/las-vegas-nv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/las-vegas-nv" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/san-diego-ca</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/san-diego-ca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/san-diego-ca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/san-diego-ca" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/san-diego-ca</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/san-diego-ca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/san-diego-ca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/san-diego-ca" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/charlotte-nc</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/charlotte-nc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/charlotte-nc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/charlotte-nc" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/charlotte-nc</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/charlotte-nc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/charlotte-nc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/charlotte-nc" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/portland-or</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/portland-or" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/portland-or" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/portland-or" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/portland-or</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/portland-or" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/portland-or" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/portland-or" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/kansas-city-mo</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/kansas-city-mo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/kansas-city-mo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/kansas-city-mo" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/kansas-city-mo</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/kansas-city-mo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/kansas-city-mo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/kansas-city-mo" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/raleigh-nc</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/raleigh-nc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/raleigh-nc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/raleigh-nc" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/flyable/raleigh-nc</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/flyable/raleigh-nc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/flyable/raleigh-nc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/flyable/raleigh-nc" />
   </url>
 </urlset>
