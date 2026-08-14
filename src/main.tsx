@@ -58,8 +58,8 @@ function Router() {
   if (p.startsWith('/delete-account')) return <DeleteAccountPage />;
   if (p.startsWith('/launch/'))    return <LaunchSharePage token={p.slice(8)} />;
   if (p.startsWith('/support'))    return <SupportPage lang={lang} />;
-  if (p.startsWith('/blog/'))      return <BlogPost slug={p.slice(6).replace(/\/$/, '')} />;
-  if (p === '/blog' || p === '/blog/') return <BlogIndex />;
+  if (p.startsWith('/blog/'))      return <BlogPost slug={p.slice(6).replace(/\/$/, '')} lang={lang} />;
+  if (p === '/blog' || p === '/blog/') return <BlogIndex lang={lang} />;
   if (p.startsWith('/help/'))      return <GuidePost slug={p.slice(6).replace(/\/$/, '')} lang={lang} />;
   if (p === '/help' || p === '/help/') return <GuidesIndex lang={lang} />;
   if (p.startsWith('/verify'))     return <VerifyPage />;

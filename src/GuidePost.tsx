@@ -51,7 +51,7 @@ const T = { en, es };
 export default function GuidePost({ slug, lang = 'en' }: GuidePostProps) {
   const t = T[lang];
   const to = (path: string) => withLang(path, lang);
-  const guide = getGuide(slug);
+  const guide = getGuide(slug, lang);
 
   if (!guide) {
     return (

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { navigate } from './navigate';
-import { guides, GUIDE_SECTIONS, type GuideSection } from './guides/index';
+import { getGuides, GUIDE_SECTIONS, type GuideSection } from './guides/index';
 import { withLang, type Lang } from './lang';
 import LanguageToggle from './LanguageToggle';
 
@@ -63,12 +63,13 @@ export default function GuidesIndex({ lang = 'en' }: { lang?: Lang }) {
   const to = (path: string) => withLang(path, lang);
   const sectionLabel = (s: Filter) => (s === 'All' ? t.all : t.sections[s]);
 
+  const guideSet = getGuides(lang);
   const [filter, setFilter] = useState<Filter>('All');
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return guides.filter(g => {
+    return guideSet.filter(g => {
       if (filter !== 'All' && g.section !== filter) return false;
       if (!q) return true;
       return (
@@ -77,14 +78,14 @@ export default function GuidesIndex({ lang = 'en' }: { lang?: Lang }) {
         g.content.toLowerCase().includes(q)
       );
     });
-  }, [filter, query]);
+  }, [filter, query, guideSet]);
 
   const countBySection = useMemo(() => {
-    const counts: Record<string, number> = { All: guides.length };
+    const counts: Record<string, number> = { All: guideSet.length };
     for (const s of GUIDE_SECTIONS) counts[s] = 0;
-    for (const g of guides) counts[g.section] = (counts[g.section] ?? 0) + 1;
+    for (const g of guideSet) counts[g.section] = (counts[g.section] ?? 0) + 1;
     return counts;
-  }, []);
+  }, [guideSet]);
 
   return (
     <div className="blog-page">

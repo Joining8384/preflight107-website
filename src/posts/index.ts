@@ -36,6 +36,8 @@ import coldWeatherRaw from './cold-weather-drone-flying-winter.md?raw';
 import preflightChecklistRaw from './drone-preflight-checklist-part-107.md?raw';
 import travelingRaw from './traveling-with-a-drone-rules.md?raw';
 
+import type { Lang } from '../lang';
+
 export type PostCategory = 'Weather' | 'Airspace' | 'Compliance' | 'Equipment' | 'Business';
 
 export const ALL_CATEGORIES: PostCategory[] = ['Weather', 'Airspace', 'Compliance', 'Equipment', 'Business'];
@@ -111,7 +113,15 @@ const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
   { slug: 'how-to-read-a-metar-drone-pilot',           raw: metarRaw,           category: 'Weather' },
 ];
 
-export const posts: Post[] = rawPosts.map(({ slug, raw, category }) => {
+// Spanish translations live in ./es/<slug>.md (same slug). Pulled in via glob so
+// new posts' translations are picked up automatically — no per-file import.
+const esRawModules = import.meta.glob('./es/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
+function buildPost(slug: string, raw: string, category: PostCategory): Post {
   const { meta, content } = parseFrontmatter(raw);
   return {
     slug,
@@ -122,8 +132,20 @@ export const posts: Post[] = rawPosts.map(({ slug, raw, category }) => {
     category,
     content,
   };
-});
+}
 
-export function getPost(slug: string): Post | undefined {
-  return posts.find(p => p.slug === slug);
+export const posts: Post[] = rawPosts.map(({ slug, raw, category }) => buildPost(slug, raw, category));
+
+// Spanish set — falls back to the English raw for any slug not yet translated,
+// so a missing translation degrades to English instead of a blank page.
+const postsEs: Post[] = rawPosts.map(({ slug, raw, category }) =>
+  buildPost(slug, esRawModules[`./es/${slug}.md`] ?? raw, category),
+);
+
+export function getPosts(lang: Lang = 'en'): Post[] {
+  return lang === 'es' ? postsEs : posts;
+}
+
+export function getPost(slug: string, lang: Lang = 'en'): Post | undefined {
+  return getPosts(lang).find(p => p.slug === slug) ?? posts.find(p => p.slug === slug);
 }

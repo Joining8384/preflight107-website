@@ -9,6 +9,8 @@ import recurringRaw from './recurring-briefings.md?raw';
 import liveObserverRaw from './live-observer-link.md?raw';
 import accountRaw from './subscription-and-account.md?raw';
 
+import type { Lang } from '../lang';
+
 export type GuideSection = 'Getting Started' | 'Using the App' | 'Account & Billing';
 
 export const GUIDE_SECTIONS: GuideSection[] = ['Getting Started', 'Using the App', 'Account & Billing'];
@@ -45,7 +47,14 @@ const rawGuides: Array<{ slug: string; raw: string; section: GuideSection }> = [
   { slug: 'subscription-and-account',               raw: accountRaw,         section: 'Account & Billing' },
 ];
 
-export const guides: Guide[] = rawGuides.map(({ slug, raw, section }) => {
+// Spanish translations live in ./es/<slug>.md (same slug), pulled in via glob.
+const esRawModules = import.meta.glob('./es/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
+function buildGuide(slug: string, raw: string, section: GuideSection): Guide {
   const { meta, content } = parseFrontmatter(raw);
   return {
     slug,
@@ -54,17 +63,28 @@ export const guides: Guide[] = rawGuides.map(({ slug, raw, section }) => {
     section,
     content,
   };
-});
-
-export function getGuide(slug: string): Guide | undefined {
-  return guides.find(g => g.slug === slug);
 }
 
-// Lightweight full-text search over title + excerpt + content.
-export function searchGuides(query: string): Guide[] {
+export const guides: Guide[] = rawGuides.map(({ slug, raw, section }) => buildGuide(slug, raw, section));
+
+const guidesEs: Guide[] = rawGuides.map(({ slug, raw, section }) =>
+  buildGuide(slug, esRawModules[`./es/${slug}.md`] ?? raw, section),
+);
+
+export function getGuides(lang: Lang = 'en'): Guide[] {
+  return lang === 'es' ? guidesEs : guides;
+}
+
+export function getGuide(slug: string, lang: Lang = 'en'): Guide | undefined {
+  return getGuides(lang).find(g => g.slug === slug) ?? guides.find(g => g.slug === slug);
+}
+
+// Lightweight full-text search over title + excerpt + content, per language.
+export function searchGuides(query: string, lang: Lang = 'en'): Guide[] {
+  const set = getGuides(lang);
   const q = query.trim().toLowerCase();
-  if (!q) return guides;
-  return guides.filter(g =>
+  if (!q) return set;
+  return set.filter(g =>
     g.title.toLowerCase().includes(q) ||
     g.excerpt.toLowerCase().includes(q) ||
     g.content.toLowerCase().includes(q)
