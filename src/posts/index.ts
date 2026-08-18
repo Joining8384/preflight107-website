@@ -35,6 +35,8 @@ import recurrentTrainingRaw from './part-107-recurrent-training-renewal.md?raw';
 import coldWeatherRaw from './cold-weather-drone-flying-winter.md?raw';
 import preflightChecklistRaw from './drone-preflight-checklist-part-107.md?raw';
 import travelingRaw from './traveling-with-a-drone-rules.md?raw';
+import rainRaw from './can-you-fly-a-drone-in-the-rain.md?raw';
+import sub250Raw from './do-sub-250g-drones-need-faa-registration.md?raw';
 
 import type { Lang } from '../lang';
 
@@ -74,6 +76,8 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'can-you-fly-a-drone-in-the-rain',           raw: rainRaw,   category: 'Weather' },
+  { slug: 'do-sub-250g-drones-need-faa-registration',   raw: sub250Raw, category: 'Compliance' },
   { slug: 'how-much-to-charge-drone-services',          raw: pricingRaw,         category: 'Business' },
   { slug: 'how-to-get-first-drone-client',              raw: firstClientRaw,     category: 'Business' },
   { slug: 'real-estate-drone-photography-workflow',     raw: realEstateRaw,      category: 'Business' },
