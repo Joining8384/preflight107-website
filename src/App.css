@@ -103,7 +103,7 @@ select:focus-visible,
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -126,14 +126,18 @@ select:focus-visible,
 
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 2rem;
+  gap: 1.4rem;
 }
 
 .nav-links a {
   font-size: 0.9rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
+  /* Multi-word labels ("Download Free", "Flight Logs", "Can I Fly?") must not
+     break across lines — a wrapped label bursts out of the .nav-cta pill. */
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -482,6 +486,11 @@ main {
 
 /* ── Nav CTA pill ── */
 .nav-cta {
+  /* inline-block so the pill is a single box around the label. As a plain
+     inline element the border/background fragment across line boxes, which
+     is what made the button render detached from its text. */
+  display: inline-block;
+  white-space: nowrap;
   padding: 0.4rem 1rem;
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.3);
@@ -493,6 +502,16 @@ main {
 .nav-cta:hover {
   background: rgba(16, 185, 129, 0.22) !important;
   color: var(--accent) !important;
+}
+
+/* Desktop nav is dense: 8 links + Download CTA + Log In + the EN|ES toggle.
+   Between the hamburger breakpoint and full width, tighten spacing so nothing
+   overflows or wraps instead of letting the CTA burst its pill. */
+@media (min-width: 769px) and (max-width: 1150px) {
+  .nav-container { padding: 0 1rem; }
+  .nav-links { gap: 0.8rem; }
+  .nav-links a { font-size: 0.82rem; }
+  .nav-cta { padding: 0.35rem 0.7rem; }
 }
 
 /* ── Section shared ── */
