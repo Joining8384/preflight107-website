@@ -39,6 +39,7 @@ import rainRaw from './can-you-fly-a-drone-in-the-rain.md?raw';
 import sub250Raw from './do-sub-250g-drones-need-faa-registration.md?raw';
 import how400Raw from './how-high-can-you-fly-a-drone-400-foot-rule.md?raw';
 import registerRaw from './how-to-register-your-drone-with-the-faa.md?raw';
+import crashReportRaw from './do-you-have-to-report-a-drone-crash-to-the-faa.md?raw';
 
 import type { Lang } from '../lang';
 
@@ -78,6 +79,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'do-you-have-to-report-a-drone-crash-to-the-faa', raw: crashReportRaw, category: 'Compliance' },
   { slug: 'how-high-can-you-fly-a-drone-400-foot-rule',  raw: how400Raw,   category: 'Airspace' },
   { slug: 'how-to-register-your-drone-with-the-faa',     raw: registerRaw, category: 'Compliance' },
   { slug: 'can-you-fly-a-drone-in-the-rain',           raw: rainRaw,   category: 'Weather' },
