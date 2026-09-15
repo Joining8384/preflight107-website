@@ -25,7 +25,8 @@ export function renderInline(text: string): ReactNode {
 }
 
 // ── Block markdown renderer ───────────────────────────────────────────────────
-// Handles headings, code fences, lists, horizontal rules, and paragraphs.
+// Handles headings, code fences, lists (bulleted + numbered), tables, horizontal
+// rules, and paragraphs.
 // Shared by the blog and the help/guides section so both render identically.
 export function renderMarkdown(content: string): ReactNode[] {
   const lines = content.split('\n');
@@ -82,6 +83,53 @@ export function renderMarkdown(content: string): ReactNode[] {
       i++; continue;
     }
 
+    // Table — a header row, a |---| separator row, then body rows
+    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\s*\|?\s*:?-{3,}/.test(lines[i + 1])) {
+      const cells = (row: string) => row.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+      const header = cells(line);
+      i += 2;
+      const rows: string[][] = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        rows.push(cells(lines[i]));
+        i++;
+      }
+      blocks.push(
+        <div key={key++} className="blog-table-wrap">
+          <table className="blog-table">
+            <thead><tr>{header.map((h, c) => <th key={c}>{renderInline(h)}</th>)}</tr></thead>
+            <tbody>
+              {rows.map((r, ri) => (
+                <tr key={ri}>{r.map((cell, c) => <td key={c}>{renderInline(cell)}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      continue;
+    }
+
+    // Ordered list — "1. step" lines, with optional indented "- " sub-bullets
+    if (/^\d+\. /.test(line)) {
+      const items: ReactNode[] = [];
+      while (i < lines.length && /^\d+\. /.test(lines[i])) {
+        const text = lines[i].replace(/^\d+\. /, '');
+        i++;
+        const subs: ReactNode[] = [];
+        while (i < lines.length && /^\s+- /.test(lines[i])) {
+          subs.push(<li key={subs.length}>{renderInline(lines[i].replace(/^\s+- /, ''))}</li>);
+          i++;
+        }
+        items.push(
+          <li key={items.length}>
+            {renderInline(text)}
+            {subs.length > 0 && <ul className="blog-ul blog-ul-nested">{subs}</ul>}
+          </li>
+        );
+      }
+      blocks.push(<ol key={key++} className="blog-ol">{items}</ol>);
+      continue;
+    }
+
     // Unordered list — collect consecutive list items
     if (line.startsWith('- ')) {
       const items: ReactNode[] = [];
@@ -103,6 +151,8 @@ export function renderMarkdown(content: string): ReactNode[] {
       lines[i].trim() !== '' &&
       !lines[i].startsWith('#') &&
       !lines[i].startsWith('- ') &&
+      !/^\d+\. /.test(lines[i]) &&
+      !(lines[i].trim().startsWith('|') && i + 1 < lines.length && /^\s*\|?\s*:?-{3,}/.test(lines[i + 1])) &&
       !lines[i].startsWith('```') &&
       lines[i].trim() !== '---'
     ) {

@@ -7,6 +7,8 @@ import flyNowScoreRaw from './understanding-fly-now-score.md?raw';
 import missionBriefingRaw from './create-mission-briefing-client-bundle.md?raw';
 import recurringRaw from './recurring-briefings.md?raw';
 import liveObserverRaw from './live-observer-link.md?raw';
+import siteWatchRaw from './site-watch.md?raw';
+import askSiriRaw from './ask-siri.md?raw';
 import accountRaw from './subscription-and-account.md?raw';
 
 import type { Lang } from '../lang';
@@ -41,6 +43,8 @@ function parseFrontmatter(raw: string): { meta: Record<string, string>; content:
 const rawGuides: Array<{ slug: string; raw: string; section: GuideSection }> = [
   { slug: 'getting-started',                        raw: gettingStartedRaw,  section: 'Getting Started' },
   { slug: 'understanding-fly-now-score',            raw: flyNowScoreRaw,     section: 'Using the App' },
+  { slug: 'site-watch',                             raw: siteWatchRaw,       section: 'Using the App' },
+  { slug: 'ask-siri',                               raw: askSiriRaw,         section: 'Using the App' },
   { slug: 'create-mission-briefing-client-bundle',  raw: missionBriefingRaw, section: 'Using the App' },
   { slug: 'recurring-briefings',                    raw: recurringRaw,       section: 'Using the App' },
   { slug: 'live-observer-link',                     raw: liveObserverRaw,    section: 'Using the App' },
