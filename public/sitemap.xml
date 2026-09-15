@@ -938,6 +938,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/subscription-and-account" />
   </url>
   <url>
+    <loc>https://preflight107.com/help/site-watch</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/site-watch" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/site-watch" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/site-watch" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/site-watch</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/site-watch" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/site-watch" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/site-watch" />
+  </url>
+  <url>
     <loc>https://preflight107.com/help/recurring-briefings</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -1008,6 +1026,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
     <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/create-mission-briefing-client-bundle" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/create-mission-briefing-client-bundle" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/help/ask-siri</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/ask-siri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/ask-siri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/ask-siri" />
+  </url>
+  <url>
+    <loc>https://preflight107.com/es/help/ask-siri</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://preflight107.com/help/ask-siri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://preflight107.com/es/help/ask-siri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://preflight107.com/help/ask-siri" />
   </url>
   <url>
     <loc>https://preflight107.com/flyable/grand-rapids-mi</loc>
