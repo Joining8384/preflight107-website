@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <title>Verify a Mission Briefing — PreFlight 107</title>
+    <meta name="description" content="Confirm that a PreFlight 107 Mission Briefing PDF is authentic and unmodified. Paste the SHA-256 hash from the PDF footer." />
+    <!--
+      Static per-route shim, NOT the SPA entry point.
+      GitHub Pages serves this file for the exact /verify path (and /verify/),
+      so iMessage / WhatsApp / Discord / Twitter / LinkedIn crawlers reading
+      the link preview see the verify-specific OG tags below instead of the
+      homepage tags.
+      Real browsers visiting /verify get redirected to / with /verify encoded
+      in the query — the SPA restores the path and renders VerifyPage. The
+      bundled JS is never loaded directly from here because Vite only injects
+      bundle URLs into the main index.html.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PreFlight 107" />
+    <meta property="og:url" content="https://preflight107.com/verify" />
+    <meta property="og:title" content="Verify a Mission Briefing — PreFlight 107" />
+    <meta property="og:description" content="Confirm a PreFlight 107 Mission Briefing PDF is authentic and unmodified. Paste the SHA-256 hash from the PDF footer." />
+    <meta property="og:image" content="https://preflight107.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Verify a Mission Briefing — PreFlight 107" />
+    <meta name="twitter:description" content="Confirm a PreFlight 107 Mission Briefing PDF is authentic and unmodified. Paste the SHA-256 hash from the PDF footer." />
+    <meta name="twitter:image" content="https://preflight107.com/og-image.png" />
+    <script>
+      // Same SPA-redirect pattern as 404.html. Encodes the current path
+      // into the query string, redirects to root, which then restores the
+      // real URL via window.history.replaceState before the SPA mounts.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host + '/' +
+        '?p=' + encodeURIComponent(l.pathname + l.search) +
+        (l.hash || '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
