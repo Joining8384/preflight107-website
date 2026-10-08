@@ -42,6 +42,7 @@ import registerRaw from './how-to-register-your-drone-with-the-faa.md?raw';
 import crashReportRaw from './do-you-have-to-report-a-drone-crash-to-the-faa.md?raw';
 import flyawayRaw from './drone-flyaway-what-to-do.md?raw';
 import bestTimeRaw from './best-time-of-day-to-fly-a-drone.md?raw';
+import vlosRaw from './how-far-can-you-fly-a-drone-visual-line-of-sight.md?raw';
 
 import type { Lang } from '../lang';
 
@@ -81,6 +82,7 @@ export function formatDate(dateStr: string): string {
 
 // Newest posts first — order here drives blog index display order
 const rawPosts: Array<{ slug: string; raw: string; category: PostCategory }> = [
+  { slug: 'how-far-can-you-fly-a-drone-visual-line-of-sight', raw: vlosRaw, category: 'Compliance' },
   { slug: 'best-time-of-day-to-fly-a-drone', raw: bestTimeRaw, category: 'Weather' },
   { slug: 'drone-flyaway-what-to-do', raw: flyawayRaw, category: 'Equipment' },
   { slug: 'do-you-have-to-report-a-drone-crash-to-the-faa', raw: crashReportRaw, category: 'Compliance' },

@@ -1,17 +1,31 @@
 import type { ReactNode } from 'react';
+import { navigate } from './navigate';
 
 // ── Inline markdown renderer ──────────────────────────────────────────────────
-// Handles **bold**, *italic*, and `inline code` within a single line of text.
+// Handles **bold**, *italic*, `inline code`, and [links](/url) within a single
+// line of text. Links are matched first so their label text isn't consumed by
+// the emphasis patterns.
 export function renderInline(text: string): ReactNode {
   const parts: ReactNode[] = [];
-  const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g;
+  const regex = /(\[[^\]]+\]\([^)\s]+\)|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g;
   let last = 0;
   let match: RegExpExecArray | null;
   let key = 0;
   while ((match = regex.exec(text)) !== null) {
     if (match.index > last) parts.push(text.slice(last, match.index));
     const token = match[0];
-    if (token.startsWith('**')) {
+    const link = token.startsWith('[') ? token.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/) : null;
+    if (link) {
+      const [, label, href] = link;
+      // Same-site links stay in the SPA; anything external opens in a new tab.
+      parts.push(
+        href.startsWith('/')
+          ? <a key={key++} className="blog-link" href={href}
+               onClick={(e) => { e.preventDefault(); navigate(href); }}>{label}</a>
+          : <a key={key++} className="blog-link" href={href}
+               target="_blank" rel="noopener noreferrer">{label}</a>
+      );
+    } else if (token.startsWith('**')) {
       parts.push(<strong key={key++}>{token.slice(2, -2)}</strong>);
     } else if (token.startsWith('*')) {
       parts.push(<em key={key++}>{token.slice(1, -1)}</em>);

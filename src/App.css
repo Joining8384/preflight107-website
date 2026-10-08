@@ -4664,6 +4664,16 @@ textarea.support-input {
 }
 .blog-table tr:last-child td { border-bottom: none; }
 
+/* Inline links inside post + guide body copy */
+.blog-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.15s ease;
+}
+.blog-link:hover { opacity: 0.75; }
+
 .blog-pre {
   background: var(--card);
   border: 1px solid var(--border);
