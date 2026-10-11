@@ -1,0 +1,108 @@
+# preflight107.com — robots policy
+#
+# Search engines (Google, Bing, etc.): allowed — we want to be findable.
+# AI training crawlers: disallowed below. These are HONOR-BASED — reputable
+# AI companies respect robots.txt; non-reputable scrapers ignore it entirely.
+# For a marketing site this is the right tradeoff: keep us indexable in
+# Google + Bing while opting out of LLM training datasets where possible.
+
+# ── AI training / inference bots (Disallow) ─────────────────────────────────
+
+# OpenAI — used to gather training data for GPT
+User-agent: GPTBot
+Disallow: /
+
+# OpenAI — fetches pages when ChatGPT browses / uses search
+User-agent: OAI-SearchBot
+Disallow: /
+
+# OpenAI — explicit ChatGPT-User crawler
+User-agent: ChatGPT-User
+Disallow: /
+
+# Anthropic — Claude's web access (separate from training)
+User-agent: ClaudeBot
+Disallow: /
+
+# Anthropic — older training crawler identifier
+User-agent: anthropic-ai
+Disallow: /
+
+# Anthropic — Claude when fetching on a user's behalf
+User-agent: Claude-Web
+Disallow: /
+
+# Common Crawl — feeds basically every LLM training pipeline
+User-agent: CCBot
+Disallow: /
+
+# Google's separate AI-training opt-out (Bard/Gemini training)
+# Note: this does NOT remove us from Google Search — that uses Googlebot
+User-agent: Google-Extended
+Disallow: /
+
+# Apple's separate AI-training opt-out (Apple Intelligence training)
+# Note: this does NOT remove us from Siri / Spotlight — that uses Applebot
+User-agent: Applebot-Extended
+Disallow: /
+
+# Bytedance / TikTok crawler
+User-agent: Bytespider
+Disallow: /
+
+# Diffbot — sells scraped page data
+User-agent: Diffbot
+Disallow: /
+
+# ImagesiftBot — Hive AI training image dataset
+User-agent: ImagesiftBot
+Disallow: /
+
+# PerplexityBot — Perplexity AI search
+User-agent: PerplexityBot
+Disallow: /
+
+# Cohere
+User-agent: cohere-ai
+Disallow: /
+
+# Mistral AI
+User-agent: MistralAI-User
+Disallow: /
+
+# Meta's AI training crawler (LLaMA et al.)
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Disallow: /
+
+# YouBot — You.com search
+User-agent: YouBot
+Disallow: /
+
+# ── Everyone else: allowed ──────────────────────────────────────────────────
+# Default policy for any User-agent not listed above (Googlebot, Bingbot,
+# DuckDuckBot, social media preview bots, etc.) = allow.
+
+User-agent: *
+Allow: /
+
+# Private / auth / admin app routes — no SEO value, and on GitHub Pages these
+# client-side routes have no static shell so they return 404 to crawlers
+# (real users are redirected into the SPA and they work fine). Telling Google
+# to skip them keeps these out of Search Console's "Not found (404)" report.
+# Public SEO routes (/blog, /flyable, /pilot, /verify, /compare, /terms,
+# /privacy, /delete-account, /support) are intentionally NOT listed here.
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /login
+Disallow: /signup
+Disallow: /app
+
+# ── Sitemap ─────────────────────────────────────────────────────────────────
+Sitemap: https://preflight107.com/sitemap.xml
